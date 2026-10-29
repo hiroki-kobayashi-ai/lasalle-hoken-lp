@@ -1,0 +1,328 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>ラサール 保険の窓口</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=BIZ+UDPMincho:wght@700&display=swap">
+<style>
+/* Layout: one column for phones, two path cards side by side from 720px; large UD type for readers 50+ */
+:root{
+  --bg:#f6f8f7; --surface:#ffffff; --ink:#18221f; --muted:#4f5c57; --line:#d6ded9;
+  --pine:#1f5c4a; --pine-soft:#e3eeea; --amber:#9a5a12; --amber-soft:#f6ecdf;
+  --line-green:#06c755; --on-accent:#ffffff;
+  --f-body:"BIZ UDPGothic","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
+  --f-display:"BIZ UDPMincho","Hiragino Mincho ProN","Yu Mincho",serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111816; --surface:#18211e; --ink:#eef3f1; --muted:#a9b6b1; --line:#2c3833;
+  --pine:#5fb39a; --pine-soft:#1c2d28; --amber:#e3a35a; --amber-soft:#2b2118;
+  --line-green:#06c755; --on-accent:#0d1412; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111816; --surface:#18211e; --ink:#eef3f1; --muted:#a9b6b1; --line:#2c3833;
+  --pine:#5fb39a; --pine-soft:#1c2d28; --amber:#e3a35a; --amber-soft:#2b2118;
+  --line-green:#06c755; --on-accent:#0d1412; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:18px;line-height:1.8;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
+.wrap{max-width:760px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pine);outline-offset:3px;border-radius:6px}
+
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:18px 8px}
+.brand{font-weight:700;font-size:15px;letter-spacing:.06em}
+.brand small{display:block;font-weight:400;font-size:12px;color:var(--muted);letter-spacing:.02em}
+.tel-mini{font-size:14px;color:var(--muted);text-align:right;line-height:1.4;text-decoration:none;padding:6px 0 6px 12px}
+.tel-mini b{text-decoration:underline;text-underline-offset:3px}
+.tel-mini b{display:block;color:var(--ink);font-size:16px;font-variant-numeric:tabular-nums}
+
+.hero{padding-block:20px 8px}
+.hero h1{font-family:var(--f-display);font-size:clamp(28px,7.4vw,40px);line-height:1.45;margin:0 0 12px;text-wrap:balance}
+.hero p{margin:0;color:var(--muted)}
+
+.paths{display:grid;gap:16px;margin-block:24px 8px}
+@media (min-width:720px){.paths{grid-template-columns:1fr 1fr}}
+.path{display:flex;flex-direction:column;gap:12px;background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:22px 20px;min-width:0}
+.path.net{border-color:var(--pine)}
+.path.talk{border-color:var(--amber)}
+.tag{align-self:flex-start;font-size:14px;font-weight:700;letter-spacing:.08em;padding:2px 10px;border-radius:999px}
+.net .tag{background:var(--pine-soft);color:var(--pine)}
+.talk .tag{background:var(--amber-soft);color:var(--amber)}
+.path h2{font-size:24px;line-height:1.45;margin:0;text-wrap:balance}
+.path p{margin:0;color:var(--muted)}
+.path ul{margin:0;padding-left:1.2em;color:var(--muted)}
+
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:60px;padding:12px 18px;border-radius:12px;
+  font-family:inherit;font-size:19px;font-weight:700;text-decoration:none;text-align:center;border:0;cursor:pointer;width:100%}
+.btn-net{background:var(--pine);color:var(--on-accent)}
+.btn-talk{background:var(--amber);color:var(--on-accent)}
+.btn-line{background:var(--line-green);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.btn[aria-disabled="true"]{opacity:.55;pointer-events:none}
+.note{font-size:14px;color:var(--muted);line-height:1.6}
+
+section.block{padding-block:40px 8px}
+section.block h2{font-family:var(--f-display);font-size:26px;line-height:1.5;margin:0 0 8px;text-wrap:balance}
+section.block > p{margin:0 0 16px;color:var(--muted)}
+
+.facts{display:grid;gap:10px;margin:16px 0;padding:0;list-style:none}
+.facts li{display:flex;gap:12px;align-items:baseline;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.facts b{flex:0 0 auto;min-width:4.2em;color:var(--pine)}
+.btn-sm{font-size:16px;min-height:52px;padding:10px 8px;white-space:nowrap}
+
+.topics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+@media (max-width:360px){.topics{grid-template-columns:1fr}}
+.topic{font-family:inherit;font-size:17px;line-height:1.5;text-align:left;padding:14px;border-radius:12px;border:2px solid var(--line);
+  background:var(--surface);color:var(--ink);cursor:pointer;min-height:64px}
+.topic[aria-pressed="true"]{border-color:var(--amber);background:var(--amber-soft);font-weight:700}
+
+.msg{background:var(--surface);border:1px dashed var(--amber);border-radius:12px;padding:14px 16px;margin:8px 0 14px}
+.msg-label{font-size:14px;color:var(--muted);margin:0 0 4px}
+.msg-text{font-weight:700;margin:0 0 10px;word-break:break-word}
+.copy{font-family:inherit;font-size:15px;padding:8px 14px;border-radius:10px;border:2px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+
+.ways{display:grid;gap:12px}
+.way{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:10px}
+.way h3{margin:0;font-size:19px}
+.way p{margin:0;color:var(--muted)}
+.num{font-size:26px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.02em;color:var(--ink);user-select:all}
+
+ol.steps{counter-reset:s;list-style:none;margin:16px 0;padding:0;display:grid;gap:10px}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start}
+ol.steps li::before{content:counter(s);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;
+  background:var(--amber-soft);color:var(--amber);font-weight:700}
+
+footer{margin-top:48px;padding-block:28px 40px;border-top:1px solid var(--line);font-size:14px;line-height:1.75;color:var(--muted)}
+footer h2{font-size:15px;color:var(--ink);margin:18px 0 4px}
+footer p{margin:0}
+footer .co{font-size:16px;color:var(--ink);font-weight:700}
+.policy{margin-top:16px;border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--surface)}
+.policy summary{cursor:pointer;color:var(--ink);font-weight:700;font-size:15px;padding-block:4px}
+.policy p{margin-top:10px}
+.rec{overflow-x:auto;margin:10px 0}
+.rec table{border-collapse:collapse;width:100%;font-size:14px}
+.rec th,.rec td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.rec th{background:var(--surface);color:var(--ink);font-weight:700;white-space:nowrap}
+footer .small{font-size:13px}
+@media (prefers-reduced-motion:no-preference){.btn,.topic{transition:transform .12s ease,background-color .12s ease}.btn:active{transform:scale(.98)}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="brand">ラサール＆パートナーズ<small>保険代理店</small></div>
+    <a class="tel-mini" href="tel:05036964531" aria-label="050-3696-4531に電話をかける">お電話<b>050-3696-4531</b></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>保険のこと、<br>自分で決めますか。<br>相談して決めますか。</h1>
+      <p>どちらからでも始められます。合うほうを選んでください。</p>
+    </section>
+
+    <div class="paths">
+      <article class="path net">
+        <span class="tag">ネットで完結</span>
+        <h2>自分で選んで、<br>ネットで申し込む</h2>
+        <p>スマホで保険料を試算して、そのまま申し込めます。担当者とのやり取りはありません。</p>
+        <a class="btn btn-net js-neo" href="#net">保険料を試算して申し込む</a>
+        <p class="note">第一ネオ生命の申込画面に移ります。</p>
+        <p class="note js-neo-note">それまでのご相談は、右の「相談の方法を見る」からどうぞ。</p>
+      </article>
+
+      <article class="path talk">
+        <span class="tag">相談してから</span>
+        <h2>迷っている、<br>まず話を聞きたい</h2>
+        <p>生命保険も、自動車・火災などの損害保険も、まとめてご相談いただけます。</p>
+        <a class="btn btn-talk" href="#soudan">相談の方法を見る</a>
+        <p class="note">LINE・電話・フォーム・テレビ電話で対応します。</p>
+      </article>
+    </div>
+
+    <section class="block" id="net">
+      <h2>ネットで申し込む方へ</h2>
+      <p>申込は、保険会社（第一ネオ生命）のホームページで、ご自身で進めていただきます。</p>
+      <ul class="facts">
+        <li><b>試算</b><span>保険料の試算は24時間できます</span></li>
+        <li><b>申込</b><span>朝5時から深夜2時まで受け付けています</span></li>
+        <li><b>お支払い</b><span>クレジットカードでのお支払いです</span></li>
+      </ul>
+      <a class="btn btn-net js-neo" href="#net">保険料を試算して申し込む</a>
+      <p class="note" style="margin-top:10px">途中で分からなくなったら、<a href="#soudan">相談</a>に切り替えても大丈夫です。メンテナンス中は利用できない時間があります。</p>
+    </section>
+
+    <section class="block" id="soudan">
+      <h2>相談して決めたい方へ</h2>
+      <p>何を相談したいか選ぶと、LINEに送る一言ができます。コピーしてそのまま送ってください。</p>
+
+      <div class="topics" role="group" aria-label="相談したいこと">
+        <button class="topic" type="button" aria-pressed="true" data-msg="病気・入院・がんの備えについて相談したいです。">病気・入院・<br>がんの備え</button>
+        <button class="topic" type="button" aria-pressed="false" data-msg="家族のための保障（死亡・収入の備え）について相談したいです。">家族のための<br>保障</button>
+        <button class="topic" type="button" aria-pressed="false" data-msg="自動車・火災・ケガの保険について相談したいです。">自動車・火災・<br>ケガの保険</button>
+        <button class="topic" type="button" aria-pressed="false" data-msg="今入っている保険を見直したいです。">今の保険を<br>見直したい</button>
+        <button class="topic" type="button" aria-pressed="false" data-msg="会社・お店の保険について相談したいです。">会社・お店の<br>保険</button>
+        <button class="topic" type="button" aria-pressed="false" data-msg="何に入ればいいか分からないので、相談したいです。">何から考えれば<br>いいか分からない</button>
+      </div>
+
+      <div class="msg">
+        <p class="msg-label">LINEに送る一言</p>
+        <p class="msg-text" id="msg-text">病気・入院・がんの備えについて相談したいです。</p>
+        <button class="copy" type="button" id="copy-msg">この一言をコピー</button>
+      </div>
+
+      <div class="ways">
+        <div class="way">
+          <h3>LINEで相談（いちばん早い）</h3>
+          <p>友だち追加して、上の一言を送ってください。担当者からお返事します。</p>
+          <a class="btn btn-line" href="https://lin.ee/5gJWVqG" target="_blank" rel="noopener">LINEで相談する</a>
+        </div>
+        <div class="way">
+          <h3>電話で相談</h3>
+          <p>つながらないときは、LINEからご連絡ください。</p>
+          <div class="num" id="tel-num">050-3696-4531</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <a class="btn btn-ghost btn-sm" href="tel:05036964531">電話をかける</a>
+            <button class="btn btn-ghost btn-sm" type="button" id="copy-tel">番号をコピー</button>
+          </div>
+        </div>
+        <div class="way">
+          <h3>フォームで相談（LINEを使っていない方）</h3>
+          <p>お名前と連絡先、相談したいことを入力して送ってください。原則2営業日以内に、ご希望の方法でご連絡します。入力内容は、ページ下の「プライバシーポリシー」に沿って取り扱います。</p>
+          <a class="btn btn-talk" href="https://docs.google.com/forms/d/e/1FAIpQLSccRHCt5AheXYdAuCldzdOeVagka3Cl97rLjJFDbVRP67sg_A/viewform" target="_blank" rel="noopener">フォームで相談する</a>
+        </div>
+        <div class="way">
+          <h3>テレビ電話で相談</h3>
+          <p>顔を見ながら話したい方は、LINE・フォーム・お電話のどれかで「テレビ電話希望」とお伝えください。日程を決めてご案内します。</p>
+        </div>
+      </div>
+
+      <h2 style="margin-top:32px">相談から手続きまで</h2>
+      <ol class="steps">
+        <li><span>LINE・電話・フォームで、相談したいことを伝える</span></li>
+        <li><span>担当者が、今の状況やご希望を伺う</span></li>
+        <li><span>合いそうな保険の資料をお送りして、ご説明する</span></li>
+        <li><span>納得できたら、お手続きに進む</span></li>
+      </ol>
+      <p class="note">ご相談だけで終わっても構いません。無理にお申し込みをおすすめすることはありません。</p>
+    </section>
+  </main>
+
+  <footer>
+    <p class="co">ラサール＆パートナーズ株式会社</p>
+    <p>保険代理店（生命保険・損害保険）<br>〒062-0932 北海道札幌市豊平区平岸2条5丁目2番19号<br>電話 <a href="tel:05036964531">050-3696-4531</a><br>メール <a href="mailto:info@lasalle2023.com">info@lasalle2023.com</a></p>
+    <p><a href="https://lasalle2023.com/" target="_blank" rel="noopener">会社概要（ラサール＆パートナーズ株式会社 ホームページ）</a></p>
+
+    <h2>取扱保険会社</h2>
+    <p>生命保険：エヌエヌ生命保険／オリックス生命保険／アクサ生命保険／マニュライフ生命保険／第一ネオ生命／メットライフ生命保険／日本生命保険／はなさく生命保険<br>損害保険：損害保険ジャパン／あいおいニッセイ同和損害保険</p>
+    <p>取扱保険会社の商品でも、お取り扱いできない場合があります。</p>
+
+    <h2>保険商品のご案内にあたって（比較推奨販売の方針）</h2>
+    <p>当社は、保障分野ごとに、推奨する保険会社を定めています。推奨保険会社以外の商品をご希望の場合は、担当者または下記までお問い合わせください。</p>
+    <div class="rec">
+      <table>
+        <tr><th scope="row">生命保険・法人第一分野</th><td>エヌエヌ生命保険／オリックス生命保険／メットライフ生命保険／日本生命保険</td></tr>
+        <tr><th scope="row">生命保険・法人第三分野</th><td>オリックス生命保険／メットライフ生命保険</td></tr>
+        <tr><th scope="row">生命保険・個人第一分野</th><td>アクサ生命保険／オリックス生命保険／マニュライフ生命保険／メットライフ生命保険／日本生命保険／はなさく生命保険</td></tr>
+        <tr><th scope="row">生命保険・個人第三分野</th><td>オリックス生命保険／第一ネオ生命／メットライフ生命保険／日本生命保険／はなさく生命保険</td></tr>
+        <tr><th scope="row">損害保険</th><td>損害保険ジャパン／あいおいニッセイ同和損害保険</td></tr>
+      </table>
+    </div>
+    <p class="small">第一分野：死亡保険など　第三分野：医療保険・がん保険など</p>
+    <p><b>推奨理由</b><br>保険料水準・商品特性・お客さまサポート体制の充実等を鑑み、上記の推奨保険会社を分野ごとに選定しています。</p>
+    <p><b>インターネット上の募集について</b><br>インターネット上の非対面による募集については、インターネット申込のシステム提供がある保険会社の商品をご案内しております。該当の保険会社と商品は以下となります。<br>【生命保険】第一ネオ生命保険会社<br>＜取扱商品＞（1）ネオdeいりょう（2）ネオdeいりょう健康プロモート（3）ネオdeからだエール（4）認知症保険toスマイル（5）ネオdeがんちりょう（6）ネオde定期（7）ネオde３疾病サポート</p>
+
+    <h2>募集人の権限について</h2>
+    <p><b>生命保険</b><br>当社および当社の募集人は、お客さまと引受保険会社の保険契約締結の媒介を行います。告知受領権および保険契約締結の代理権はありません。</p>
+    <p><b>損害保険</b><br>当社は引受保険会社との委託契約に基づき、保険契約の締結、保険料の領収、保険料領収証の交付、契約の管理業務等の代理業務を行っております。当社とご締結いただいて有効に成立したご契約は、引受保険会社と直接契約されたものとなります。</p>
+
+    <details class="policy">
+      <summary>お客さま本位の業務運営に関する宣言</summary>
+      <p>当社は、金融庁「顧客本位の業務運営に関する原則」を採択し、お客さまの「最善の利益」を提供するべく、以下のとおり取り組むことを宣言します。</p>
+      <p><b>1. お客さま本位の業務運営を社内外に周知し、着実に実行するための取組み</b><br>お客さまの信頼を得るための営業活動・保全活動を行います。</p>
+      <p><b>2. お客さまに最適な商品・サービスをご提供するための取組み</b><br>お客さまの環境や属性を踏まえてニーズを注意深くヒアリングし、意向把握シートを用いて合致した商品をご提案します。パンフレットなどを用いて分かりやすい説明に努め、情報提供を行います。<br>適合性の原則に沿った高齢のお客さま、特定保険契約販売への対応（リスクの適切な説明）については、各保険会社の基準に従い、ご家族同席のうえで面談・ご提案を進めます。</p>
+      <p><b>3. お客さまへのアフターフォローを適切に行うための取組み</b><br>保険金・給付金の早急な支払いのため、保全手続きのweb給付請求の推進に努めます。<br>年に一度、お客さまへの訪問・コール等を行い、ご契約内容についてのご案内を行い、定期的にお客さまフォローを行います。</p>
+      <p><b>4. お客さまから寄せられた声を業務運営に生かすための取組み</b><br>苦情については保険会社へ即日報告・指示を受けつつ、対応は速やかに行います。苦情管理表にて対応進捗管理を行い、お客さまからご納得をいただけるよう優先してフォローを行います。<br>代理店内で速やかに再発防止策を検討し、保険会社へ報告を行います。</p>
+      <p><b>5. お客さま本位を推進するための社員教育、業績評価に関する取組み</b><br>高度なサービスを提供できる専門的な知識習得のための教育・研修、資格取得に努めます。</p>
+      <p><b>お客さま本位の業務運営のための成果指標（KPI）</b><br>早期脱落・失効契約：お客さまへの定期フォローを推進し、早期脱落・失効を防ぐ（目標 1.0%）<br>37か月継続率：お客さまサービスに努め、末永く生命保険を継続いただく（目標 95%）</p>
+      <p>2024年2月　ラサール＆パートナーズ株式会社</p>
+    </details>
+
+    <details class="policy">
+      <summary>勧誘方針</summary>
+      <p><b>1. コンプライアンスの徹底</b><br>法令等を遵守するとともに、社会一般の倫理・常識に従って勧誘・販売を行います。コンプライアンスの徹底のための態勢の維持・強化に努め、適切な勧誘・販売を行うための研修等を実施し、お客さまから信頼される人材の育成に努めます。</p>
+      <p><b>2. お客さまの情報の保護</b><br>お客さまの情報については、当社のプライバシーポリシーに則り、適正に取得し、厳重に管理します。</p>
+      <p><b>3. お客さま本位の勧誘・販売</b><br>お客さまのご意向、生命保険に関する知識、ご加入の状況、資産・収入等の状況に十分に配慮して勧誘・販売を行います。外貨建ての保険等、市場リスクを有する商品は、投資経験や知識、受け入れられるリスクの程度にも配慮し、十分にご説明します。未成年のお客さまを被保険者とする場合は、ご契約内容が適正か特に慎重に確認します。ご高齢のお客さまには、より丁寧に勧誘・販売を行います。お客さまにご迷惑をおかけする時間帯や場所、方法で勧誘・販売を行いません。</p>
+      <p><b>4. 重要事項についての説明</b><br>商品の仕組みや特徴等、ご判断に影響を与える重要事項を、正しくご理解いただけるようにご説明します。正しく告知いただけなかった場合には保険金・給付金等をお受け取りいただけない場合があることを十分にご説明します。説明には「契約概要」「注意喚起情報」等、法令・取扱保険会社および当社の規程に則った募集文書を使用します。</p>
+      <p><b>5. 誤解の防止</b><br>お客さまに誤解を与えないように、生命保険とその他の商品を明確に区別して取り扱います。</p>
+      <p><b>6. アフターフォロー</b><br>ご契約後もご安心いただくため、適切なアフターフォローに努めます。</p>
+      <p><b>7. 相談窓口</b><br>ご意見・ご要望がございましたら、当社担当者または下記までご連絡ください。</p>
+      <p><b>8. インターネット上の募集について</b><br>インターネット上の非対面による募集については、インターネット申込のシステム提供がある保険会社の商品をご案内しております。該当の保険会社は第一ネオ生命保険会社です。</p>
+    </details>
+
+    <details class="policy">
+      <summary>個人情報の取り扱い（プライバシーポリシー）</summary>
+      <p>当社は、個人情報の保護に関する法律その他の関連法令・ガイドライン等を遵守して、個人情報を適正に取り扱い、安全管理について適切な措置を講じます。</p>
+      <p><b>取得と利用目的</b><br>業務上必要な範囲で、適法で公正な手段により個人情報を取得し、保険会社から委託を受けた保険募集業務（各種商品やサービスの案内・提供・維持管理と、これに付随する業務）の遂行に必要な範囲で利用します。各保険会社の利用目的は、それぞれのホームページに記載されています。</p>
+      <p><b>取得する情報</b><br>氏名・生年月日・住所・性別・電話番号・職業・健康状態等を、ご記入いただいた書面のほか、電話・LINE等の通信手段を通じて取得します。健康状態などの配慮が必要な情報は、保険募集業務に必要な範囲に限って取り扱います。</p>
+      <p><b>安全管理</b><br>個人データの漏えい・滅失・毀損を防ぐため、取扱規程や実施体制を整え、十分なセキュリティ対策を講じます。</p>
+      <p><b>第三者への提供</b><br>法令に基づく場合など法令で認められた場合を除き、ご本人の同意なく第三者に個人データを提供しません。</p>
+      <p><b>取り扱いの委託</b><br>個人情報の取り扱いを外部に委託する場合は、委託先の管理体制を確認し、適切に監督します。</p>
+      <p><b>保存期間</b><br>利用目的の達成に必要な期間、または法令で定められた期間保存し、不要になった情報は速やかに削除します。</p>
+      <p><b>開示・訂正・利用停止等のご請求、お問い合わせ</b><br>ご本人であることを確認したうえで対応します。下記までご連絡ください。</p>
+      <p>ラサール＆パートナーズ株式会社　代表取締役 小林弘毅<br>北海道札幌市豊平区平岸二条五丁目2番19号</p>
+    </details>
+
+    <details class="policy">
+      <summary>反社会的勢力に対する基本方針</summary>
+      <p>当社は、反社会的勢力とは一切の関係を持たず、不当な要求には毅然として対応し、これを拒絶します。必要に応じて警察や弁護士等の外部専門機関と連携し、組織として対応します。</p>
+    </details>
+
+    <details class="policy">
+      <summary>ご意見・ご相談・苦情の窓口</summary>
+      <p><b>当社の窓口</b><br>ラサール＆パートナーズ株式会社<br>電話 <a href="tel:05036964531">050-3696-4531</a>（月曜日〜金曜日 9時〜18時）<br>メール info@lasalle2023.com<br>LINEでも受け付けています。</p>
+      <p>ご契約内容や保険金・給付金のお支払いについては、ご契約の保険会社の窓口にもご相談いただけます。</p>
+      <p><b>保険業界の相談窓口（指定紛争解決機関）</b><br>保険会社との間で問題が解決しない場合は、次の窓口をご利用いただけます。</p>
+      <p>生命保険：一般社団法人 生命保険協会「生命保険相談所」<br>電話 03-3286-2648（月曜日〜金曜日 9時〜17時、祝日・年末年始を除く）</p>
+      <p>損害保険：一般社団法人 日本損害保険協会「そんぽADRセンター」<br>電話 03-4332-5241（月曜日〜金曜日 9時15分〜17時、祝日・休日・年末年始を除く）</p>
+    </details>
+    <p style="margin-top:14px">このページは保険選びの入口のご案内です。個別の商品内容・保険料は、各保険会社の資料または相談時にご確認ください。</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  // Neoダイレクトの代理店判定URL。2026-11-02 0:00（日本時間）から自動でボタンが使えるようになる
+  var NEO_URL = "https://neofirst.co.jp/ent2/?param=6155300000";
+  var OPEN_AT = Date.parse("2026-11-02T00:00:00+09:00");
+  var isOpen = Date.now() >= OPEN_AT;
+  document.querySelectorAll(".js-neo").forEach(function(a){
+    if(isOpen){ a.href = NEO_URL; a.target = "_blank"; a.rel = "noopener"; }
+    else { a.setAttribute("aria-disabled","true"); a.textContent = "11月2日（月）から申し込めます"; }
+  });
+  document.querySelectorAll(".js-neo-note").forEach(function(p){ p.hidden = isOpen; });
+
+  var topics = document.querySelectorAll(".topic");
+  var msgText = document.getElementById("msg-text");
+  topics.forEach(function(b){
+    b.addEventListener("click", function(){
+      topics.forEach(function(t){ t.setAttribute("aria-pressed","false"); });
+      b.setAttribute("aria-pressed","true");
+      msgText.textContent = b.getAttribute("data-msg");
+    });
+  });
+
+  function selectText(el){
+    var r = document.createRange(); r.selectNodeContents(el);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  function copy(btn, el, done){
+    var text = el.textContent;
+    var ok = function(){ var o = btn.textContent; btn.textContent = done; setTimeout(function(){ btn.textContent = o; }, 1800); };
+    try{
+      navigator.clipboard.writeText(text).then(ok, function(){ selectText(el); btn.textContent = "選択しました。長押しでコピー"; });
+    }catch(e){ selectText(el); btn.textContent = "選択しました。長押しでコピー"; }
+  }
+  document.getElementById("copy-msg").addEventListener("click", function(){ copy(this, msgText, "コピーしました"); });
+  document.getElementById("copy-tel").addEventListener("click", function(){ copy(this, document.getElementById("tel-num"), "コピーしました"); });
+})();
+</script>
+
+<script src="analytics.js"></script>
+</body></html>
