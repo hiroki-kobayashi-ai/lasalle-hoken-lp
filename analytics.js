@@ -1,7 +1,7 @@
 // 訪問・ボタンタップの計測（Googleアナリティクス GA4）
 // 測定IDが空のあいだは何も送信しません。発行後に下の ID を入れてください（例 "G-XXXXXXXXXX"）。
 (function(){
-  var GA_ID = "";
+  var GA_ID = "G-ERPXVZ39RD";
   if(!GA_ID) return;
 
   // 流入元（?src=ig / ?src=yt など）を覚えておく
