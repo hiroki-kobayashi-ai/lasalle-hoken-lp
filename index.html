@@ -59,6 +59,14 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 .btn[aria-disabled="true"]{opacity:.55;pointer-events:none}
 .note{font-size:14px;color:var(--muted);line-height:1.6}
 
+.check{display:flex;flex-direction:column;gap:12px;background:var(--pine-soft);border:2px solid var(--pine);border-radius:16px;padding:22px 20px;margin-block:16px 8px}
+.check .tag{background:var(--surface);color:var(--pine)}
+.check h2{font-family:var(--f-display);font-size:26px;line-height:1.45;margin:0;text-wrap:balance}
+.check h2 span{font-family:var(--f-body);font-size:19px;font-weight:700;color:var(--pine)}
+.check > p{margin:0;color:var(--ink)}
+.check ol.steps{margin:4px 0}
+.check ol.steps li::before{background:var(--surface);color:var(--pine)}
+
 section.block{padding-block:40px 8px}
 section.block h2{font-family:var(--f-display);font-size:26px;line-height:1.5;margin:0 0 8px;text-wrap:balance}
 section.block > p{margin:0 0 16px;color:var(--muted)}
@@ -135,6 +143,19 @@ footer .small{font-size:13px}
         <p class="note">LINE・電話・フォーム・テレビ電話で対応します。</p>
       </article>
     </div>
+
+    <section class="check" id="check" aria-labelledby="check-h">
+      <span class="tag">無料・写真を送るだけ</span>
+      <h2 id="check-h">保険証券チェック<br><span>今の保険、このままで大丈夫？</span></h2>
+      <p>お手元の保険証券の写真をLINEで送ってください。担当者が内容を確認して、見直したほうがよい点があればお返事します。</p>
+      <ol class="steps">
+        <li><span>下のボタンからLINEで友だち追加する</span></li>
+        <li><span>証券の<b>お名前・ご住所・生年月日・証券番号</b>を、紙などで隠す</span></li>
+        <li><span>写真を撮って、そのままトークに送る</span></li>
+      </ol>
+      <a class="btn btn-line js-shoken" href="https://lin.ee/5gJWVqG" target="_blank" rel="noopener">保険証券の写真をLINEで送る</a>
+      <p class="note">友だち追加すると、7項目の「保険証券チェック表」が届きます。写真を送っても、無理にお申し込みをおすすめすることはありません。</p>
+    </section>
 
     <section class="block" id="net">
       <h2>ネットで申し込む方へ</h2>
