@@ -28,6 +28,7 @@
     if(!a || a.getAttribute("aria-disabled") === "true") return;
     var href = a.getAttribute("href") || "";
     if(a.classList.contains("js-neo") && href.indexOf("neofirst.co.jp") > -1) send("neo");
+    else if(a.classList.contains("js-shoken")) send("shoken_check");
     else if(href.indexOf("lin.ee/") > -1) send("line");
     else if(href.indexOf("tel:") === 0) send("tel");
     else if(href.indexOf("docs.google.com/forms") > -1) send("form");
