@@ -111,6 +111,32 @@ footer .co{font-size:16px;color:var(--ink);font-weight:700}
 .rec th{background:var(--surface);color:var(--ink);font-weight:700;white-space:nowrap}
 footer .small{font-size:13px}
 @media (prefers-reduced-motion:no-preference){.btn,.topic{transition:transform .12s ease,background-color .12s ease}.btn:active{transform:scale(.98)}}
+
+/* v2 2026-11-03: 最初の画面を1ボタンに。60代以上が迷わない基準（本文18px・ボタン文字20px・高さ60px） */
+.greet{display:none;margin:0 0 10px;font-size:17px;color:var(--pine);font-weight:700}
+.greet[data-on]{display:block}
+.hero .sub{font-size:19px;color:var(--ink);margin:0 0 18px;line-height:1.7}
+.btn-big{min-height:64px;font-size:20px}
+.alt{display:flex;flex-wrap:wrap;gap:8px 20px;margin:14px 0 0;padding:0;list-style:none;font-size:17px}
+.alt a{color:var(--ink);text-underline-offset:4px}
+.hook{background:var(--surface);border:2px solid var(--amber);border-radius:16px;padding:18px 18px 16px;margin:22px 0 8px}
+.hook p.q{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.5}
+.hook .opts{display:grid;gap:10px}
+@media (min-width:520px){.hook .opts{grid-template-columns:1fr 1fr 1fr}}
+.hook .opt{font-family:inherit;font-size:18px;font-weight:700;min-height:58px;border-radius:12px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;padding:10px}
+.hook .opt[aria-pressed="true"]{border-color:var(--amber);background:var(--amber-soft)}
+.hook .ans{display:none;margin:14px 0 0;padding:14px 16px;border-radius:12px;background:var(--amber-soft);font-size:18px;line-height:1.7}
+.hook .ans[data-on]{display:block}
+.hook .ans .btn{margin-top:12px}
+.howto{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;margin:14px 0 0;text-decoration:none;color:var(--ink)}
+.howto img{width:96px;height:96px;object-fit:cover;border-radius:10px;background:#000}
+.howto b{display:block;font-size:18px}
+.howto span{font-size:15px;color:var(--muted)}
+.howto-frame{margin:14px 0 0;aspect-ratio:9/16;max-width:360px;border-radius:14px;overflow:hidden;background:#000}
+.howto-frame iframe{width:100%;height:100%;border:0}
+.btn-line-msg{margin-top:4px}
+.copy-small{font-size:15px;color:var(--muted);margin:8px 0 0}
+.copy-small button{font-family:inherit;font-size:15px;color:var(--ink);background:none;border:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:4px 0}
 </style>
 
 <div class="wrap">
@@ -120,9 +146,35 @@ footer .small{font-size:13px}
   </header>
 
   <main>
-    <section class="hero">
-      <h1>保険のこと、<br>自分で決めますか。<br>相談して決めますか。</h1>
-      <p>どちらからでも始められます。合うほうを選んでください。</p>
+    <section class="hero" id="top">
+      <p class="greet" id="greet"></p>
+      <h1>今の保険、<br>このままで大丈夫？</h1>
+      <p class="sub">保険証券の写真をLINEで送るだけ。<br>担当者が無料で見て、見直す点があればお返事します。</p>
+      <a class="btn btn-line btn-big js-shoken" href="https://lin.ee/5gJWVqG" target="_blank" rel="noopener">写真をLINEで送る（無料）</a>
+      <ul class="alt">
+        <li><a href="#net">相談なしで、自分で申し込む</a></li>
+        <li><a href="#soudan">LINE・電話で相談する</a></li>
+      </ul>
+
+      <div class="hook" id="hook">
+        <p class="q">保険証券、最後に開いたのはいつですか？</p>
+        <div class="opts" role="group" aria-label="最後に証券を開いた時期">
+          <button class="opt" type="button" aria-pressed="false" data-ans="よく見ていらっしゃいます。それでも、保障の重なりや、今の年齢に合わなくなった部分は、写真1枚で確認できます。">1年以内</button>
+          <button class="opt" type="button" aria-pressed="false" data-ans="その間に、ご家族や収入、医療の制度も変わっています。写真を送るだけで、今の暮らしに合っているかお返事します。">2〜3年前</button>
+          <button class="opt" type="button" aria-pressed="false" data-ans="多くの方がそうです。引き出しから出して、写真を1枚。それだけで、見直す点があるか分かります。">覚えていない</button>
+        </div>
+        <div class="ans" id="hook-ans">
+          <p id="hook-text" style="margin:0"></p>
+          <a class="btn btn-line js-shoken" href="https://lin.ee/5gJWVqG" target="_blank" rel="noopener">写真をLINEで送る（無料）</a>
+          <p class="note" style="margin:8px 0 0">お名前・ご住所・証券番号は隠して送ってください。送っても、無理にお申し込みをおすすめすることはありません。</p>
+        </div>
+      </div>
+
+      <a class="howto js-howto" href="https://youtube.com/shorts/dnItJ8blm6s" target="_blank" rel="noopener">
+        <img src="https://i.ytimg.com/vi/dnItJ8blm6s/hqdefault.jpg" alt="" loading="lazy">
+        <span><b>押し方を60秒で見る</b><span>どこを押せばいいか、動画でご案内します</span></span>
+      </a>
+      <div class="howto-frame" id="howto-frame" hidden></div>
     </section>
 
     <div class="paths">
@@ -172,7 +224,7 @@ footer .small{font-size:13px}
 
     <section class="block" id="soudan">
       <h2>相談して決めたい方へ</h2>
-      <p>何を相談したいか選ぶと、LINEに送る一言ができます。コピーしてそのまま送ってください。</p>
+      <p>相談したいことを1つ押してください。その一言が入った状態でLINEが開きます（送信ボタンを押すだけ）。</p>
 
       <div class="topics" role="group" aria-label="相談したいこと">
         <button class="topic" type="button" aria-pressed="true" data-msg="病気・入院・がんの備えについて相談したいです。">病気・入院・<br>がんの備え</button>
@@ -188,14 +240,15 @@ footer .small{font-size:13px}
       <div class="msg">
         <p class="msg-label">LINEに送る一言</p>
         <p class="msg-text" id="msg-text">病気・入院・がんの備えについて相談したいです。</p>
-        <button class="copy" type="button" id="copy-msg">この一言をコピー</button>
+        <a class="btn btn-line btn-line-msg js-line-msg" id="line-msg" href="https://lin.ee/5gJWVqG" target="_blank" rel="noopener">この一言をLINEで送る</a>
+        <p class="copy-small">まだ友だち追加していない方は、追加の画面が先に出ます。うまく開かないときは <button class="copy" type="button" id="copy-msg">一言をコピー</button> して、LINEに貼ってください。</p>
       </div>
 
       <div class="ways">
         <div class="way">
           <h3>LINEで相談（いちばん早い）</h3>
-          <p>友だち追加して、上の一言を送ってください。担当者からお返事します。</p>
-          <a class="btn btn-line" href="https://lin.ee/5gJWVqG" target="_blank" rel="noopener">LINEで相談する</a>
+          <p>上の一言を送っていただければ、担当者からお返事します。文字だけで相談できます。</p>
+          <a class="btn btn-line" href="https://lin.ee/5gJWVqG" target="_blank" rel="noopener">LINEで友だち追加する</a>
         </div>
         <div class="way">
           <h3>電話で相談</h3>
@@ -322,13 +375,59 @@ footer .small{font-size:13px}
   });
   document.querySelectorAll(".js-neo-note").forEach(function(p){ p.hidden = isOpen; });
 
+  // 来た動画に合わせた一言（?src= で切り替え。GitHub Pagesのまま動く）
+  var src = "";
+  try{ src = new URLSearchParams(location.search).get("src") || sessionStorage.getItem("src") || ""; }catch(e){}
+  var greets = [
+    [/^(yt|ig)_52$/, "「五十二の旗」をご覧いただき、ありがとうございます。"],
+    [/^(yt|ig)_jibu$/, "「治部と刑部」をご覧いただき、ありがとうございます。"],
+    [/^(yt|ig)_t$/, "「保険のトリセツ」をご覧いただき、ありがとうございます。"],
+    [/^(yt_lab|ig_hoken|yt|ig_story)$/, "物語をご覧いただき、ありがとうございます。"],
+    [/^(yt_kashimasa|ig_lumiere|ig_kobayashi|ig)$/, "動画をご覧いただき、ありがとうございます。"],
+    [/^line_/, "LINEからお越しいただき、ありがとうございます。"]
+  ];
+  var greet = document.getElementById("greet");
+  for(var i=0;i<greets.length;i++){ if(greets[i][0].test(src)){ greet.textContent = greets[i][1]; greet.setAttribute("data-on","1"); break; } }
+
+  // 最初の1タップ（証券を最後に開いた時期）
+  var opts = document.querySelectorAll(".hook .opt");
+  var ans = document.getElementById("hook-ans"), ansText = document.getElementById("hook-text");
+  opts.forEach(function(b){
+    b.addEventListener("click", function(){
+      opts.forEach(function(t){ t.setAttribute("aria-pressed","false"); });
+      b.setAttribute("aria-pressed","true");
+      ansText.textContent = b.getAttribute("data-ans");
+      ans.setAttribute("data-on","1");
+      if(window.gtag) gtag("event","hook_tap",{src:src, choice:b.textContent.trim()});
+    });
+  });
+
+  // 使い方動画：押したらその場で再生（自動再生はしない）
+  var howto = document.querySelector(".js-howto"), frame = document.getElementById("howto-frame");
+  if(howto && frame){
+    howto.addEventListener("click", function(e){
+      e.preventDefault();
+      frame.hidden = false;
+      frame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/dnItJ8blm6s?autoplay=1&playsinline=1&rel=0" title="押し方の案内（60秒）" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+      howto.hidden = true;
+      if(window.gtag) gtag("event","howto_play",{src:src});
+    });
+  }
+
+  // 相談したいこと → 一言が入った状態でLINEが開く（LINE公式アカウント @375swnrk）
+  var LINE_OA = "%40375swnrk";
   var topics = document.querySelectorAll(".topic");
   var msgText = document.getElementById("msg-text");
+  var lineMsg = document.getElementById("line-msg");
+  function setLine(text){ lineMsg.href = "https://line.me/R/oaMessage/" + LINE_OA + "/?" + encodeURIComponent(text); }
+  setLine(msgText.textContent);
   topics.forEach(function(b){
     b.addEventListener("click", function(){
       topics.forEach(function(t){ t.setAttribute("aria-pressed","false"); });
       b.setAttribute("aria-pressed","true");
       msgText.textContent = b.getAttribute("data-msg");
+      setLine(msgText.textContent);
+      if(window.gtag) gtag("event","topic_tap",{src:src, topic:b.textContent.replace(/\s+/g,"")});
     });
   });
 
