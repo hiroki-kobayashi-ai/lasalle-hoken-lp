@@ -30,6 +30,7 @@
     if(a.classList.contains("js-neo") && href.indexOf("neofirst.co.jp") > -1) send("neo");
     else if(a.classList.contains("js-shoken")) send("shoken_check");
     else if(a.classList.contains("js-line-msg")) send("line_msg");
+    else if(a.classList.contains("js-tokuten-pdf")) send("tokuten_pdf");
     else if(a.classList.contains("js-howto")) return;
     else if(href.indexOf("lin.ee/") > -1 || href.indexOf("line.me/") > -1) send("line");
     else if(href.indexOf("tel:") === 0) send("tel");
