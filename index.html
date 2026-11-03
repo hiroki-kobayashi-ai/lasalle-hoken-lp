@@ -179,9 +179,9 @@ footer .small{font-size:13px}
       </div>
 
       <!-- 使い方動画。差し替えは下の HOWTO（id・向き・題名）だけ直す。11/6に「特典と申込ページの使い方（90秒・横長）」へ差し替え予定 -->
-      <a class="howto js-howto" id="howto-link" href="https://youtube.com/shorts/dnItJ8blm6s" target="_blank" rel="noopener">
-        <img id="howto-thumb" src="https://i.ytimg.com/vi/dnItJ8blm6s/hqdefault.jpg" alt="" loading="lazy">
-        <span><b id="howto-title">押し方を60秒で見る</b><span id="howto-sub">どこを押せばいいか、動画でご案内します</span></span>
+      <a class="howto js-howto" id="howto-link" href="https://youtu.be/GBCoHSRfADw" target="_blank" rel="noopener">
+        <img id="howto-thumb" src="https://i.ytimg.com/vi/GBCoHSRfADw/hqdefault.jpg" alt="" loading="lazy">
+        <span><b id="howto-title">特典と押し方を2分で見る</b><span id="howto-sub">いまだけの特典3つと、どこを押せばいいかを動画でご案内します</span></span>
       </a>
       <div class="howto-frame" id="howto-frame" hidden></div>
     </section>
@@ -413,7 +413,7 @@ footer .small{font-size:13px}
 
   // 使い方動画：押したらその場で再生（自動再生はしない）
   // 差し替え手順：id／vertical（縦ならtrue）／title／sub を直すだけ
-  var HOWTO = { id:"dnItJ8blm6s", vertical:true, title:"押し方を60秒で見る", sub:"どこを押せばいいか、動画でご案内します" };
+  var HOWTO = { id:"GBCoHSRfADw", vertical:false, title:"特典と押し方を2分で見る", sub:"いまだけの特典3つと、どこを押せばいいかを動画でご案内します" };
   var howto = document.querySelector(".js-howto"), frame = document.getElementById("howto-frame");
   if(howto && frame){
     howto.href = HOWTO.vertical ? "https://youtube.com/shorts/"+HOWTO.id : "https://youtu.be/"+HOWTO.id;
