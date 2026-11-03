@@ -176,9 +176,10 @@ footer .small{font-size:13px}
         </div>
       </div>
 
-      <a class="howto js-howto" href="https://youtube.com/shorts/dnItJ8blm6s" target="_blank" rel="noopener">
-        <img src="https://i.ytimg.com/vi/dnItJ8blm6s/hqdefault.jpg" alt="" loading="lazy">
-        <span><b>押し方を60秒で見る</b><span>どこを押せばいいか、動画でご案内します</span></span>
+      <!-- 使い方動画。差し替えは下の HOWTO（id・向き・題名）だけ直す。11/6に「特典と申込ページの使い方（90秒・横長）」へ差し替え予定 -->
+      <a class="howto js-howto" id="howto-link" href="https://youtube.com/shorts/dnItJ8blm6s" target="_blank" rel="noopener">
+        <img id="howto-thumb" src="https://i.ytimg.com/vi/dnItJ8blm6s/hqdefault.jpg" alt="" loading="lazy">
+        <span><b id="howto-title">押し方を60秒で見る</b><span id="howto-sub">どこを押せばいいか、動画でご案内します</span></span>
       </a>
       <div class="howto-frame" id="howto-frame" hidden></div>
     </section>
@@ -409,12 +410,19 @@ footer .small{font-size:13px}
   });
 
   // 使い方動画：押したらその場で再生（自動再生はしない）
+  // 差し替え手順：id／vertical（縦ならtrue）／title／sub を直すだけ
+  var HOWTO = { id:"dnItJ8blm6s", vertical:true, title:"押し方を60秒で見る", sub:"どこを押せばいいか、動画でご案内します" };
   var howto = document.querySelector(".js-howto"), frame = document.getElementById("howto-frame");
   if(howto && frame){
+    howto.href = HOWTO.vertical ? "https://youtube.com/shorts/"+HOWTO.id : "https://youtu.be/"+HOWTO.id;
+    document.getElementById("howto-thumb").src = "https://i.ytimg.com/vi/"+HOWTO.id+"/hqdefault.jpg";
+    document.getElementById("howto-title").textContent = HOWTO.title;
+    document.getElementById("howto-sub").textContent = HOWTO.sub;
+    if(!HOWTO.vertical){ frame.style.aspectRatio = "16/9"; frame.style.maxWidth = "100%"; }
     howto.addEventListener("click", function(e){
       e.preventDefault();
       frame.hidden = false;
-      frame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/dnItJ8blm6s?autoplay=1&playsinline=1&rel=0" title="押し方の案内（60秒）" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+      frame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/'+HOWTO.id+'?autoplay=1&playsinline=1&rel=0" title="'+HOWTO.title+'" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
       howto.hidden = true;
       if(window.gtag) gtag("event","howto_play",{src:src});
     });
