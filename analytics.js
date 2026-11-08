@@ -23,6 +23,39 @@
   gtag("config", GA_ID, cfg);
 
   function send(name){ gtag("event", name, src ? { src: src } : {}); }
+
+  // 滞在・スクロールの計測（2026-11-09追加）
+  // Instagramのアプリ内ブラウザでは滞在時間が0秒と記録されやすいため、
+  // 画面が表示されている時間を自前で数え、3秒・10秒の到達をイベントで送る。
+  // stay_3s / stay_10s が来ているのに滞在0秒のセッションは「測れていないだけ」と判断できる。
+  function sendNow(name, extra){
+    var p = { transport_type: "beacon" };
+    if(src) p.src = src;
+    if(extra) for(var k in extra) p[k] = extra[k];
+    gtag("event", name, p);
+  }
+  var visibleMs = 0, lastTick = Date.now(), sentStay = {};
+  function tick(){
+    var now = Date.now();
+    if(document.visibilityState === "visible") visibleMs += now - lastTick;
+    lastTick = now;
+    [3, 10, 30].forEach(function(sec){
+      if(!sentStay[sec] && visibleMs >= sec * 1000){ sentStay[sec] = true; sendNow("stay_" + sec + "s"); }
+    });
+  }
+  setInterval(tick, 500);
+  document.addEventListener("visibilitychange", function(){ lastTick = Date.now(); });
+
+  var sentScroll = {};
+  function onScroll(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if(h <= 0) return;
+    var pct = (window.scrollY || document.documentElement.scrollTop) / h * 100;
+    [25, 50, 75, 90].forEach(function(t){
+      if(!sentScroll[t] && pct >= t){ sentScroll[t] = true; sendNow("scroll_" + t, { percent_scrolled: t }); }
+    });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
   document.addEventListener("click", function(e){
     var a = e.target.closest && e.target.closest("a");
     if(!a || a.getAttribute("aria-disabled") === "true") return;
