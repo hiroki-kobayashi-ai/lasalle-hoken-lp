@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>30秒 保険チェック｜ラサール＆パートナーズ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap">
+<style>
+/* 広告で来た方専用（65歳以上の男女を想定）。1画面1問・押すだけ・入力なし。本文20px・ボタン高さ64px以上 */
+:root{
+  color-scheme:light;
+  --bg:#f6f8f7; --surface:#ffffff; --ink:#18221f; --muted:#4a5753; --line:#cfd8d3;
+  --pine:#1f5c4a; --pine-soft:#e3eeea; --amber:#9a5a12; --amber-soft:#f6ecdf;
+  --line-green:#06c755; --on-accent:#ffffff;
+  --f-body:"BIZ UDPGothic","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111816; --surface:#18211e; --ink:#eef3f1; --muted:#b3c0bb; --line:#2c3833;
+  --pine:#5fb39a; --pine-soft:#1c2d28; --amber:#e3a35a; --amber-soft:#2b2118; --on-accent:#0d1412; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111816; --surface:#18211e; --ink:#eef3f1; --muted:#b3c0bb; --line:#2c3833;
+  --pine:#5fb39a; --pine-soft:#1c2d28; --amber:#e3a35a; --amber-soft:#2b2118; --on-accent:#0d1412; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:20px;line-height:1.75;
+  padding:0 max(16px,env(safe-area-inset-left,0px)) calc(96px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:640px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pine);outline-offset:3px;border-radius:6px}
+[hidden]{display:none!important}
+
+header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0 6px}
+.brand{font-weight:700;font-size:15px;line-height:1.35}
+.brand small{display:block;font-weight:400;font-size:13px;color:var(--muted)}
+.speak{font-family:inherit;font-size:16px;font-weight:700;min-height:48px;padding:6px 14px;border-radius:999px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;white-space:nowrap}
+
+.greet{margin:8px 0 4px;font-size:17px;font-weight:700;color:var(--pine)}
+h1{font-size:clamp(27px,7.6vw,36px);line-height:1.4;margin:6px 0 8px;text-wrap:balance}
+.lead{margin:0 0 6px;font-size:19px}
+.promise{display:flex;flex-wrap:wrap;gap:6px 10px;margin:8px 0 14px;padding:0;list-style:none;font-size:16px;font-weight:700;color:var(--pine)}
+.promise li{background:var(--pine-soft);border-radius:999px;padding:3px 12px}
+
+.card{background:var(--surface);border:2px solid var(--pine);border-radius:18px;padding:18px 16px 16px;margin:6px 0 16px}
+.step-head{display:flex;justify-content:space-between;align-items:center;margin:0 0 4px;font-size:16px;color:var(--muted);font-weight:700}
+.bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin:0 0 14px}
+.bar i{display:block;height:100%;width:33%;background:var(--pine);transition:width .25s ease}
+.q{font-size:24px;font-weight:700;line-height:1.45;margin:0 0 14px}
+.opts{display:grid;gap:10px}
+.opt{font-family:inherit;font-size:21px;font-weight:700;text-align:left;min-height:64px;padding:12px 18px;border-radius:14px;
+  border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.opt::after{content:"›";font-size:28px;color:var(--pine);line-height:1}
+.opt:active{background:var(--pine-soft)}
+.back{font-family:inherit;font-size:17px;background:none;border:0;color:var(--muted);text-decoration:underline;text-underline-offset:4px;padding:12px 0 0;cursor:pointer}
+
+.result h2{font-size:25px;line-height:1.45;margin:0 0 6px}
+.result .you{font-size:17px;color:var(--muted);margin:0 0 12px}
+.points{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:10px;counter-reset:p}
+.points li{counter-increment:p;display:grid;grid-template-columns:40px 1fr;gap:10px;align-items:start;background:var(--bg);border-radius:12px;padding:12px}
+.points li::before{content:counter(p);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--pine);color:var(--on-accent);font-weight:700}
+.extra{margin:0 0 14px;padding:12px 14px;border-left:5px solid var(--amber);background:var(--amber-soft);border-radius:0 12px 12px 0;font-size:19px}
+
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:66px;padding:12px 16px;border-radius:14px;
+  font-family:inherit;font-size:21px;font-weight:700;text-decoration:none;text-align:center;border:0;cursor:pointer;width:100%;line-height:1.35}
+.btn small{display:block;font-size:15px;font-weight:400}
+.btn-col{flex-direction:column;gap:2px}
+.btn-line{background:var(--line-green);color:#fff}
+.btn-tel{background:var(--amber);color:var(--on-accent)}
+.btn-net{background:transparent;color:var(--ink);border:2px solid var(--pine)}
+.ctas{display:grid;gap:12px;margin:4px 0 8px}
+.note{font-size:16px;color:var(--muted);line-height:1.65;margin:6px 0 0}
+
+.trust{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:18px 0}
+.trust h3{margin:0 0 6px;font-size:19px}
+.trust ul{margin:0;padding-left:1.2em;font-size:18px}
+.more{font-size:18px;margin:14px 0}
+.more a{text-underline-offset:4px}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--surface);border-top:1px solid var(--line);
+  padding:10px max(12px,env(safe-area-inset-left,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-right,0px))}
+.dock .in{max-width:640px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dock .btn{min-height:58px;font-size:19px}
+
+footer{margin-top:40px;padding-block:24px 32px;border-top:1px solid var(--line);font-size:14px;line-height:1.75;color:var(--muted)}
+footer h2{font-size:15px;color:var(--ink);margin:18px 0 4px}
+footer p{margin:0}
+footer .co{font-size:16px;color:var(--ink);font-weight:700}
+.policy{margin-top:16px;border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--surface)}
+.policy summary{cursor:pointer;color:var(--ink);font-weight:700;font-size:15px;padding-block:4px}
+.policy p{margin-top:10px}
+.rec{overflow-x:auto;margin:10px 0}
+.rec table{border-collapse:collapse;width:100%;font-size:14px}
+.rec th,.rec td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.rec th{background:var(--surface);color:var(--ink);font-weight:700;white-space:nowrap}
+footer .small{font-size:13px}
+@media (prefers-reduced-motion:no-preference){.btn,.opt{transition:transform .1s ease}.btn:active,.opt:active{transform:scale(.98)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">ラサール＆パートナーズ<small>札幌の保険代理店（生命保険・損害保険）</small></div>
+    <button class="speak" type="button" id="speak" hidden aria-label="この画面の文字を読み上げる">🔊 読み上げ</button>
+  </header>
+
+  <main>
+    <p class="greet" id="greet" hidden></p>
+    <h1 id="h1">いまの保険、<br>いまの年齢に合っていますか？</h1>
+    <p class="lead" id="lead">3回押すだけで、確認したほうがよい点がその場でわかります。</p>
+    <ul class="promise"><li>30秒</li><li>名前・電話番号は不要</li><li>無料</li></ul>
+
+    <section class="card" id="quiz" aria-live="polite">
+      <div class="step-head"><span id="step-no">質問 1 / 3</span><span>押すだけ</span></div>
+      <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+
+      <div class="qs" data-q="1">
+        <p class="q">あなたのご年齢は？</p>
+        <div class="opts">
+          <button class="opt" type="button" data-v="50代">50代</button>
+          <button class="opt" type="button" data-v="60代前半">60代前半</button>
+          <button class="opt" type="button" data-v="60代後半">60代後半</button>
+          <button class="opt" type="button" data-v="70代">70代</button>
+          <button class="opt" type="button" data-v="80代以上">80代以上</button>
+        </div>
+      </div>
+
+      <div class="qs" data-q="2" hidden>
+        <p class="q">いちばん気がかりなことは？</p>
+        <div class="opts">
+          <button class="opt" type="button" data-v="入院・手術">入院・手術</button>
+          <button class="opt" type="button" data-v="がん">がん</button>
+          <button class="opt" type="button" data-v="介護・認知症">介護・認知症</button>
+          <button class="opt" type="button" data-v="家族に残すお金・お葬式">家族に残すお金・お葬式</button>
+          <button class="opt" type="button" data-v="特にない・わからない">特にない・わからない</button>
+        </div>
+        <button class="back" type="button" data-back="1">← ひとつ前に戻る</button>
+      </div>
+
+      <div class="qs" data-q="3" hidden>
+        <p class="q">いまの保険は？</p>
+        <div class="opts">
+          <button class="opt" type="button" data-v="10年以上前に入ったまま">10年以上前に入ったまま</button>
+          <button class="opt" type="button" data-v="10年以内に入った・見直した">10年以内に入った・見直した</button>
+          <button class="opt" type="button" data-v="入っていない">入っていない</button>
+          <button class="opt" type="button" data-v="わからない">わからない</button>
+        </div>
+        <button class="back" type="button" data-back="2">← ひとつ前に戻る</button>
+      </div>
+
+      <div class="result" id="result" hidden>
+        <h2>あなたの確認ポイント</h2>
+        <p class="you" id="you"></p>
+        <ol class="points" id="points"></ol>
+        <p class="extra" id="extra"></p>
+
+        <div class="ctas">
+          <a class="btn btn-line btn-col js-line-result" id="line-result" href="https://lin.ee/5gJWVqG" target="_blank" rel="noopener">この結果をLINEで送って聞く<small>担当者が無料でお返事します（送信ボタンを押すだけ）</small></a>
+          <a class="btn btn-tel btn-col" href="tel:05036964531">電話で聞く　050-3696-4531<small>平日9時〜18時。時間外はLINEへどうぞ</small></a>
+          <a class="btn btn-net btn-col js-neo" id="neo" href="https://neofirst.co.jp/ent2/?param=6155300000" target="_blank" rel="noopener">相談なしで、自分で保険料を見る<small>第一ネオ生命の画面に移ります</small></a>
+        </div>
+        <p class="note">ご相談だけで終わっても構いません。無理にお申し込みをおすすめすることはありません。ご家族と一緒のご相談もできます。</p>
+        <button class="back" type="button" id="restart">← 最初から答え直す</button>
+      </div>
+    </section>
+
+    <section class="trust" aria-labelledby="trust-h">
+      <h3 id="trust-h">はじめての方へ</h3>
+      <ul>
+        <li>札幌の保険代理店です。生命保険8社・損害保険2社を取り扱っています。</li>
+        <li>生命保険会社で支社長を務めた担当者が、直接お答えします。</li>
+        <li>LINE・電話・テレビ電話で、ご自宅から相談できます。</li>
+        <li>しつこい電話や訪問はしません。</li>
+      </ul>
+    </section>
+
+    <p class="more">あわせて：<a class="js-tokuten-pdf" href="/tokuten/hayawakari-2026.pdf" target="_blank" rel="noopener">「お金と制度の早わかり表 2026年版」（PDF・無料）</a></p>
+    <p class="more"><a href="/?src=ad_full" id="to-full">詳しい案内ページを見る（相談の方法・特典）</a></p>
+  </main>
+
+  <footer>
+    <p class="co">ラサール＆パートナーズ株式会社</p>
+    <p>保険代理店（生命保険・損害保険）<br>〒062-0932 北海道札幌市豊平区平岸2条5丁目2番19号<br>電話 <a href="tel:05036964531">050-3696-4531</a><br>メール <a href="mailto:info@lasalle2023.com">info@lasalle2023.com</a></p>
+    <p><a href="https://lasalle2023.com/" target="_blank" rel="noopener">会社概要（ラサール＆パートナーズ株式会社 ホームページ）</a></p>
+
+    <h2>取扱保険会社</h2>
+    <p>生命保険：エヌエヌ生命保険／オリックス生命保険／アクサ生命保険／マニュライフ生命保険／第一ネオ生命／メットライフ生命保険／日本生命保険／はなさく生命保険<br>損害保険：損害保険ジャパン／あいおいニッセイ同和損害保険</p>
+    <p>取扱保険会社の商品でも、お取り扱いできない場合があります。</p>
+
+    <h2>保険商品のご案内にあたって（比較推奨販売の方針）</h2>
+    <p>当社は、保障分野ごとに、推奨する保険会社を定めています。推奨保険会社以外の商品をご希望の場合は、担当者または下記までお問い合わせください。</p>
+    <div class="rec">
+      <table>
+        <tr><th scope="row">生命保険・法人第一分野</th><td>エヌエヌ生命保険／オリックス生命保険／メットライフ生命保険／日本生命保険</td></tr>
+        <tr><th scope="row">生命保険・法人第三分野</th><td>オリックス生命保険／メットライフ生命保険</td></tr>
+        <tr><th scope="row">生命保険・個人第一分野</th><td>アクサ生命保険／オリックス生命保険／マニュライフ生命保険／メットライフ生命保険／日本生命保険／はなさく生命保険</td></tr>
+        <tr><th scope="row">生命保険・個人第三分野</th><td>オリックス生命保険／第一ネオ生命／メットライフ生命保険／日本生命保険／はなさく生命保険</td></tr>
+        <tr><th scope="row">損害保険</th><td>損害保険ジャパン／あいおいニッセイ同和損害保険</td></tr>
+      </table>
+    </div>
+    <p class="small">第一分野：死亡保険など　第三分野：医療保険・がん保険など</p>
+    <p><b>推奨理由</b><br>保険料水準・商品特性・お客さまサポート体制の充実等を鑑み、上記の推奨保険会社を分野ごとに選定しています。</p>
+    <p><b>インターネット上の募集について</b><br>インターネット上の非対面による募集については、インターネット申込のシステム提供がある保険会社の商品をご案内しております。該当の保険会社と商品は以下となります。<br>【生命保険】第一ネオ生命保険会社<br>＜取扱商品＞（1）ネオdeいりょう（2）ネオdeいりょう健康プロモート（3）ネオdeからだエール（4）認知症保険toスマイル（5）ネオdeがんちりょう（6）ネオde定期（7）ネオde３疾病サポート</p>
+
+    <h2>募集人の権限について</h2>
+    <p><b>生命保険</b><br>当社および当社の募集人は、お客さまと引受保険会社の保険契約締結の媒介を行います。告知受領権および保険契約締結の代理権はありません。</p>
+    <p><b>損害保険</b><br>当社は引受保険会社との委託契約に基づき、保険契約の締結、保険料の領収、保険料領収証の交付、契約の管理業務等の代理業務を行っております。当社とご締結いただいて有効に成立したご契約は、引受保険会社と直接契約されたものとなります。</p>
+
+    <details class="policy">
+      <summary>お客さま本位の業務運営に関する宣言</summary>
+      <p>当社は、金融庁「顧客本位の業務運営に関する原則」を採択し、お客さまの「最善の利益」を提供するべく、以下のとおり取り組むことを宣言します。</p>
+      <p><b>1. お客さま本位の業務運営を社内外に周知し、着実に実行するための取組み</b><br>お客さまの信頼を得るための営業活動・保全活動を行います。</p>
+      <p><b>2. お客さまに最適な商品・サービスをご提供するための取組み</b><br>お客さまの環境や属性を踏まえてニーズを注意深くヒアリングし、意向把握シートを用いて合致した商品をご提案します。パンフレットなどを用いて分かりやすい説明に努め、情報提供を行います。<br>適合性の原則に沿った高齢のお客さま、特定保険契約販売への対応（リスクの適切な説明）については、各保険会社の基準に従い、ご家族同席のうえで面談・ご提案を進めます。</p>
+      <p><b>3. お客さまへのアフターフォローを適切に行うための取組み</b><br>保険金・給付金の早急な支払いのため、保全手続きのweb給付請求の推進に努めます。<br>年に一度、お客さまへの訪問・コール等を行い、ご契約内容についてのご案内を行い、定期的にお客さまフォローを行います。</p>
+      <p><b>4. お客さまから寄せられた声を業務運営に生かすための取組み</b><br>苦情については保険会社へ即日報告・指示を受けつつ、対応は速やかに行います。苦情管理表にて対応進捗管理を行い、お客さまからご納得をいただけるよう優先してフォローを行います。<br>代理店内で速やかに再発防止策を検討し、保険会社へ報告を行います。</p>
+      <p><b>5. お客さま本位を推進するための社員教育、業績評価に関する取組み</b><br>高度なサービスを提供できる専門的な知識習得のための教育・研修、資格取得に努めます。</p>
+      <p><b>お客さま本位の業務運営のための成果指標（KPI）</b><br>早期脱落・失効契約：お客さまへの定期フォローを推進し、早期脱落・失効を防ぐ（目標 1.0%）<br>37か月継続率：お客さまサービスに努め、末永く生命保険を継続いただく（目標 95%）</p>
+      <p>2024年2月　ラサール＆パートナーズ株式会社</p>
+    </details>
+
+    <details class="policy">
+      <summary>勧誘方針</summary>
+      <p><b>1. コンプライアンスの徹底</b><br>法令等を遵守するとともに、社会一般の倫理・常識に従って勧誘・販売を行います。コンプライアンスの徹底のための態勢の維持・強化に努め、適切な勧誘・販売を行うための研修等を実施し、お客さまから信頼される人材の育成に努めます。</p>
+      <p><b>2. お客さまの情報の保護</b><br>お客さまの情報については、当社のプライバシーポリシーに則り、適正に取得し、厳重に管理します。</p>
+      <p><b>3. お客さま本位の勧誘・販売</b><br>お客さまのご意向、生命保険に関する知識、ご加入の状況、資産・収入等の状況に十分に配慮して勧誘・販売を行います。外貨建ての保険等、市場リスクを有する商品は、投資経験や知識、受け入れられるリスクの程度にも配慮し、十分にご説明します。未成年のお客さまを被保険者とする場合は、ご契約内容が適正か特に慎重に確認します。ご高齢のお客さまには、より丁寧に勧誘・販売を行います。お客さまにご迷惑をおかけする時間帯や場所、方法で勧誘・販売を行いません。</p>
+      <p><b>4. 重要事項についての説明</b><br>商品の仕組みや特徴等、ご判断に影響を与える重要事項を、正しくご理解いただけるようにご説明します。正しく告知いただけなかった場合には保険金・給付金等をお受け取りいただけない場合があることを十分にご説明します。説明には「契約概要」「注意喚起情報」等、法令・取扱保険会社および当社の規程に則った募集文書を使用します。</p>
+      <p><b>5. 誤解の防止</b><br>お客さまに誤解を与えないように、生命保険とその他の商品を明確に区別して取り扱います。</p>
+      <p><b>6. アフターフォロー</b><br>ご契約後もご安心いただくため、適切なアフターフォローに努めます。</p>
+      <p><b>7. 相談窓口</b><br>ご意見・ご要望がございましたら、当社担当者または下記までご連絡ください。</p>
+      <p><b>8. インターネット上の募集について</b><br>インターネット上の非対面による募集については、インターネット申込のシステム提供がある保険会社の商品をご案内しております。該当の保険会社は第一ネオ生命保険会社です。</p>
+    </details>
+
+    <details class="policy">
+      <summary>個人情報の取り扱い（プライバシーポリシー）</summary>
+      <p>当社は、個人情報の保護に関する法律その他の関連法令・ガイドライン等を遵守して、個人情報を適正に取り扱い、安全管理について適切な措置を講じます。</p>
+      <p><b>取得と利用目的</b><br>業務上必要な範囲で、適法で公正な手段により個人情報を取得し、保険会社から委託を受けた保険募集業務（各種商品やサービスの案内・提供・維持管理と、これに付随する業務）の遂行に必要な範囲で利用します。各保険会社の利用目的は、それぞれのホームページに記載されています。</p>
+      <p><b>取得する情報</b><br>氏名・生年月日・住所・性別・電話番号・職業・健康状態等を、ご記入いただいた書面のほか、電話・LINE等の通信手段を通じて取得します。健康状態などの配慮が必要な情報は、保険募集業務に必要な範囲に限って取り扱います。</p>
+      <p><b>安全管理</b><br>個人データの漏えい・滅失・毀損を防ぐため、取扱規程や実施体制を整え、十分なセキュリティ対策を講じます。</p>
+      <p><b>第三者への提供</b><br>法令に基づく場合など法令で認められた場合を除き、ご本人の同意なく第三者に個人データを提供しません。</p>
+      <p><b>取り扱いの委託</b><br>個人情報の取り扱いを外部に委託する場合は、委託先の管理体制を確認し、適切に監督します。</p>
+      <p><b>保存期間</b><br>利用目的の達成に必要な期間、または法令で定められた期間保存し、不要になった情報は速やかに削除します。</p>
+      <p><b>開示・訂正・利用停止等のご請求、お問い合わせ</b><br>ご本人であることを確認したうえで対応します。下記までご連絡ください。</p>
+      <p>ラサール＆パートナーズ株式会社　代表取締役 小林弘毅<br>北海道札幌市豊平区平岸二条五丁目2番19号</p>
+    </details>
+
+    <details class="policy">
+      <summary>反社会的勢力に対する基本方針</summary>
+      <p>当社は、反社会的勢力とは一切の関係を持たず、不当な要求には毅然として対応し、これを拒絶します。必要に応じて警察や弁護士等の外部専門機関と連携し、組織として対応します。</p>
+    </details>
+
+    <details class="policy">
+      <summary>ご意見・ご相談・苦情の窓口</summary>
+      <p><b>当社の窓口</b><br>ラサール＆パートナーズ株式会社<br>電話 <a href="tel:05036964531">050-3696-4531</a>（月曜日〜金曜日 9時〜18時）<br>メール info@lasalle2023.com<br>LINEでも受け付けています。</p>
+      <p>ご契約内容や保険金・給付金のお支払いについては、ご契約の保険会社の窓口にもご相談いただけます。</p>
+      <p><b>保険業界の相談窓口（指定紛争解決機関）</b><br>保険会社との間で問題が解決しない場合は、次の窓口をご利用いただけます。</p>
+      <p>生命保険：一般社団法人 生命保険協会「生命保険相談所」<br>電話 03-3286-2648（月曜日〜金曜日 9時〜17時、祝日・年末年始を除く）</p>
+      <p>損害保険：一般社団法人 日本損害保険協会「そんぽADRセンター」<br>電話 03-4332-5241（月曜日〜金曜日 9時15分〜17時、祝日・休日・年末年始を除く）</p>
+    </details>
+    <p style="margin-top:14px">このページは保険選びの入口のご案内です。個別の商品内容・保険料は、各保険会社の資料または相談時にご確認ください。</p>
+  </footer>
+
+<nav class="dock" aria-label="すぐに相談する">
+  <div class="in">
+    <a class="btn btn-tel" href="tel:05036964531">📞 電話で聞く</a>
+    <a class="btn btn-line" href="https://lin.ee/5gJWVqG" target="_blank" rel="noopener">LINEで聞く</a>
+  </div>
+</nav>
+
+<script>
+(function(){
+  // 経路の目印（広告ごとに ?src=ad_〇〇 を付ける）
+  var src = "";
+  try{ src = new URLSearchParams(location.search).get("src") || sessionStorage.getItem("src") || "ad"; }catch(e){ src = "ad"; }
+  function ev(name, p){ if(window.gtag){ p = p || {}; p.src = src; gtag("event", name, p); } }
+
+  // 来た動画に合わせた一言
+  var greets = [
+    [/52/, "「五十二の旗」の物語をご覧いただき、ありがとうございます。"],
+    [/jibu/, "「治部と刑部」をご覧いただき、ありがとうございます。"],
+    [/lumiere|reina/, "「レイナの逆転90日」をご覧いただき、ありがとうございます。"],
+    [/hoken|lab|_t\b|_t_/, "物語をご覧いただき、ありがとうございます。"]
+  ];
+  var g = document.getElementById("greet");
+  for(var i=0;i<greets.length;i++){ if(greets[i][0].test(src)){ g.textContent = greets[i][1]; g.hidden = false; break; } }
+
+  // 結果の文（公的制度と一般的な話だけ。保険会社名・商品名・保険料は書かない）
+  var BY_WORRY = {
+    "入院・手術": [
+      "入院は年々短くなり、日帰りや数日の入院が増えています。「入院の何日目から出るか」「手術1回でいくら出るか」を確認しましょう。",
+      "公的な医療保険には、ひと月の自己負担に上限がある制度（高額療養費制度）があります。上限を知ると、保険で備える額がはっきりします。",
+      "差額ベッド代や入院中の食事代は、この上限の対象外です。ここを保険で備えるかどうかが分かれ目です。"
+    ],
+    "がん": [
+      "がんの治療は、入院より通院が中心になってきています。通院での治療に保障があるかを確認しましょう。",
+      "がんと診断されたときに、まとまったお金が出るかどうか。使い道が自由なお金は、治療中の生活を支えます。",
+      "先進医療の技術料は、公的な医療保険の対象外で全額自己負担です。備えがあるかを確認しましょう。"
+    ],
+    "介護・認知症": [
+      "公的な介護保険でサービスを使うと、自己負担は所得に応じて1〜3割です。",
+      "施設に入る場合の居住費や食費などは、自己負担が大きくなりがちです。どこまでを貯金で、どこからを保険で備えるかを決めておきましょう。",
+      "ご本人が手続きできなくなったときに、ご家族が代わりに保険金を請求できる「指定代理請求」の設定がされているかを確認しましょう。"
+    ],
+    "家族に残すお金・お葬式": [
+      "生命保険の死亡保険金には、相続税がかからない枠（500万円×法定相続人の数）があります。",
+      "受取人がだれになっているか。亡くなった方や、いまは連絡を取っていない方のままになっていないかを確認しましょう。",
+      "お葬式などすぐに必要なお金は、保険金が早く受け取れるかどうかで、ご家族の負担が変わります。"
+    ],
+    "特にない・わからない": [
+      "まずは、いまどんな保険に入っているかを1枚にまとめることから。それだけで安心につながります。",
+      "同じような保障が重なって、二重に保険料を払っていないかを確認しましょう。",
+      "「更新」のある保険は、更新のたびに保険料が上がる仕組みです。次の更新がいつかを確認しましょう。"
+    ]
+  };
+  var BY_NOW = {
+    "10年以上前に入ったまま": "10年以上前の保険は、いまの治療の受け方（短い入院・通院が中心）に合っていないことがあります。",
+    "10年以内に入った・見直した": "入ったばかりの保険でも、ほかの保険と保障が重なっていないか、一度確かめると安心です。",
+    "入っていない": "公的な制度でまかなえる部分と、足りない部分を分けて考えると、必要な備えは小さく済みます。",
+    "わからない": "何に入っているか分からなくても大丈夫です。担当者が一緒に確認します。"
+  };
+  var BY_AGE = {
+    "50代": "50代は、定期型の保険の更新や満了が近づく時期です。",
+    "60代前半": "60代前半は、定期型の保険の更新や満了が近づく時期です。",
+    "60代後半": "65歳からは、公的な介護保険の「第1号被保険者」になります。",
+    "70代": "70歳以上の方は、医療費の窓口負担や自己負担の上限が70歳未満と違います。",
+    "80代以上": "70歳以上の方は、医療費の窓口負担や自己負担の上限が70歳未満と違います。"
+  };
+
+  var ans = {1:"",2:"",3:""};
+  var qs = document.querySelectorAll(".qs"), bar = document.getElementById("bar"), stepNo = document.getElementById("step-no");
+  var result = document.getElementById("result"), quiz = document.getElementById("quiz");
+  var started = false;
+
+  function show(n){
+    qs.forEach(function(el){ el.hidden = el.getAttribute("data-q") !== String(n); });
+    result.hidden = n !== 4;
+    bar.style.width = (n >= 4 ? 100 : n * 33) + "%";
+    stepNo.textContent = n >= 4 ? "結果" : "質問 " + n + " / 3";
+    if(n > 1){ quiz.scrollIntoView({block:"start"}); }
+  }
+
+  function buildResult(){
+    var pts = (BY_WORRY[ans[2]] || BY_WORRY["特にない・わからない"]).slice();
+    document.getElementById("you").textContent = "（" + ans[1] + "・" + ans[2] + "・" + ans[3] + "の方）";
+    var ol = document.getElementById("points"); ol.innerHTML = "";
+    pts.forEach(function(t){ var li = document.createElement("li"); li.textContent = t; ol.appendChild(li); });
+    document.getElementById("extra").textContent = (BY_NOW[ans[3]] || "") + (BY_AGE[ans[1]] ? "　" + BY_AGE[ans[1]] : "");
+    var text = "【30秒チェックの結果】年代：" + ans[1] + "／気がかり：" + ans[2] + "／いまの保険：" + ans[3] + "　確認ポイントを詳しく教えてください。";
+    document.getElementById("line-result").href = "https://line.me/R/oaMessage/%40375swnrk/?" + encodeURIComponent(text);
+    try{ sessionStorage.setItem("ad_ans", JSON.stringify(ans)); }catch(e){}
+  }
+
+  qs.forEach(function(el){
+    var n = Number(el.getAttribute("data-q"));
+    el.querySelectorAll(".opt").forEach(function(b){
+      b.addEventListener("click", function(){
+        if(!started){ started = true; ev("quiz_start"); }
+        ans[n] = b.getAttribute("data-v");
+        ev("quiz_q" + n, {answer: ans[n]});
+        if(n < 3){ show(n + 1); }
+        else { buildResult(); show(4); ev("quiz_result", {age: ans[1], worry: ans[2], now: ans[3]}); }
+      });
+    });
+    var back = el.querySelector(".back");
+    if(back){ back.addEventListener("click", function(){ show(Number(back.getAttribute("data-back"))); ev("quiz_back", {from: n}); }); }
+  });
+  document.getElementById("restart").addEventListener("click", function(){ ans = {1:"",2:"",3:""}; show(1); ev("quiz_restart"); });
+
+  // 結果からの行動（analytics.js の line/tel/neo とは別に、結果画面からかどうかを記録）
+  document.getElementById("line-result").addEventListener("click", function(){ ev("line_result", {age: ans[1], worry: ans[2], now: ans[3]}); });
+  result.querySelectorAll('a[href^="tel:"]').forEach(function(a){ a.addEventListener("click", function(){ ev("tel_result"); }); });
+  document.getElementById("neo").addEventListener("click", function(){ ev("neo_result"); });
+  document.querySelectorAll(".dock a").forEach(function(a){ a.addEventListener("click", function(){ ev("dock_tap", {to: a.textContent.trim()}); }); });
+
+  // 読み上げ（使える端末だけボタンを出す）
+  var speak = document.getElementById("speak");
+  if("speechSynthesis" in window && window.SpeechSynthesisUtterance){
+    speak.hidden = false;
+    speak.addEventListener("click", function(){
+      var t;
+      if(!result.hidden){
+        t = "あなたの確認ポイントです。" + Array.prototype.map.call(document.querySelectorAll("#points li"), function(li, i){ return (i+1) + "。" + li.textContent; }).join("") + document.getElementById("extra").textContent;
+      } else {
+        var cur = document.querySelector('.qs:not([hidden])');
+        t = (cur.getAttribute("data-q") === "1" ? document.getElementById("h1").textContent + "。" + document.getElementById("lead").textContent : "") +
+            cur.querySelector(".q").textContent + "。" + Array.prototype.map.call(cur.querySelectorAll(".opt"), function(b){ return b.textContent; }).join("、") + "。";
+      }
+      speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(t); u.lang = "ja-JP"; u.rate = 0.9;
+      speechSynthesis.speak(u);
+      ev("read_aloud", {step: result.hidden ? "q" : "result"});
+    });
+  }
+
+  // スクロールの深さ（25・50・75・100%）
+  var marks = [25,50,75,100], sent = {};
+  window.addEventListener("scroll", function(){
+    var h = document.documentElement.scrollHeight - innerHeight; if(h <= 0) return;
+    var p = scrollY / h * 100;
+    marks.forEach(function(m){ if(p >= m && !sent[m]){ sent[m] = 1; ev("scroll_" + m); } });
+  }, {passive:true});
+
+  // 10秒以上ページにいた人（「読んだ人」の数）
+  setTimeout(function(){ ev("stay_10s"); }, 10000);
+
+  show(1);
+})();
+</script>
+<script src="/analytics.js"></script>
+</body>
+</html>
