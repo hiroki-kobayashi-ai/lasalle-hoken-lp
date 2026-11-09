@@ -391,16 +391,7 @@ footer .small{font-size:13px}
     });
   }
 
-  // スクロールの深さ（25・50・75・100%）
-  var marks = [25,50,75,100], sent = {};
-  window.addEventListener("scroll", function(){
-    var h = document.documentElement.scrollHeight - innerHeight; if(h <= 0) return;
-    var p = scrollY / h * 100;
-    marks.forEach(function(m){ if(p >= m && !sent[m]){ sent[m] = 1; ev("scroll_" + m); } });
-  }, {passive:true});
-
-  // 10秒以上ページにいた人（「読んだ人」の数）
-  setTimeout(function(){ ev("stay_10s"); }, 10000);
+  // 滞在秒数・スクロールの深さは共通の analytics.js が送る（二重計測しない）
 
   show(1);
 })();
