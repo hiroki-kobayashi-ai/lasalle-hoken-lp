@@ -38,6 +38,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:10px;pa
 
 .greet{margin:8px 0 4px;font-size:17px;font-weight:700;color:var(--pine)}
 h1{font-size:clamp(27px,7.6vw,36px);line-height:1.4;margin:6px 0 8px;text-wrap:balance}
+.nudge{margin:0 0 8px;font-size:19px;font-weight:700;color:var(--amber);line-height:1.6}
 .lead{margin:0 0 6px;font-size:19px}
 .promise{display:flex;flex-wrap:wrap;gap:6px 10px;margin:8px 0 14px;padding:0;list-style:none;font-size:16px;font-weight:700;color:var(--pine)}
 .promise li{background:var(--pine-soft);border-radius:999px;padding:3px 12px}
@@ -113,6 +114,7 @@ footer .small{font-size:13px}
   <main>
     <p class="greet" id="greet" hidden></p>
     <h1 id="h1">いまの保険、<br>いまの年齢に合っていますか？</h1>
+    <p class="nudge" id="nudge">確かめてみると、思っていたことと違うということがよくあります。この機会をご活用ください。</p>
     <p class="lead" id="lead">3回押すだけで、確認したほうがよい点がその場でわかります。</p>
     <ul class="promise"><li>30秒</li><li>名前・電話番号は不要</li><li>無料</li></ul>
     <a class="btn btn-self btn-col self-top" id="neo-top" href="https://neofirst.co.jp/ent2/?param=6155300000" target="_blank" rel="noopener"><span class="self-tag">相談なしでOK</span><span>自分で見直してみる<span class="arw" aria-hidden="true">›</span></span><small>保険料を見るだけなら、申し込みにはなりません。<br>そのままご自分でお申し込みまでできます（第一ネオ生命）</small></a>
@@ -398,7 +400,7 @@ footer .small{font-size:13px}
         t = "あなたの確認ポイントです。" + Array.prototype.map.call(document.querySelectorAll("#points li"), function(li, i){ return (i+1) + "。" + li.textContent; }).join("") + document.getElementById("extra").textContent;
       } else {
         var cur = document.querySelector('.qs:not([hidden])');
-        t = (cur.getAttribute("data-q") === "1" ? document.getElementById("h1").textContent + "。" + document.getElementById("lead").textContent : "") +
+        t = (cur.getAttribute("data-q") === "1" ? document.getElementById("h1").textContent + "。" + document.getElementById("nudge").textContent + document.getElementById("lead").textContent : "") +
             cur.querySelector(".q").textContent + "。" + Array.prototype.map.call(cur.querySelectorAll(".opt"), function(b){ return b.textContent; }).join("、") + "。";
       }
       speechSynthesis.cancel();
