@@ -13,15 +13,15 @@
   color-scheme:light;
   --bg:#f6f8f7; --surface:#ffffff; --ink:#18221f; --muted:#4a5753; --line:#cfd8d3;
   --pine:#1f5c4a; --pine-soft:#e3eeea; --amber:#9a5a12; --amber-soft:#f6ecdf;
-  --line-green:#06c755; --on-accent:#ffffff;
+  --line-green:#06c755; --on-accent:#ffffff; --self:#1f57c3; --self-ink:#ffffff;
   --f-body:"BIZ UDPGothic","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#111816; --surface:#18211e; --ink:#eef3f1; --muted:#b3c0bb; --line:#2c3833;
-  --pine:#5fb39a; --pine-soft:#1c2d28; --amber:#e3a35a; --amber-soft:#2b2118; --on-accent:#0d1412; color-scheme:dark}}
+  --pine:#5fb39a; --pine-soft:#1c2d28; --amber:#e3a35a; --amber-soft:#2b2118; --on-accent:#0d1412; --self:#3b7bea; --self-ink:#ffffff; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#111816; --surface:#18211e; --ink:#eef3f1; --muted:#b3c0bb; --line:#2c3833;
-  --pine:#5fb39a; --pine-soft:#1c2d28; --amber:#e3a35a; --amber-soft:#2b2118; --on-accent:#0d1412; color-scheme:dark}
+  --pine:#5fb39a; --pine-soft:#1c2d28; --amber:#e3a35a; --amber-soft:#2b2118; --on-accent:#0d1412; --self:#3b7bea; --self-ink:#ffffff; color-scheme:dark}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:20px;line-height:1.75;
@@ -68,7 +68,11 @@ h1{font-size:clamp(27px,7.6vw,36px);line-height:1.4;margin:6px 0 8px;text-wrap:b
 .btn-line{background:var(--line-green);color:#fff}
 .btn-tel{background:var(--amber);color:var(--on-accent)}
 .btn-net{background:transparent;color:var(--ink);border:2px solid var(--pine)}
-.self-top{margin:0 0 14px;min-height:60px;font-size:19px}
+.btn-self{background:var(--self);color:var(--self-ink);border:0;box-shadow:0 4px 0 rgba(0,0,0,.18);font-size:24px;font-weight:800;min-height:78px}
+.btn-self small{font-size:16px;font-weight:700;opacity:.95}
+.btn-self .arw{font-size:30px;line-height:1;margin-left:4px}
+.self-tag{display:inline-block;background:#ffd84d;color:#1a1a1a;font-size:14px;font-weight:800;border-radius:999px;padding:1px 10px;margin-bottom:4px}
+.self-top{margin:0 0 14px}
 .bridge{margin:4px 0 10px;font-size:20px;font-weight:700;line-height:1.6;color:var(--ink)}
 .ctas{display:grid;gap:12px;margin:4px 0 8px}
 .note{font-size:16px;color:var(--muted);line-height:1.65;margin:6px 0 0}
@@ -111,7 +115,7 @@ footer .small{font-size:13px}
     <h1 id="h1">いまの保険、<br>いまの年齢に合っていますか？</h1>
     <p class="lead" id="lead">3回押すだけで、確認したほうがよい点がその場でわかります。</p>
     <ul class="promise"><li>30秒</li><li>名前・電話番号は不要</li><li>無料</li></ul>
-    <a class="btn btn-net btn-col self-top" id="neo-top" href="https://neofirst.co.jp/ent2/?param=6155300000" target="_blank" rel="noopener">まずは自分で、保険料だけ見てみる<small>見るだけなら申し込みにはなりません。そのままご自分だけでお申し込みまでできます（第一ネオ生命の画面へ）</small></a>
+    <a class="btn btn-self btn-col self-top" id="neo-top" href="https://neofirst.co.jp/ent2/?param=6155300000" target="_blank" rel="noopener"><span class="self-tag">相談なしでOK</span><span>自分で見直してみる<span class="arw" aria-hidden="true">›</span></span><small>保険料を見るだけなら、申し込みにはなりません。<br>そのままご自分でお申し込みまでできます（第一ネオ生命）</small></a>
 
     <section class="card" id="quiz" aria-live="polite">
       <div class="step-head"><span id="step-no">質問 1 / 3</span><span>押すだけ</span></div>
@@ -163,7 +167,7 @@ footer .small{font-size:13px}
         <div class="ctas">
           <a class="btn btn-line btn-col js-line-result" id="line-result" href="https://lin.ee/5gJWVqG" target="_blank" rel="noopener">この結果を担当者に見てもらう（LINE・無料）<small>送信ボタンを押すだけ。返事を読んでから、続けるか決めて大丈夫です</small></a>
           <a class="btn btn-tel btn-col" href="tel:05036964531">話して確かめたい方：電話で聞いてみる（無料）<small>5分だけでも大丈夫です。050-3696-4531（平日9時〜18時・時間外はLINEへ）</small></a>
-          <a class="btn btn-net btn-col js-neo" id="neo" href="https://neofirst.co.jp/ent2/?param=6155300000" target="_blank" rel="noopener">相談せずに、自分で保険料を見てみる<small>見るだけなら申し込みにはなりません（第一ネオ生命の画面へ）</small></a>
+          <a class="btn btn-self btn-col js-neo" id="neo" href="https://neofirst.co.jp/ent2/?param=6155300000" target="_blank" rel="noopener"><span class="self-tag">相談なしでOK</span><span>自分で見直してみる<span class="arw" aria-hidden="true">›</span></span><small>保険料を見るだけなら、申し込みにはなりません（第一ネオ生命）</small></a>
         </div>
         <p class="note"><b>相談しても、申し込まなくて大丈夫です。</b>こちらからしつこく電話することはありません。ご家族と一緒のご相談もできます。</p>
         <button class="back" type="button" id="restart">← 最初から答え直す</button>
