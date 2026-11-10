@@ -150,12 +150,12 @@ footer .small{font-size:13px}
     <section class="hero" id="top">
       <p class="greet" id="greet"></p>
       <picture class="family"><source srcset="img/family.webp" type="image/webp"><img src="img/family.png" width="640" height="391" alt="三世代の家族の笑顔" loading="eager" fetchpriority="high"></picture>
-      <h1>証券の写真を送ると、<br>お孫さんが主役の<br>ドラマができる。</h1>
+      <h1>LINEのお友だち登録で、<br>お孫さんが主役の<br>ドラマができる。</h1>
       <p class="sub">今の保険、このままで大丈夫？ 保険証券の写真をLINEで送るだけ。<br>担当者が無料で見て、「重なり」「足りない所」「今の年齢に合わない所」を1枚にまとめてお返しします。契約しなくても、もちろん大丈夫です。</p>
       <div class="note" style="font-size:16px;color:var(--ink);background:var(--amber-soft);border-radius:12px;padding:12px 14px;margin:0 0 14px">
         <p style="margin:0 0 8px"><b>いまなら（11月30日まで）、このページに来た方全員に</b>：「お金と制度の早わかり表 2026年版」（入院・介護・年金・相続で国からいくら戻るか。2026年8月に変わった高額療養費の新しい上限、申請しないともらえないお金、A4・9ページ）を無料でお渡しします。3分でわかる動画版も近日公開。</p>
         <a class="btn btn-talk js-tokuten-pdf" href="/tokuten/hayawakari-2026.pdf" target="_blank" rel="noopener" style="min-height:56px;font-size:18px">早わかり表（PDF）を今すぐ見る</a>
-        <p style="margin:10px 0 0"><b>写真を送った方限定で、さらにどちらか1つ</b><br>A　<b>お孫さん・お子さんが主役の10秒ミニドラマ</b>（呼び名と好きなことから作るイラストの物語。ご自身が主役でも）<br>B　<b>ルミエール90（通常980円）を無料で</b>（女性向け・1日5〜15分の90日プログラム。男性は「イケオジ90」も選べます）</p>
+        <p style="margin:10px 0 0"><b>LINEのお友だち登録をした方全員に、さらに</b><br><b>お孫さん・お子さんが主役の10秒ミニドラマ</b>（呼び名と好きなことから作るイラストの物語。ご自身が主役でも）<br><span style="font-size:15px">※保険のご相談やご契約とは関係なく、どなたにもお作りします。</span></p>
       </div>
       <a class="btn btn-line btn-big js-shoken" href="https://lin.ee/5gJWVqG" target="_blank" rel="noopener">保険証券の写真をLINEで送る</a>
       <p class="note" style="margin:10px 0 4px;font-size:16px;color:var(--ink)">特典が要らない方は、こちらからそのまま進めます。</p>
@@ -181,7 +181,7 @@ footer .small{font-size:13px}
       <!-- 使い方動画。差し替えは下の HOWTO（id・向き・題名）だけ直す。11/6に「特典と申込ページの使い方（90秒・横長）」へ差し替え予定 -->
       <a class="howto js-howto" id="howto-link" href="https://youtu.be/GBCoHSRfADw" target="_blank" rel="noopener">
         <img id="howto-thumb" src="https://i.ytimg.com/vi/GBCoHSRfADw/hqdefault.jpg" alt="" loading="lazy">
-        <span><b id="howto-title">特典と押し方を2分で見る</b><span id="howto-sub">いまだけの特典3つと、どこを押せばいいかを動画でご案内します</span></span>
+        <span><b id="howto-title">特典と押し方を2分で見る</b><span id="howto-sub">いまだけの特典と、どこを押せばいいかを動画でご案内します</span></span>
       </a>
       <div class="howto-frame" id="howto-frame" hidden></div>
     </section>
@@ -413,7 +413,7 @@ footer .small{font-size:13px}
 
   // 使い方動画：押したらその場で再生（自動再生はしない）
   // 差し替え手順：id／vertical（縦ならtrue）／title／sub を直すだけ
-  var HOWTO = { id:"GBCoHSRfADw", vertical:false, title:"特典と押し方を2分で見る", sub:"いまだけの特典3つと、どこを押せばいいかを動画でご案内します" };
+  var HOWTO = { id:"GBCoHSRfADw", vertical:false, title:"特典と押し方を2分で見る", sub:"いまだけの特典と、どこを押せばいいかを動画でご案内します" };
   var howto = document.querySelector(".js-howto"), frame = document.getElementById("howto-frame");
   if(howto && frame){
     howto.href = HOWTO.vertical ? "https://youtube.com/shorts/"+HOWTO.id : "https://youtu.be/"+HOWTO.id;
