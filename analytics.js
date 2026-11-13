@@ -97,12 +97,11 @@
   }, true);
 
   // 「迷ったらLINE」（2026-11-13追加・小林さん承認）
-  // 第一ネオ生命の画面へ移ったあと、このページに戻ってきた人に一度だけ、LINEで聞ける案内を下から出す。
+  // 第一ネオ生命の画面へ移ったあと、このページに戻ってくるたびに、LINEで聞ける案内を下から出す（毎回）。
   // ねらい：Neoのボタンは押されているのに申込0件のため、途中で迷った人を相談（LINE）で拾う。
   // 計測：表示＝neo_return、LINEを押した＝neo_return_line（＋共通の line）、閉じた＝neo_return_close
   var LINE_URL = "https://lin.ee/5gJWVqG";
-  var leftForNeo = false, returnShown = false;
-  try{ returnShown = sessionStorage.getItem("neo_return_shown") === "1"; }catch(e){}
+  var leftForNeo = false;
   document.addEventListener("click", function(e){
     var a = e.target.closest && e.target.closest("a.js-neo");
     if(a && (a.getAttribute("href") || "").indexOf("neofirst.co.jp") > -1){
@@ -110,17 +109,18 @@
       try{ sessionStorage.setItem("neo_left", "1"); }catch(_){}
     }
   }, true);
+  // 2026-11-13 16:33 小林さん指示：一度きりにせず、Neoから戻るたびに毎回出す
   function showReturn(){
-    if(returnShown) return;
-    returnShown = true;
-    try{ sessionStorage.setItem("neo_return_shown", "1"); }catch(_){}
+    if(document.querySelector(".neo-return")) return;
+    leftForNeo = false;
+    try{ sessionStorage.removeItem("neo_left"); }catch(_){}
     var st = document.createElement("style");
     st.textContent = ".neo-return{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#fff;border-top:3px solid #9a5a12;box-shadow:0 -6px 24px #18221f33;padding:16px 16px 20px;font:18px/1.6 'BIZ UDPGothic','Hiragino Sans','Yu Gothic','Meiryo',sans-serif;color:#18221f}"
       + ".neo-return .in{max-width:760px;margin:auto}.neo-return p{margin:0 0 4px;font-size:21px;font-weight:700;line-height:1.45;padding-right:40px}"
       + ".neo-return small{display:block;font-size:17px;color:#4f5c57;margin-bottom:12px}"
       + ".neo-return a{display:flex;justify-content:center;align-items:center;min-height:58px;border-radius:12px;background:#06c755;color:#fff;font-size:21px;font-weight:700;text-decoration:none}"
       + ".neo-return button{position:absolute;top:8px;right:10px;width:44px;height:44px;border:0;background:none;font-size:28px;color:#4f5c57;cursor:pointer}";
-    document.head.appendChild(st);
+    if(!document.getElementById("neo-return-style")){ st.id = "neo-return-style"; document.head.appendChild(st); }
     var box = document.createElement("div");
     box.className = "neo-return";
     box.setAttribute("role", "dialog");

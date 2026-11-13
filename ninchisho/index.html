@@ -85,5 +85,5 @@
 // どのバナーかを区別する計測（neo / line / tel / form は共通の analytics.js が送る）
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-ev]");if(!a||!window.gtag)return;var p={transport_type:"beacon",page:"ninchisho"};try{var s=sessionStorage.getItem("src");if(s)p.src=s;}catch(_){}gtag("event",a.getAttribute("data-ev"),p);},true);
 </script>
-<script src="/analytics.js?v=20261113b"></script>
+<script src="/analytics.js?v=20261113c"></script>
 </body></html>
