@@ -95,4 +95,57 @@
     else if(href.indexOf("tel:") === 0) send("tel");
     else if(href.indexOf("docs.google.com/forms") > -1) send("form");
   }, true);
+
+  // 「迷ったらLINE」（2026-11-13追加・小林さん承認）
+  // 第一ネオ生命の画面へ移ったあと、このページに戻ってきた人に一度だけ、LINEで聞ける案内を下から出す。
+  // ねらい：Neoのボタンは押されているのに申込0件のため、途中で迷った人を相談（LINE）で拾う。
+  // 計測：表示＝neo_return、LINEを押した＝neo_return_line（＋共通の line）、閉じた＝neo_return_close
+  var LINE_URL = "https://lin.ee/5gJWVqG";
+  var leftForNeo = false, returnShown = false;
+  try{ returnShown = sessionStorage.getItem("neo_return_shown") === "1"; }catch(e){}
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest("a.js-neo");
+    if(a && (a.getAttribute("href") || "").indexOf("neofirst.co.jp") > -1){
+      leftForNeo = true;
+      try{ sessionStorage.setItem("neo_left", "1"); }catch(_){}
+    }
+  }, true);
+  function showReturn(){
+    if(returnShown) return;
+    returnShown = true;
+    try{ sessionStorage.setItem("neo_return_shown", "1"); }catch(_){}
+    var st = document.createElement("style");
+    st.textContent = ".neo-return{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#fff;border-top:3px solid #9a5a12;box-shadow:0 -6px 24px #18221f33;padding:16px 16px 20px;font:18px/1.6 'BIZ UDPGothic','Hiragino Sans','Yu Gothic','Meiryo',sans-serif;color:#18221f}"
+      + ".neo-return .in{max-width:760px;margin:auto}.neo-return p{margin:0 0 4px;font-size:21px;font-weight:700;line-height:1.45;padding-right:40px}"
+      + ".neo-return small{display:block;font-size:17px;color:#4f5c57;margin-bottom:12px}"
+      + ".neo-return a{display:flex;justify-content:center;align-items:center;min-height:58px;border-radius:12px;background:#06c755;color:#fff;font-size:21px;font-weight:700;text-decoration:none}"
+      + ".neo-return button{position:absolute;top:8px;right:10px;width:44px;height:44px;border:0;background:none;font-size:28px;color:#4f5c57;cursor:pointer}";
+    document.head.appendChild(st);
+    var box = document.createElement("div");
+    box.className = "neo-return";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-label", "迷ったらLINEで聞けます");
+    box.innerHTML = '<div class="in"><button type="button" aria-label="閉じる">×</button>'
+      + '<p>申込みの画面で迷いましたか？</p>'
+      + '<small>どの保険がいいか、ご家族の分など、LINEでそのまま聞けます。無料です。聞いても申し込まなくて大丈夫です。</small>'
+      + '<a href="' + LINE_URL + '" target="_blank" rel="noopener noreferrer" data-ev="neo_return_line">LINEで聞いてみる</a></div>';
+    document.body.appendChild(box);
+    sendNow("neo_return");
+    box.querySelector("a").addEventListener("click", function(){
+      // /ninchisho/ はページ側の data-ev 計測が送るので二重に送らない
+      if(!/\/ninchisho\//.test(location.pathname)) sendNow("neo_return_line");
+      box.remove();
+    });
+    box.querySelector("button").addEventListener("click", function(){ sendNow("neo_return_close"); box.remove(); });
+  }
+  // 別タブのNeoから戻った（このタブが再び表示された）
+  document.addEventListener("visibilitychange", function(){
+    if(leftForNeo && document.visibilityState === "visible") setTimeout(showReturn, 600);
+  });
+  // 同じタブでNeoへ行き「戻る」で帰ってきた
+  window.addEventListener("pageshow", function(){
+    var left = false;
+    try{ left = sessionStorage.getItem("neo_left") === "1"; }catch(_){}
+    if(left && !leftForNeo){ leftForNeo = true; setTimeout(showReturn, 600); }
+  });
 })();
