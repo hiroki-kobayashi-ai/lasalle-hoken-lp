@@ -138,14 +138,17 @@
     });
     box.querySelector("button").addEventListener("click", function(){ sendNow("neo_return_close"); box.remove(); });
   }
-  // 別タブのNeoから戻った（このタブが再び表示された）
-  document.addEventListener("visibilitychange", function(){
+  // 別タブのNeoから戻った（このタブが再び表示された・前面に戻った）
+  function backFromNeo(){
     if(leftForNeo && document.visibilityState === "visible") setTimeout(showReturn, 600);
-  });
-  // 同じタブでNeoへ行き「戻る」で帰ってきた
+  }
+  document.addEventListener("visibilitychange", backFromNeo);
+  window.addEventListener("focus", function(){ if(leftForNeo) setTimeout(showReturn, 600); });
+  // 同じタブでNeoへ行き「戻る」で帰ってきた（パソコン・アプリ内ブラウザで多い。
+  // 戻ったページがそのまま復元される場合も、読み直される場合も出す）
   window.addEventListener("pageshow", function(){
     var left = false;
     try{ left = sessionStorage.getItem("neo_left") === "1"; }catch(_){}
-    if(left && !leftForNeo){ leftForNeo = true; setTimeout(showReturn, 600); }
+    if(left){ leftForNeo = true; setTimeout(showReturn, 600); }
   });
 })();
