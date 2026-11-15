@@ -49,7 +49,7 @@
 
   function send(name){ gtag("event", name, src ? { src: src } : {}); fb(name); }
 
-  // 滞在・スクロールの計測（2026-11-09追加）
+  // 滞在・スクロールの計測（2026-11-09追加、2026-11-16 60秒・120秒・180秒を追加・小林さん承認）
   // Instagramのアプリ内ブラウザでは滞在時間が0秒と記録されやすいため、
   // 画面が表示されている時間を自前で数え、3秒・10秒の到達をイベントで送る。
   // stay_3s / stay_10s が来ているのに滞在0秒のセッションは「測れていないだけ」と判断できる。
@@ -65,7 +65,7 @@
     var now = Date.now();
     if(document.visibilityState === "visible") visibleMs += now - lastTick;
     lastTick = now;
-    [3, 10, 30].forEach(function(sec){
+    [3, 10, 30, 60, 120, 180].forEach(function(sec){
       if(!sentStay[sec] && visibleMs >= sec * 1000){ sentStay[sec] = true; sendNow("stay_" + sec + "s"); }
     });
   }
