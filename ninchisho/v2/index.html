@@ -9,8 +9,8 @@ body{font-size:20px;background:#f5f6f3}
 .brand{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:#4f5c57;margin:0 2px 6px}
 .brand b{color:#1f5c4a;font-size:15px}
 .brand a{font-weight:700;color:#1f5c4a;text-decoration:none;font-size:15px}
-.tabs6{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.tabs6 a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-height:58px;padding:4px 2px;border-radius:14px;background:#f1f4f0;color:#18221f;text-decoration:none;font-size:14px;font-weight:700;line-height:1.25;text-align:center;border:2px solid transparent}
+.tabs6{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+.tabs6 a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-height:56px;padding:4px 1px;border-radius:14px;background:#f1f4f0;color:#18221f;text-decoration:none;font-size:13px;font-weight:700;line-height:1.25;text-align:center;border:2px solid transparent}
 .tabs6 a .ic{font-size:22px;line-height:1}
 .tabs6 a[aria-current="page"],.tabs6 a.small[aria-current="page"]{background:#1f5c4a;color:#fff}
 .tabs6 a.small{font-size:13px;color:#4f5c57}
@@ -86,12 +86,22 @@ ol.flow8 li:before{content:counter(s);position:absolute;left:0;top:8px;width:28p
 .pill-steps div b{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:#9a5a12;color:#fff;display:flex;align-items:center;justify-content:center}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#18221f;color:#fff;padding:12px 18px;border-radius:999px;font-size:17px;z-index:99;display:none}
 .toast.show{display:block}
+
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:#e9eee9;border-radius:16px;padding:5px;margin:0 0 14px}
+.seg button{border:0;border-radius:12px;background:transparent;padding:10px 2px;font:inherit;font-size:17px;font-weight:800;color:#4f5c57;cursor:pointer;line-height:1.3}
+.seg button span{display:block;font-size:24px}
+.seg button[aria-selected="true"]{background:#fff;color:#1f5c4a;box-shadow:0 2px 8px #18221f1f}
+.sub{display:none}.sub.on{display:block;animation:slide .3s ease}
+.bring{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0}
+.bring div{background:#f1f4f0;border-radius:14px;padding:10px 6px;text-align:center;font-size:16px;line-height:1.4}
+.bring div b{display:block;font-size:26px}
 </style></head><body><div class="wrap"><div class="top"><div class="brand"><span><b>ラサール＆パートナーズ</b>（保険代理店）</span><a href="tel:05036964531" data-ev="tel_top">☎ 電話で相談</a></div>
 <nav class="tabs6" aria-label="ページの切り替え">
 <a href="#ninchi" data-v="ninchi"><span class="ic">🌿</span>認知症の<br>備え</a>
 <a href="#gan" data-v="gan"><span class="ic">🎗️</span>がんの<br>備え</a>
 <a href="#jibyo" data-v="jibyo"><span class="ic">💊</span>持病が<br>ある方</a>
 <a href="#over70" data-v="over70"><span class="ic">🌸</span>70歳<br>以上の方</a>
+<a href="#sonpo" data-v="sonpo"><span class="ic">🚗</span>車・家の<br>保険</a>
 <a href="#soudan" data-v="soudan"><span class="ic">💬</span>保険の<br>相談</a>
 <a href="#oya" data-v="oya" class="small"><span class="ic">👪</span>親御さんの<br>保険</a>
 </nav></div><main id="main-content"><section class="view" id="v-ninchi" data-name="ninchi">
@@ -231,8 +241,51 @@ ol.flow8 li:before{content:counter(s);position:absolute;left:0;top:8px;width:28p
 <p class="note" style="text-align:center">LINEの方は「LINEで送る」も使えます。<a href="#" id="f70-line" data-ev="over70_line">LINEで送る ›</a></p>
 </section>
 <section class="box"><h2>このあとの流れ</h2><div class="pill-steps">
-<div><b>1</b>いまの内容を送る</div><div><b>2</b>担当がお客さまに合う保険をお調べします</div><div><b>3</b>保険料やパンフレットを、LINE・お電話・メールでお届けします</div><div><b>4</b>ご納得いただけたら、お手続きをご案内します</div></div>
+<div><b>1</b>いまの内容を送る</div><div><b>2</b>担当がお客さまに合う保険をお調べします</div><div><b>3</b>保険料やパンフレットを、ご希望の方法でご案内します</div><div><b>4</b>ご納得いただけたら、お手続きをご案内します</div></div>
 <p class="callrow">お電話でもどうぞ<br><a href="tel:05036964531" data-ev="tel_70">050-3696-4531</a><br><span class="note">月〜金 9:00〜18:00</span></p></section>
+</section><section class="view" id="v-sonpo" data-name="sonpo">
+<div class="lead"><span class="kicker">車と家の保険（損害保険）</span><h1>車と家の保険も、<br>スマホで。</h1><p>お店に行かず、見積もりから申込みまでできます。</p></div>
+<div class="seg" role="tablist" aria-label="保険の種類">
+<button type="button" role="tab" aria-selected="true" data-sub="car"><span>🚗</span>自動車保険</button>
+<button type="button" role="tab" aria-selected="false" data-sub="fire"><span>🏠</span>火災保険</button>
+<button type="button" role="tab" aria-selected="false" data-sub="etc"><span>🛡️</span>その他</button></div>
+
+<div class="sub on" id="s-car">
+<section class="box"><h2>こんなとき、見直しどきです</h2><div class="chips" id="cc">
+<label><input type="checkbox" value="満期が近い">📅 満期が近い</label><label><input type="checkbox" value="車を買い替える">🚙 車を買い替える</label>
+<label><input type="checkbox" value="家族が免許を取った">🔰 家族が免許を取った</label><label><input type="checkbox" value="運転する人が変わった">👥 運転する人が変わった</label>
+<label><input type="checkbox" value="保険料を見直したい">💴 保険料を見直したい</label><label><input type="checkbox" value="補償の中身がわからない">🤔 中身がよくわからない</label></div></section>
+<section class="box"><h2>手元にあると早いもの</h2><div class="bring"><div><b>📄</b>車検証</div><div><b>📋</b>今の保険証券<br><span class="note">（入っている方）</span></div><div><b>🪪</b>運転免許証<br><span class="note">（色を確認）</span></div><div><b>📱</b>スマホ</div></div></section>
+</div>
+
+<div class="sub" id="s-fire">
+<section class="box"><h2>あなたの家、水害は大丈夫？</h2><p>火災保険は、<b>水災（大雨・洪水）</b>を付けるかどうかで中身が大きく変わります。まずは、お住まいの場所の危険度を見てみましょう。</p>
+<a class="cta sub" data-ev="hazardmap" href="https://disaportal.gsi.go.jp/" target="_blank" rel="noopener noreferrer">🗺️ ハザードマップで調べる<small>国土交通省「ハザードマップポータルサイト」</small></a>
+<p class="note">危険度が低い地域でも、大雨で水があふれたり、土砂崩れが起きたりすることがあります。</p></section>
+<section class="box"><h2>こんなとき、見直しどきです</h2><div class="chips" id="fc">
+<label><input type="checkbox" value="更新が近い">📅 更新が近い</label><label><input type="checkbox" value="家を買う・建てる">🏡 家を買う・建てる</label>
+<label><input type="checkbox" value="引っ越す・賃貸">📦 引っ越す・賃貸</label><label><input type="checkbox" value="地震保険を考えたい">🌏 地震保険を考えたい</label>
+<label><input type="checkbox" value="水災を付けるか迷う">🌧️ 水災を付けるか迷う</label><label><input type="checkbox" value="家財も守りたい">🛋️ 家具・家電も守りたい</label></div></section>
+<section class="box"><h2>手元にあると早いもの</h2><div class="bring"><div><b>📍</b>住所</div><div><b>🏢</b>戸建て・<br>マンション</div><div><b>📐</b>広さと<br>建てた年</div><div><b>📋</b>今の保険証券<br><span class="note">（入っている方）</span></div></div></section>
+</div>
+
+<div class="sub" id="s-etc">
+<section class="box"><h2>ほかにも、こんな保険があります</h2><div class="chips" id="ec">
+<label><input type="checkbox" value="ケガの保険">🩹 ケガ</label><label><input type="checkbox" value="自転車の保険">🚲 自転車</label>
+<label><input type="checkbox" value="旅行の保険">✈️ 旅行</label><label><input type="checkbox" value="会社・お店の保険">🏢 会社・お店</label>
+<label><input type="checkbox" value="よくわからない">🤔 よくわからない</label></div>
+<p class="note">選んで「見積もり・相談を頼む」を押してください。合うものをお調べします。</p></section>
+</div>
+
+<section class="box"><h2>スマホで申込みまで、4ステップ</h2><div class="pill-steps">
+<div><b>1</b>下のボタンから、見積もりを頼む</div>
+<div><b>2</b>担当が見積もりを作り、資料をメールでお送りします</div>
+<div><b>3</b>大切なことを、お電話でご説明します</div>
+<div><b>4</b>スマホに届く案内から申込み。サインも郵送もいりません</div></div>
+<p class="note">申込みの画面は、夜でも休日でも開けます（システムの点検中をのぞく）。お会いしてのお手続きもできます。</p></section>
+<button type="button" class="cta" id="sp-go" style="border:0;cursor:pointer;font-family:inherit">見積もり・相談を頼む<small>フォームが開きます（選んだ内容が入っています）</small></button>
+<a class="cta line" data-ev="sonpo_line" href="https://lin.ee/5gJWVqG" target="_blank" rel="noopener noreferrer">LINEで聞いてみる</a>
+<p class="callrow">お電話でもどうぞ<br><a href="tel:05036964531" data-ev="tel_sonpo">050-3696-4531</a><br><span class="note">月〜金 9:00〜18:00</span></p>
 </section><section class="view" id="v-soudan" data-name="soudan">
 <div class="lead"><span class="kicker">無料のご相談</span><h1>どんな保険のことでも、<br>聞いてください。</h1><p>相談しても、申し込まなくて大丈夫です。</p></div>
 <section class="box"><h2>こんなご相談、多いです</h2><div class="topics">
@@ -240,7 +293,7 @@ ol.flow8 li:before{content:counter(s);position:absolute;left:0;top:8px;width:28p
 <a href="#" data-topic="家族のための保障" data-ev="topic_souzoku"><span>🏠</span>相続のこと</a>
 <a href="#" data-topic="病気・入院・がんの保険" data-ev="topic_gan"><span>🎗️</span>がん・病気・入院</a>
 <a href="#" data-topic="家族のための保障" data-ev="topic_ninchi"><span>🌿</span>認知症・介護</a>
-<a href="#" data-topic="自動車・火災・ケガの保険" data-ev="topic_sonpo"><span>🚗</span>車・火災・ケガ</a>
+<a href="#sonpo" data-v="sonpo" data-ev="topic_sonpo"><span>🚗</span>車・家・ケガ</a>
 <a href="#" data-topic="会社・お店の保険" data-ev="topic_houjin"><span>🏢</span>会社・お店の保険</a>
 <a href="#" data-topic="まだ分からない" data-ev="topic_wakaranai" style="grid-column:1/-1"><span>🤔</span>何から聞けばいいかわからない</a></div>
 <p class="note">押すと、相談フォームが開きます（選んだ内容が入った状態で開きます）。</p></section>
@@ -339,7 +392,7 @@ ol.flow8 li:before{content:counter(s);position:absolute;left:0;top:8px;width:28p
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-ev]");if(!a||!window.gtag)return;var p={transport_type:"beacon",page:"ninchisho"};try{var s=sessionStorage.getItem("src");if(s)p.src=s;}catch(_){}gtag("event",a.getAttribute("data-ev"),p);},true);
 </script><div class="toast" id="toast"></div><script>
 (function(){
-var views=["ninchi","gan","jibyo","over70","soudan","oya"];
+var views=["ninchi","gan","jibyo","over70","sonpo","soudan","oya"];
 function ev(n,p){try{if(window.gtag){var q={transport_type:"beacon",page:"ninchisho_v2"};var s=sessionStorage.getItem("src");if(s)q.src=s;for(var k in(p||{}))q[k]=p[k];gtag("event",n,q);}}catch(e){}}
 function show(v,push){if(views.indexOf(v)<0)v="ninchi";views.forEach(function(x){document.getElementById("v-"+x).classList.toggle("on",x===v);});
 document.querySelectorAll(".tabs6 a").forEach(function(a){if(a.getAttribute("data-v")===v)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");});
@@ -362,6 +415,9 @@ var FORM="https://docs.google.com/forms/d/e/1FAIpQLSccRHCt5AheXYdAuCldzdOeVagka3
 var fg=document.getElementById("f70-go");if(fg)fg.addEventListener("click",function(){var how=vals("how");var map={"LINE":"LINE","電話":"電話","メール":"メール"};var u=FORM+"?usp=pp_url&entry.777293406="+encodeURIComponent("家族のための保障")+"&entry.245163664="+encodeURIComponent(memo())+(map[how]?"&entry.2058551988="+encodeURIComponent(map[how]):"");ev("over70_form",{kind:vals("kind")});window.open(u,"_blank","noopener");});
 var fl=document.getElementById("f70-line");if(fl)fl.addEventListener("click",function(e){e.preventDefault();var t=memo();function go(){var ts=document.getElementById("toast");ts.textContent="内容をコピーしました。LINEに貼り付けて送ってください";ts.classList.add("show");setTimeout(function(){ts.classList.remove("show");},4000);window.open("https://lin.ee/5gJWVqG","_blank","noopener");}
 if(navigator.clipboard)navigator.clipboard.writeText(t).then(go,go);else go();});
+// 損保のサブタブ
+var cur="car";document.querySelectorAll(".seg button").forEach(function(b){b.addEventListener("click",function(){cur=b.getAttribute("data-sub");document.querySelectorAll(".seg button").forEach(function(x){x.setAttribute("aria-selected",x===b?"true":"false");});["car","fire","etc"].forEach(function(s){document.getElementById("s-"+s).classList.toggle("on",s===cur);});ev("sonpo_tab_"+cur);});});
+var sg=document.getElementById("sp-go");if(sg)sg.addEventListener("click",function(){var name={car:"自動車保険",fire:"火災保険",etc:"その他の損害保険"}[cur];var box={car:"cc",fire:"fc",etc:"ec"}[cur];var picks=[].slice.call(document.querySelectorAll("#"+box+" input:checked")).map(function(i){return i.value;}).join("・");var memo="【"+name+"の見積もり・相談】\n気になっていること："+(picks||"未選択")+"\n";var u=FORM+"?usp=pp_url&entry.777293406="+encodeURIComponent(cur==="etc"&&picks.indexOf("会社")>-1?"会社・お店の保険":"自動車・火災・ケガの保険")+"&entry.245163664="+encodeURIComponent(memo);ev("sonpo_form",{kind:cur});window.open(u,"_blank","noopener");});
 // 相談テーマ → フォーム（選んだ内容入り）
 document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();var u=FORM+"?usp=pp_url&entry.777293406="+encodeURIComponent(a.getAttribute("data-topic"))+"&entry.245163664="+encodeURIComponent("相談したいこと："+a.textContent.trim()+"\n");window.open(u,"_blank","noopener");});});
 })();
