@@ -132,7 +132,7 @@ ol.flow8 li:before{content:counter(s);position:absolute;left:0;top:8px;width:28p
 <a href="#sonpo" data-v="sonpo"><span class="ic">🚗</span>車・家の<br>保険</a>
 <a href="#souzoku" data-v="souzoku"><span class="ic">🏠</span>相続の<br>備え</a>
 <a href="#soudan" data-v="soudan"><span class="ic">💬</span>保険の<br>相談</a>
-<a href="#oya" data-v="oya" class="small"><span class="ic">👪</span>親御さんの<br>保険</a>
+<a href="#oya" data-v="oya"><span class="ic">👪</span>親御さんの<br>保険</a>
 </nav></div><main id="main-content"><section class="view" id="v-ninchi" data-name="ninchi">
 <div class="src-hero" id="hero-jihyo" hidden><img src="/img/jihyo_hero.jpg" width="540" height="540" alt="机の上に置かれた一通の封筒"><p>あなたは、どうしますか。<small>元気なうちに、決めておけること。</small></p></div>
 <div class="src-hero dark" id="hero-soba" hidden><p><span>🍜</span>父は今夜も、そばを打つ。<small>その手が止まる日のことを、少しだけ考えてみませんか。</small></p></div>
@@ -350,6 +350,7 @@ ol.flow8 li:before{content:counter(s);position:absolute;left:0;top:8px;width:28p
 <a class="cta line" data-ev="oya_line" href="https://lin.ee/5gJWVqG" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
 <a class="cta sub" data-ev="oya_form" href="https://docs.google.com/forms/d/e/1FAIpQLSccRHCt5AheXYdAuCldzdOeVagka3Cl97rLjJFDbVRP67sg_A/viewform" target="_blank" rel="noopener noreferrer">フォームで相談する</a>
 <a class="cta sub" href="#over70" data-v="over70">親御さんが70歳以上なら、こちらが早いです</a>
+<div class="pair"><a class="p2" href="#" onclick="history.back();return false;">← 前の画面に<br>戻る</a><a class="p1" href="#ninchi" data-v="ninchi">トップに<br>戻る</a></div>
 </section><section class="view" id="v-companies" data-name="companies">
 <div class="lead"><span class="kicker">ラサール＆パートナーズ</span><h1>取扱保険会社一覧</h1><p>複数の保険会社をくらべてご提案する、乗合代理店です。</p></div>
 <section class="box complist"><h3>生命保険</h3><ul><li>エヌエヌ生命保険</li><li>オリックス生命保険</li><li>アクサ生命保険</li><li>マニュライフ生命保険</li><li>第一ネオ生命保険</li><li>メットライフ生命保険</li><li>日本生命保険</li><li>はなさく生命保険</li></ul><h3>損害保険</h3><ul><li>損害保険ジャパン</li><li>あいおいニッセイ同和損害保険</li></ul>
@@ -496,4 +497,4 @@ var sg=document.getElementById("sp-go");if(sg)sg.addEventListener("click",functi
 // 相談テーマ → フォーム（選んだ内容入り）
 document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();var u=FORM+"?usp=pp_url&entry.777293406="+encodeURIComponent(a.getAttribute("data-topic"))+"&entry.245163664="+encodeURIComponent("相談したいこと："+a.textContent.trim()+"\n");window.open(u,"_blank","noopener");});});
 })();
-</script><script src="/analytics.js?v=20261116b"></script></body></html>
+</script><script src="/analytics.js?v=20261116"></script></body></html>
