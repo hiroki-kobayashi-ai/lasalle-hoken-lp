@@ -4,6 +4,14 @@
   var GA_ID = "G-ERPXVZ39RD";
   if(!GA_ID) return;
 
+  // 社内の確認用（2026-11-16 小林さん承認）：?nostat=1 で開いた端末は、以後この端末からの計測（GA4・Metaピクセル）を送らない。?nostat=0 で解除。
+  try{
+    var ns = new URLSearchParams(location.search).get("nostat");
+    if(ns === "1") localStorage.setItem("lp_nostat","1");
+    if(ns === "0") localStorage.removeItem("lp_nostat");
+    if(localStorage.getItem("lp_nostat") === "1"){ window.gtag = function(){}; return; }
+  }catch(e){}
+
   // 流入元（?src=ig / ?src=yt など）を覚えておく
   var src = "";
   try{
