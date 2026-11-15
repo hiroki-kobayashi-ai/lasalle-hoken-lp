@@ -84,6 +84,7 @@ ol.flow8 li:before{content:counter(s);position:absolute;left:0;top:8px;width:28p
 .pill-steps{display:flex;flex-direction:column;gap:8px;margin:8px 0}
 .pill-steps div{display:flex;gap:10px;align-items:center;background:#f1f4f0;border-radius:16px;padding:10px 12px;font-size:18px;line-height:1.45}
 .pill-steps div b{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:#9a5a12;color:#fff;display:flex;align-items:center;justify-content:center}
+.src-hero{border-radius:22px;overflow:hidden;background:#fff;margin:0 0 14px;box-shadow:0 2px 14px #18221f14}.src-hero img{display:block;width:100%;height:auto}.src-hero p{margin:0;padding:14px 16px;font-size:23px;font-weight:800;line-height:1.5;text-align:center}.src-hero p small{display:block;font-size:17px;font-weight:400;color:#4f5c57;margin-top:4px}.src-hero.dark{background:#1d2623;color:#fff}.src-hero.dark p{padding:30px 18px}.src-hero.dark p span{display:block;font-size:44px}.src-hero.dark small{color:#cfd8d3}.keep{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.keep a{display:flex;align-items:center;justify-content:center;text-align:center;min-height:56px;border-radius:14px;font-weight:800;font-size:16px;line-height:1.35;text-decoration:none;padding:6px}.keep .k-line{background:#06c755;color:#fff}.keep .k-fam{background:#fff;border:2px solid #1f5c4a;color:#1f5c4a}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#18221f;color:#fff;padding:12px 18px;border-radius:999px;font-size:17px;z-index:99;display:none}
 .toast.show{display:block}
 
@@ -105,7 +106,9 @@ ol.flow8 li:before{content:counter(s);position:absolute;left:0;top:8px;width:28p
 <a href="#soudan" data-v="soudan"><span class="ic">💬</span>保険の<br>相談</a>
 <a href="#oya" data-v="oya" class="small"><span class="ic">👪</span>親御さんの<br>保険</a>
 </nav></div><main id="main-content"><section class="view" id="v-ninchi" data-name="ninchi">
-<div class="hero-people"><img src="/img/ninchisho_hero.jpg" width="1086" height="362" alt="穏やかな表情の60代の男性と女性のイラスト"></div>
+<div class="src-hero" id="hero-jihyo" hidden><img src="/img/jihyo_hero.jpg" width="540" height="540" alt="机の上に置かれた一通の封筒"><p>あなたは、どうしますか。<small>元気なうちに、決めておけること。</small></p></div>
+<div class="src-hero dark" id="hero-soba" hidden><p><span>🍜</span>父は今夜も、そばを打つ。<small>その手が止まる日のことを、少しだけ考えてみませんか。</small></p></div>
+<div class="hero-people" id="hero-default"><img src="/img/ninchisho_hero.jpg" width="1086" height="362" alt="穏やかな表情の60代の男性と女性のイラスト"></div>
 <div class="lead"><span class="kicker">認知症への備え</span><h1>自分で決める、<br>自分で備える。</h1><p>まずは3つの数字から。</p></div>
 <div class="big3"><div><b>3.6人に<br>1人</b><span>65歳以上で認知症か、その手前</span></div><div><b>4年<br>7か月</b><span>介護が続く平均の期間</span></div><div><b>月<br>9.0万円</b><span>介護にかかる毎月の費用の平均</span></div></div>
 <p class="srcs">出典：厚生労働省資料（2022年の推計）、生命保険文化センター（2024年度）</p>
@@ -203,7 +206,7 @@ ol.flow8 li:before{content:counter(s);position:absolute;left:0;top:8px;width:28p
 <label><input type="checkbox" value="horumon">💊 ホルモン剤</label><label><input type="checkbox" value="shindan">📄 診断されたら一時金</label>
 <label><input type="checkbox" value="sensin">🔬 先進医療</label><label><input type="checkbox" value="shunyu">👔 休んだ分の収入</label></div>
 <button type="button" class="cta" id="gc-go" style="width:100%;border:0;cursor:pointer;font-family:inherit">結果を見る</button>
-<div class="res2" id="gc-res"><h3>保険を選ぶときに確かめたいこと</h3><ul id="gc-list"></ul><p class="note">がん保険は、商品によって「どの治療のときにお金が出るか」が違います。選んだ治療が保障の対象かを、試算の画面やご相談で確かめてください。</p></div></section>
+<div class="res2" id="gc-res"><h3>保険を選ぶときに確かめたいこと</h3><ul id="gc-list"></ul><p class="note">がん保険は、商品によって「どの治療のときにお金が出るか」が違います。選んだ治療が保障の対象かを、試算の画面やご相談で確かめてください。</p><div class="keep"><a href="#" class="k-line" data-keep="gan">📩 この結果を<br>LINEに保存</a><a href="#" class="k-fam" data-share="gan">👪 家族に<br>このページを送る</a></div></div></section>
 <a class="cta js-neo" data-ev="neo_gan" href="https://neofirst.co.jp/sim/simulation?sid=agent=6155300000&amp;branch=0000&amp;index=0000&amp;type=014015" target="_blank" rel="noopener noreferrer">がん保険を見てみる<small>第一ネオ生命（第一生命グループ）の画面へ・試算だけなら申込みになりません</small></a>
 <a class="cta sub" href="#soudan" data-v="soudan">相談して決めたい方はこちら</a>
 <a class="cta sub" href="#over70" data-v="over70">70歳以上の方はこちら</a>
@@ -214,7 +217,7 @@ ol.flow8 li:before{content:counter(s);position:absolute;left:0;top:8px;width:28p
 <label><input type="checkbox">🏥 いま通院している</label><label><input type="checkbox">💊 毎日飲んでいる薬がある</label>
 <label><input type="checkbox">🩹 入院・手術をしたことがある</label><label><input type="checkbox">🙅 保険を断られたことがある</label></div>
 <button type="button" class="cta" id="jc-go" style="width:100%;border:0;cursor:pointer;font-family:inherit">結果を見る</button>
-<div class="res2" id="jc-res"><h3 id="jc-h"></h3><p id="jc-p"></p></div></section>
+<div class="res2" id="jc-res"><h3 id="jc-h"></h3><p id="jc-p"></p><div class="keep"><a href="#" class="k-line" data-keep="jibyo">📩 この結果を<br>LINEに保存</a><a href="#" class="k-fam" data-share="jibyo">👪 家族に<br>このページを送る</a></div></div></section>
 <section class="box"><h2>入りやすい保険って？</h2>
 <div class="pill-steps"><div><b>1</b>健康についての質問が、ふつうの保険より少なく、かんたんです</div><div><b>2</b>そのぶん、保険料はふつうの保険より高めです</div><div><b>3</b>まずは、ふつうの保険に入れるかを確かめるのがおすすめです</div></div>
 <p class="note">「引受基準緩和型（ひきうけきじゅん かんわがた）」と呼ばれる保険です。</p></section>
@@ -238,7 +241,7 @@ ol.flow8 li:before{content:counter(s);position:absolute;left:0;top:8px;width:28p
 <div class="q"><p class="qt"><i>6</i>ご連絡の方法は？</p><div class="chips" data-n="how">
 <label><input type="radio" name="how" value="LINE">LINE</label><label><input type="radio" name="how" value="電話">電話</label><label><input type="radio" name="how" value="メール">メール</label></div></div>
 <button type="button" class="cta amber" id="f70-go" style="width:100%;border:0;cursor:pointer;font-family:inherit">この内容で送る<small>次の画面で、お名前とご連絡先を入れて送信します</small></button>
-<p class="note" style="text-align:center">LINEの方は「LINEで送る」も使えます。<a href="#" id="f70-line" data-ev="over70_line">LINEで送る ›</a></p>
+<a href="#" class="cta line" id="f70-line" data-ev="over70_line">この内容をLINEで送る<small>LINEが開いたら、送信を押すだけです</small></a>
 </section>
 <section class="box"><h2>このあとの流れ</h2><div class="pill-steps">
 <div><b>1</b>いまの内容を送る</div><div><b>2</b>担当がお客さまに合う保険をお調べします</div><div><b>3</b>保険料やパンフレットを、ご希望の方法でご案内します</div><div><b>4</b>ご納得いただけたら、お手続きをご案内します</div></div>
@@ -279,10 +282,10 @@ ol.flow8 li:before{content:counter(s);position:absolute;left:0;top:8px;width:28p
 
 <section class="box"><h2>スマホで申込みまで、4ステップ</h2><div class="pill-steps">
 <div><b>1</b>下のボタンから、見積もりを頼む</div>
-<div><b>2</b>担当が見積もりを作り、資料をメールでお送りします</div>
-<div><b>3</b>大切なことを、お電話でご説明します</div>
-<div><b>4</b>スマホに届く案内から申込み。サインも郵送もいりません</div></div>
-<p class="note">申込みの画面は、夜でも休日でも開けます（システムの点検中をのぞく）。お会いしてのお手続きもできます。</p></section>
+<div><b>2</b>担当が見積もりを作り、資料をメールでお送りします<br><span class="note">（いくつかの保険会社でくらべることもできます）</span></div>
+<div><b>3</b>大切なことのご説明と、内容に間違いがないかの確認を、お電話でします</div>
+<div><b>4</b>スマホで申込みができます。ハンコはいりません</div></div>
+<p class="note">お電話でのお申込みや、お会いしてのお手続きもできます。</p></section>
 <button type="button" class="cta" id="sp-go" style="border:0;cursor:pointer;font-family:inherit">見積もり・相談を頼む<small>フォームが開きます（選んだ内容が入っています）</small></button>
 <a class="cta line" data-ev="sonpo_line" href="https://lin.ee/5gJWVqG" target="_blank" rel="noopener noreferrer">LINEで聞いてみる</a>
 <p class="callrow">お電話でもどうぞ<br><a href="tel:05036964531" data-ev="tel_sonpo">050-3696-4531</a><br><span class="note">月〜金 9:00〜18:00</span></p>
@@ -413,8 +416,23 @@ function memo(){var co=vals("co");if(co==="ある"){var nm=document.getElementBy
 return "【70歳以上の方のご相談】\n探している保険："+(vals("kind")||"未選択")+"\n希望の保険会社："+(co||"未選択")+"\n性別："+(vals("sex")||"未選択")+"\nお生まれの年："+(by&&by.value||"未選択")+"\n生年月日（くわしく）：\n知りたいこと："+(vals("want")||"未選択")+"\nご連絡方法："+(vals("how")||"未選択");}
 var FORM="https://docs.google.com/forms/d/e/1FAIpQLSccRHCt5AheXYdAuCldzdOeVagka3Cl97rLjJFDbVRP67sg_A/viewform";
 var fg=document.getElementById("f70-go");if(fg)fg.addEventListener("click",function(){var how=vals("how");var map={"LINE":"LINE","電話":"電話","メール":"メール"};var u=FORM+"?usp=pp_url&entry.777293406="+encodeURIComponent("家族のための保障")+"&entry.245163664="+encodeURIComponent(memo())+(map[how]?"&entry.2058551988="+encodeURIComponent(map[how]):"");ev("over70_form",{kind:vals("kind")});window.open(u,"_blank","noopener");});
-var fl=document.getElementById("f70-line");if(fl)fl.addEventListener("click",function(e){e.preventDefault();var t=memo();function go(){var ts=document.getElementById("toast");ts.textContent="内容をコピーしました。LINEに貼り付けて送ってください";ts.classList.add("show");setTimeout(function(){ts.classList.remove("show");},4000);window.open("https://lin.ee/5gJWVqG","_blank","noopener");}
-if(navigator.clipboard)navigator.clipboard.writeText(t).then(go,go);else go();});
+var fl=document.getElementById("f70-line");if(fl)fl.addEventListener("click",function(e){e.preventDefault();window.open(OA+encodeURIComponent(memo()),"_blank","noopener");});
+
+var OA="https://line.me/R/oaMessage/%40375swnrk/?";
+// 案2：広告の動画ごとに最初の画面を変える
+var src="";try{src=new URLSearchParams(location.search).get("src")||sessionStorage.getItem("src")||"";}catch(e){}
+var H={soba:/soba/,jihyo:/jihyo|lumiere_ninchi|kashimasa_ninchi/};
+for(var k in H){if(H[k].test(src)){var el=document.getElementById("hero-"+k);if(el){el.hidden=false;var d=document.getElementById("hero-default");if(d)d.hidden=true;ev("hero_"+k);}}}
+// 案1：結果をLINEに保存・家族に送る
+function resultText(kind){if(kind==="ninchi"){return "【認知症・介護のセルフチェック結果】\n介護にかかるお金の目安："+(document.getElementById("sc-total").textContent||"")+"\n使えそうなお金の目安："+(document.getElementById("sc-have").textContent||"")+"\n"+(document.getElementById("sc-gap").textContent||"");}
+if(kind==="gan"){return "【がん保険チェックの結果】\n確かめたいこと：\n"+[].slice.call(document.querySelectorAll("#gc-list li")).map(function(l){return "・"+l.textContent;}).join("\n");}
+if(kind==="jibyo"){return "【持病チェックの結果】\n"+document.getElementById("jc-h").textContent+"\n"+document.getElementById("jc-p").textContent;}return "";}
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-keep],[data-share]");if(!a)return;e.preventDefault();
+if(a.hasAttribute("data-keep")){var k=a.getAttribute("data-keep");ev("keep_line_"+k);window.open(OA+encodeURIComponent(resultText(k)+"\n\n（保存用に送ります）"),"_blank","noopener");return;}
+var v=a.getAttribute("data-share");var url=location.origin+location.pathname+"#"+v;var msg={ninchi:"認知症の備え、3つの数字とかんたんチェックがあったよ。いっしょに見てみない？",gan:"がんの備え、どの治療に備えるかチェックできるページがあったよ。",jibyo:"持病があっても入りやすい保険のこと、わかりやすいページがあったよ。"}[v]||"保険のこと、わかりやすいページがあったよ。";ev("share_family_"+v);
+if(navigator.share){navigator.share({text:msg,url:url}).catch(function(){});}else{window.open("https://line.me/R/share?text="+encodeURIComponent(msg+"\n"+url),"_blank","noopener");}});
+// 認知症セルフチェックの結果の下にもボタンを出す
+var sr=document.getElementById("sc-res");if(sr){var d2=document.createElement("div");d2.innerHTML='<div class="keep"><a href="#" class="k-line" data-keep="ninchi">📩 この結果を<br>LINEに保存</a><a href="#" class="k-fam" data-share="ninchi">👪 家族に<br>このページを送る</a></div>';sr.appendChild(d2.firstChild);}
 // 損保のサブタブ
 var cur="car";document.querySelectorAll(".seg button").forEach(function(b){b.addEventListener("click",function(){cur=b.getAttribute("data-sub");document.querySelectorAll(".seg button").forEach(function(x){x.setAttribute("aria-selected",x===b?"true":"false");});["car","fire","etc"].forEach(function(s){document.getElementById("s-"+s).classList.toggle("on",s===cur);});ev("sonpo_tab_"+cur);});});
 var sg=document.getElementById("sp-go");if(sg)sg.addEventListener("click",function(){var name={car:"自動車保険",fire:"火災保険",etc:"その他の損害保険"}[cur];var box={car:"cc",fire:"fc",etc:"ec"}[cur];var picks=[].slice.call(document.querySelectorAll("#"+box+" input:checked")).map(function(i){return i.value;}).join("・");var memo="【"+name+"の見積もり・相談】\n気になっていること："+(picks||"未選択")+"\n";var u=FORM+"?usp=pp_url&entry.777293406="+encodeURIComponent(cur==="etc"&&picks.indexOf("会社")>-1?"会社・お店の保険":"自動車・火災・ケガの保険")+"&entry.245163664="+encodeURIComponent(memo);ev("sonpo_form",{kind:cur});window.open(u,"_blank","noopener");});
