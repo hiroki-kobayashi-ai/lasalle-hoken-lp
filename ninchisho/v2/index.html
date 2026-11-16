@@ -14,6 +14,17 @@ body{font-size:20px;background:#f5f6f3}
 .tabs6 a .ic{font-size:22px;line-height:1}
 .tabs6 a[aria-current="page"],.tabs6 a.small[aria-current="page"]{background:#1f5c4a;color:#fff}
 .tabs6 a.small{font-size:14px;color:#4f5c57}
+.tabs6 a.hot{position:relative;border-color:#d9822b;background:#fff6ec}
+.tabs6 a.hot[aria-current="page"]{background:#1f5c4a;border-color:#d9822b}
+.tabs6 a .badge{position:absolute;top:-8px;right:-2px;background:#d9482b;color:#fff;font-style:normal;font-size:11px;font-weight:800;padding:1px 6px;border-radius:9px;line-height:1.5}
+.calc .row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:8px 0;font-size:16px}
+.calc .row input,.calc .row select{width:9.5em;font-size:18px;padding:8px;border:1px solid #c9d3cf;border-radius:10px;text-align:right}
+.calc .row select{text-align:left}
+.calc .res{background:#f1f4f0;border-radius:14px;padding:12px;margin-top:10px;font-size:16px;line-height:1.7}
+.calc .res b{font-size:22px;color:#1f5c4a}
+.story{border-left:4px solid #d9822b;padding:2px 0 2px 12px;margin:10px 0;line-height:1.8}
+.story p{margin:6px 0}
+.kv{margin:0;padding:0;list-style:none}.kv li{padding:10px 0;border-bottom:1px solid #e3e9e6;line-height:1.7}.kv li b{display:block;color:#1f5c4a;font-size:17px}
 .view{display:none;padding-top:14px;animation:slide .35s ease}
 .view.on{display:block}
 @keyframes slide{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
@@ -130,7 +141,7 @@ ol.flow8 li:before{content:counter(s);position:absolute;left:0;top:8px;width:28p
 <a href="#jibyo" data-v="jibyo"><span class="ic">💊</span>持病が<br>ある方</a>
 <a href="#over70" data-v="over70"><span class="ic">🌸</span>70歳<br>以上の方</a>
 <a href="#sonpo" data-v="sonpo"><span class="ic">🚗</span>車・家の<br>保険</a>
-<a href="#souzoku" data-v="souzoku"><span class="ic">🏠</span>相続の<br>備え</a>
+<a href="#souzoku" data-v="souzoku" class="hot"><em class="badge">相談多数</em><span class="ic">🏠</span>相続の<br>備え</a>
 <a href="#soudan" data-v="soudan"><span class="ic">💬</span>保険の<br>相談</a>
 <a href="#oya" data-v="oya"><span class="ic">👪</span>親御さんの<br>保険</a>
 </nav></div><main id="main-content"><section class="view" id="v-ninchi" data-name="ninchi">
@@ -319,12 +330,54 @@ ol.flow8 li:before{content:counter(s);position:absolute;left:0;top:8px;width:28p
 <a class="cta line" data-ev="sonpo_line" href="https://lin.ee/5gJWVqG" target="_blank" rel="noopener noreferrer">LINEで聞いてみる</a>
 <p class="callrow">お電話でもどうぞ<br><a href="tel:05036964531" data-ev="tel_sonpo">050-3696-4531</a><br><span class="note">月〜金 9:00〜18:00</span></p>
 </section><section class="view" id="v-souzoku" data-name="souzoku">
-<div class="lead"><span class="kicker">相続への備え</span><h1>相続を「争族」に<br>しないために。</h1><p>生命保険は、相続でいちばん使いやすい道具のひとつです。</p></div>
+<div class="lead"><span class="kicker">相続への備え　<span style="color:#d9482b">いまご相談が多いテーマです</span></span><h1>相続を「争族」に<br>しないために。</h1><p>相続税の試算、よくある悩み、一般的な対策をまとめました。</p></div>
 <div class="big3"><div><b style="font-size:18px">3,000万円<br>＋600万円<br>×人数</b><span>相続税がかからない<br>基礎控除</span></div><div><b>500万円<br>×人数</b><span>死亡保険金が<br>非課税になる枠</span></div><div><b>10か月</b><span>相続税の<br>申告・納付の期限</span></div></div>
 <p class="srcs">出典：国税庁　※人数は法定相続人の数</p>
+<section class="box" style="border:2px solid #1f5c4a"><p style="margin:0;line-height:1.8">👤 <b>相続のご相談は、行政書士資格保有者や国家資格ファイナンシャルプランナーがお受けします。</b><br>税理士・弁護士・司法書士へのお取り次ぎも可能です。</p></section>
 <div class="pair"><a class="p1" href="#hear-souzoku" data-scroll="hear-souzoku">かんたん<br>相談メモへ<small>1分・お名前は不要</small></a><a class="p2" href="#soudan" data-v="soudan">あらゆる保険の<br>相談をする<small>無料・申し込まなくてOK</small></a></div>
 <section class="box tips"><h2>💡 知らないと損する3つのこと</h2><ol><li><b>生命保険には「非課税の枠」がある</b>死亡保険金のうち「500万円×法定相続人の数」までは、相続税がかかりません。預金のまま残すより、税金が少なくなることがあります。</li><li><b>受け取る人を決めておける</b>生命保険は受け取る人を指定できるので、遺産の分け方の話し合いとは別に、指定した人へ現金で届きます。</li><li><b>認知症になると、対策がむずかしい</b>保険の契約や財産の整理には、本人の判断が必要です。元気なうちに考えておくのが大切です。</li></ol><p class="src2">出典：国税庁（相続税の基礎控除・生命保険金の非課税限度額）。具体的な税額は、必要に応じて税理士と連携してご案内します。</p></section>
+<section class="box calc" id="souzoku-calc"><h2>🧮 相続税の「かんたん試算」</h2>
+<p>相続税がどう計算されるかを知るための<b>学習用の試算</b>です。数字は「万円」で入れてください。</p>
+<div class="row"><label for="c-sp">配偶者（夫・妻）</label><select id="c-sp"><option value="1">いる</option><option value="0">いない</option></select></div>
+<div class="row"><label for="c-ch">子どもの人数</label><select id="c-ch"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option></select></div>
+<div class="row"><label for="c-dep">預貯金</label><input id="c-dep" type="number" inputmode="numeric" min="0" placeholder="例 2000"></div>
+<div class="row"><label for="c-re">自宅・土地など<small style="display:block;font-size:12px;color:#4f5c57">固定資産税の評価額などのめやす</small></label><input id="c-re" type="number" inputmode="numeric" min="0" placeholder="例 3000"></div>
+<div class="row"><label for="c-st">株・投資信託など</label><input id="c-st" type="number" inputmode="numeric" min="0" placeholder="例 500"></div>
+<div class="row"><label for="c-li">死亡保険金</label><input id="c-li" type="number" inputmode="numeric" min="0" placeholder="例 1000"></div>
+<div class="row"><label for="c-db">借入れ・葬儀費用</label><input id="c-db" type="number" inputmode="numeric" min="0" placeholder="例 200"></div>
+<button type="button" class="cta" id="c-go" data-ev="souzoku_calc">試算してみる</button>
+<div class="res" id="c-res" hidden></div>
+<p class="note">※国税庁が公表している計算のしくみ（基礎控除・税率表・生命保険金の非課税枠・配偶者の税額軽減）を、財産を法律で決まった割合（法定相続分）で分けたと仮定して当てはめた<b>一般的な試算</b>です。土地の評価（路線価、小規模宅地等の特例など）や贈与、お子さまがいない場合などは反映していません。個別の税額の計算や税務のご相談ではありません。実際の税額は税理士にご確認ください（税理士・弁護士・司法書士へのお取り次ぎも可能です）。</p>
+</section>
+<section class="box"><h2>⚠️ 相続が「争族（あらそうぞく）」になるまで</h2>
+<div class="big3" style="grid-template-columns:1fr 1fr"><div><b>約3件に<br>1件</b><span>家庭裁判所で争われた遺産分割のうち、遺産1,000万円以下</span></div><div><b>約4分の3</b><span>遺産5,000万円以下のケースの割合</span></div></div>
+<p class="srcs">出典：最高裁判所「司法統計年報」（令和4年・遺産分割事件の遺産の価額別）</p>
+<div class="story"><p>父が亡くなった。財産は、実家と預金が少し。</p>
+<p>実家で同居して介護をしてきた長女は「家は私が住み続けたい」。遠くに住む長男は「法律どおり半分ずつ」。</p>
+<p>家を売らなければ半分は払えない。話し合いは平行線のまま、10か月の期限が近づく。</p>
+<p>やがて家庭裁判所の調停へ。父の一周忌に、きょうだいがそろうことはなかった。</p></div>
+<p>「うちは財産が少ないから大丈夫」が、いちばん危ない。もめる原因はお金の多さではなく、<b>分けにくさ</b>と<b>気持ちのすれ違い</b>です。</p></section>
+<section class="box"><h2>😟 相続で、よく困ること</h2><ul class="kv">
+<li><b>財産が自宅しかなく、分けられない</b>売るのか、誰かが住み続けるのか。住む人が他の兄弟にお金を払えず、もめる原因になります。</li>
+<li><b>介護をした人・しなかった人の不公平感</b>「私がずっと面倒を見たのに、同じ割合なの？」は、とても多いご相談です。</li>
+<li><b>預金が引き出せず、葬儀代に困る</b>亡くなったことが分かると、口座は止まります。一定額まで払い戻せる制度はありますが、手続きが必要です。</li>
+<li><b>相続人が多い・連絡が取れない</b>前の結婚のお子さん、疎遠な兄弟など、全員の同意がないと分け方が決まりません。</li>
+<li><b>相続人の中に認知症の方がいる</b>話し合いに参加できず、成年後見人が必要になることがあります。</li>
+<li><b>期限に追われる</b>相続放棄は3か月、相続税の申告は10か月。悲しみの中で、手続きが一気に押し寄せます。</li>
+</ul></section>
+<section class="box"><h2>📌 一般的な相続対策（常識の範囲で）</h2><ul class="kv">
+<li><b>① 財産の一覧をつくる</b>預金・保険・不動産・証券・借入れを1枚に。ネット銀行やネット証券は、家族が気づかないことがよくあります。</li>
+<li><b>② 遺言書を書いておく</b>公証役場でつくる「公正証書遺言」や、法務局で預かってもらえる「自筆証書遺言の保管制度」があります。</li>
+<li><b>③ 生命保険の非課税枠を使う</b>死亡保険金は「500万円×法定相続人の数」まで非課税。受け取る人を指定でき、すぐ現金で届きます。</li>
+<li><b>④ 相続税をはらう現金を用意する</b>財産が自宅中心だと、税金や他の家族に渡すお金が足りなくなりがちです。</li>
+<li><b>⑤ 生前の贈与を計画的に</b>年110万円までの贈与は贈与税がかかりません（ただし亡くなる前の一定期間の贈与は相続財産に足し戻されます）。</li>
+<li><b>⑥ 認知症に備える</b>判断力がなくなると、契約や財産の整理ができなくなります。任意後見や家族信託という方法もあります。</li>
+<li><b>⑦ 家族で一度、話しておく</b>「誰が家を継ぐか」「介護をしてくれた人への気持ち」など、元気なうちの一言がいちばんの対策です。</li>
+</ul><p class="srcs">出典：国税庁、法務省（自筆証書遺言書保管制度）</p></section>
+<div class="pair"><a class="p1" href="#hear-souzoku" data-scroll="hear-souzoku">かんたん<br>相談メモへ<small>1分・お名前は不要</small></a><a class="p2" href="#soudan" data-v="soudan">あらゆる保険の<br>相談をする<small>無料・申し込まなくてOK</small></a></div>
+<section class="box" style="border:2px solid #1f5c4a"><p style="margin:0;line-height:1.8">👤 <b>相続のご相談は、行政書士資格保有者や国家資格ファイナンシャルプランナーがお受けします。</b><br>税理士・弁護士・司法書士へのお取り次ぎも可能です。</p></section>
 <section class="box hear" id="hear-souzoku" data-title="相続のご相談" data-cat="家族のための保障"><h2>かんたん相談メモ<small>わかるところだけでOK。お名前・ご住所は、ここでは入れません。</small></h2><div class="hf"><p class="ql">年代</p><div class="chips"><label><input type="radio" name="年代" value="50代以下">50代以下</label><label><input type="radio" name="年代" value="60代">60代</label><label><input type="radio" name="年代" value="70代">70代</label><label><input type="radio" name="年代" value="80歳以上">80歳以上</label></div></div><div class="hf"><p class="ql">ご家族</p><div class="chips"><label><input type="radio" name="配偶者" value="配偶者がいる">配偶者がいる</label><label><input type="radio" name="配偶者" value="配偶者はいない">配偶者はいない</label></div><div class="chips"><label><input type="radio" name="子どもの人数" value="子ども1人">子ども1人</label><label><input type="radio" name="子どもの人数" value="子ども2人">子ども2人</label><label><input type="radio" name="子どもの人数" value="子ども3人以上">子ども3人以上</label><label><input type="radio" name="子どもの人数" value="子どもはいない">子どもはいない</label></div></div><div class="hf"><p class="ql">気になっていること（いくつでも）</p><div class="chips"><label><input type="checkbox" name="気になること" value="相続税">相続税</label><label><input type="checkbox" name="気になること" value="遺産の分け方">遺産の分け方</label><label><input type="checkbox" name="気になること" value="税金をはらうお金">税金をはらうお金</label><label><input type="checkbox" name="気になること" value="自宅・不動産">自宅・不動産</label><label><input type="checkbox" name="気になること" value="会社・お店の引き継ぎ">会社・お店の引き継ぎ</label><label><input type="checkbox" name="気になること" value="認知症になったとき">認知症になったとき</label></div></div><div class="hf"><p class="ql">財産でいちばん多いもの</p><div class="chips"><label><input type="radio" name="財産" value="自宅・不動産">自宅・不動産</label><label><input type="radio" name="財産" value="預貯金">預貯金</label><label><input type="radio" name="財産" value="株・投資信託">株・投資信託</label><label><input type="radio" name="財産" value="会社の株">会社の株</label><label><input type="radio" name="財産" value="わからない">わからない</label></div></div><div class="hf"><p class="ql">今の生命保険</p><div class="chips"><label><input type="radio" name="今の生命保険" value="入っている">入っている</label><label><input type="radio" name="今の生命保険" value="入っていない">入っていない</label><label><input type="radio" name="今の生命保険" value="わからない">わからない</label></div></div><div class="hf"><p class="ql">ご質問・ご要望など（自由にどうぞ）</p><textarea name="comment" rows="3" placeholder="例：今の保険料が高いので見直したい／平日の夜に電話がほしい"></textarea></div><div class="hf"><p class="ql">ご連絡の方法</p><div class="chips"><label><input type="radio" name="連絡方法" value="LINE">LINE</label><label><input type="radio" name="連絡方法" value="電話">電話</label><label><input type="radio" name="連絡方法" value="メール">メール</label><label><input type="radio" name="連絡方法" value="テレビ電話">テレビ電話</label></div></div><div class="sendrow"><button type="button" class="s-line" data-send="hear-souzoku">LINEで送る</button><button type="button" class="s-form" data-sendform="hear-souzoku">フォームで送る</button></div><p class="note">「LINEで送る」はLINEが開くので送信を押すだけ。「フォームで送る」は<b>Googleフォーム</b>（お名前・ご連絡先を入れる画面）が開き、答えは入った状態です。</p><p class="reply">⏱ 受付から遅くとも<b>翌々日まで</b>に、お見積もりをお返事します。</p><p class="fp">📜 国家資格（FP技能士）をもつファイナンシャルプランナーが担当します。当社は複数の保険会社を扱う乗合代理店です。<a href="#companies" data-v="companies">取扱保険会社一覧 ›</a></p></section>
+<div class="pair"><a class="p2" href="#" onclick="history.back();return false;">← 前の画面に<br>戻る</a><a class="p1" href="#ninchi" data-v="ninchi">トップに<br>戻る</a></div>
 </section><section class="view" id="v-soudan" data-name="soudan">
 <div class="lead"><span class="kicker">無料のご相談</span><h1>どんな保険のことでも、<br>聞いてください。</h1><p>相談しても、申し込まなくて大丈夫です。</p></div>
 <section class="box" id="shindan"><h2>📋 今入っている保険の「無料診断」</h2><p>保険証券の写真を送るだけ。生命保険も、車・家の保険も、まとめて見ます。</p><div class="pill-steps"><div><b>1</b>保険証券（車は車検証も）を用意</div><div><b>2</b>お名前など個人の情報を隠して写真をとる</div><div><b>3</b>メールかフォームで送る</div><div><b>4</b>診断結果をお返事します</div></div><div class="mask"><b>📸 写真を送るときは、ここを隠してください</b><div class="mask-grid"><span>お名前</span><span>ご住所</span><span>電話番号</span><span>生年月日の月日</span><span>証券番号</span><span>車台番号</span></div><p class="note">付箋や指でかくして撮ればOK。保険会社名・補償の中身・保険料・満期日・等級は見えるままにしてください。</p></div><div class="sendrow" style="grid-template-columns:1fr"><a class="s-mail" data-ev="photo_mail" href="mailto:info@lasalle2023.com?subject=%E4%BF%9D%E9%99%BA%E8%A8%BC%E5%88%B8%E3%81%AE%E5%86%99%E7%9C%9F%EF%BC%88%E8%A8%BA%E6%96%AD%E3%83%BB%E3%81%8A%E7%94%B3%E8%BE%BC%E3%81%BF%EF%BC%89&body=%E5%86%99%E7%9C%9F%E3%82%92%E6%B7%BB%E4%BB%98%E3%81%97%E3%81%BE%E3%81%99%E3%80%82%EF%BC%88%E5%80%8B%E4%BA%BA%E6%83%85%E5%A0%B1%E3%81%AF%E9%9A%A0%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%EF%BC%89%0A%E3%81%94%E9%80%A3%E7%B5%A1%E5%85%88%EF%BC%9A">✉️ メールで写真を送る</a><p class="note">メールのあて先：info@lasalle2023.com（ラサール＆パートナーズ）</p><p class="reply">⏱ 受付から遅くとも<b>翌々日まで</b>に、診断結果をお返事します。</p></section>
@@ -439,7 +492,18 @@ ol.flow8 li:before{content:counter(s);position:absolute;left:0;top:8px;width:28p
   </footer></div><script>(function(){var b=document.getElementById("sc-go");if(!b)return;function v(n){var e=document.querySelector('#sc-form input[name="'+n+'"]:checked');return e?parseFloat(e.value):0;}function f(x){return Math.round(x).toLocaleString("ja-JP")+"万円";}b.addEventListener("click",function(){var m=v("months"),total=47.2+v("place")*m,have=v("save")+v("monthly")*m,gap=total-have;document.getElementById("sc-total").textContent="約"+f(total);document.getElementById("sc-have").textContent="約"+f(have);var g=document.getElementById("sc-gap"),msg=document.getElementById("sc-msg");if(gap>0){g.className="big";g.textContent="足りなくなりそうな額：約"+f(gap);msg.textContent="この差を、貯蓄・家族・保険のどれで備えるかを考えておくと安心です。";}else{g.className="big ok";g.textContent="今の見込みで、目安の費用はまかなえそうです";msg.textContent="施設や長めの期間でも試してみると、備えの幅がわかります。";}var r=document.getElementById("sc-res");r.classList.add("show");r.scrollIntoView({behavior:"smooth",block:"start"});try{var p={page:"ninchisho",gap_man:Math.max(0,Math.round(gap))};var s=sessionStorage.getItem("src");if(s)p.src=s;window.gtag&&gtag("event","selfcheck_done",p);}catch(_){}});})();</script><script>
 // どのバナーかを区別する計測（neo / line / tel / form は共通の analytics.js が送る）
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-ev]");if(!a||!window.gtag)return;var p={transport_type:"beacon",page:"ninchisho"};try{var s=sessionStorage.getItem("src");if(s)p.src=s;}catch(_){}gtag("event",a.getAttribute("data-ev"),p);},true);
-</script><div class="toast" id="toast"></div><script>
+</script><script>(function(){var b=document.getElementById("c-go");if(!b)return;
+function v(id){var x=parseFloat(document.getElementById(id).value);return isNaN(x)||x<0?0:x;}
+function tx(a){var t=[[1000,.10,0],[3000,.15,50],[5000,.20,200],[10000,.30,700],[20000,.40,1700],[30000,.45,2700],[60000,.50,4200],[1e12,.55,7200]];for(var i=0;i<t.length;i++){if(a<=t[i][0])return Math.max(0,a*t[i][1]-t[i][2]);}return 0;}
+function f(n){return Math.round(n).toLocaleString("ja-JP");}
+b.addEventListener("click",function(){var sp=+document.getElementById("c-sp").value,ch=+document.getElementById("c-ch").value,n=sp+ch;
+var li=v("c-li"),liFree=Math.min(li,500*n),gross=v("c-dep")+v("c-re")+v("c-st")+(li-liFree)-v("c-db");if(gross<0)gross=0;
+var base=3000+600*n,taxable=Math.max(0,gross-base),total=0,spShare=sp?0.5:0,chShare=sp?0.5/ch:1/ch;
+if(sp)total+=tx(taxable*spShare);for(var i=0;i<ch;i++)total+=tx(taxable*chShare);
+var after=sp?total*(1-spShare):total;
+var r=document.getElementById("c-res");r.hidden=false;
+r.innerHTML="法定相続人："+n+"人<br>課税される財産（保険の非課税枠 "+f(liFree)+"万円を引いた後）："+f(gross)+"万円<br>基礎控除："+f(base)+"万円<br>"+(taxable<=0?"<b>相続税はかからない見込み</b>（基礎控除の範囲内）":"家族全体の相続税の目安：<b>約"+f(after)+"万円</b>"+(sp?"<br><small>（配偶者の税額軽減を使った場合。使わない場合の総額は約"+f(total)+"万円）</small>":""))+"<br><small>※学習用の一般的な試算です。実際の税額は税理士にご確認ください。</small>";
+try{if(window.gtag)gtag("event","souzoku_calc");}catch(e){}});})();</script><div class="toast" id="toast"></div><script>
 (function(){
 var views=["ninchi","gan","jibyo","over70","sonpo","souzoku","soudan","oya","companies"];
 function ev(n,p){try{if(window.gtag){var q={transport_type:"beacon",page:"ninchisho_v2"};var s=sessionStorage.getItem("src");if(s)q.src=s;for(var k in(p||{}))q[k]=p[k];gtag("event",n,q);}}catch(e){}}
