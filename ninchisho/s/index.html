@@ -10,9 +10,12 @@ body{font-size:20px;background:#f5f6f3}
 .brand b{display:block;color:#1f5c4a;font-size:19px;letter-spacing:.02em}
 .brand a{font-weight:700;color:#1f5c4a;text-decoration:none;font-size:15px}
 .tabs6{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
-.tabs6 a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-height:56px;padding:4px 1px;border-radius:14px;background:#f1f4f0;color:#18221f;text-decoration:none;font-size:15px;font-weight:800;font-weight:700;line-height:1.25;text-align:center;border:2px solid transparent}
-.tabs6 a .ic{font-size:22px;line-height:1}
-.tabs6 a.wide{grid-column:1/-1;flex-direction:row;gap:8px;min-height:44px;background:#eaf3ef;border-color:#1f5c4a;color:#1f5c4a}
+.tabs6 a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;min-height:46px;padding:3px 1px;border-radius:12px;background:#f1f4f0;color:#18221f;text-decoration:none;font-size:14px;font-weight:700;line-height:1.2;text-align:center;border:2px solid transparent}
+.tabs6 a .ic{font-size:18px;line-height:1}
+.tabs6.closed{display:none}
+.tabtg{display:block;width:100%;margin:6px 0 0;padding:9px;border:0;border-radius:12px;background:#1f5c4a;color:#fff;font-size:16px;font-weight:800;font-family:inherit;cursor:pointer}
+.tabtg.open{background:#f1f4f0;color:#1f5c4a;border:2px solid #1f5c4a}
+.tabs6 a.wide{grid-column:1/-1;flex-direction:row;gap:8px;min-height:40px;background:#eaf3ef;border-color:#1f5c4a;color:#1f5c4a}
 .tabs6 a.wide .ic{font-size:20px}
 .tabs6 a.wide[aria-current="page"]{background:#1f5c4a;color:#fff}
 .deskband{display:flex;align-items:center;gap:10px;background:#eaf3ef;border:2px solid #1f5c4a;border-radius:16px;padding:12px 14px;margin:8px 0 16px;color:#18221f;text-decoration:none;line-height:1.6}
@@ -145,7 +148,7 @@ ol.flow8 li:before{content:counter(s);position:absolute;left:0;top:8px;width:28p
 .seg4{grid-template-columns:repeat(4,1fr)}
 .seg4 button{font-size:15px}
 </style></head><body><div class="wrap"><div class="top"><div class="brand"><span><b>ラサール＆パートナーズ</b>（保険代理店）</span><a class="telbtn" href="tel:05036964531" data-ev="tel_top"><small>☎ 電話で相談</small><span>050-3696-4531</span></a></div>
-<nav class="tabs6" aria-label="ページの切り替え">
+<nav class="tabs6" id="tabs-nav" aria-label="ページの切り替え">
 <a href="#ninchi" data-v="ninchi"><span class="ic">🌿</span>認知症の<br>備え</a>
 <a href="#gan" data-v="gan"><span class="ic">🎗️</span>がんの<br>備え</a>
 <a href="#jibyo" data-v="jibyo"><span class="ic">💊</span>持病が<br>ある方</a>
@@ -156,7 +159,7 @@ ol.flow8 li:before{content:counter(s);position:absolute;left:0;top:8px;width:28p
 <a href="#oya" data-v="oya"><span class="ic">👪</span>親御さんの<br>保険</a>
 <a href="#oyanaki" data-v="oyanaki"><span class="ic">🤲</span>障がいと<br>親なきあと</a>
 <a href="#desk" data-v="desk" class="wide"><span class="ic">🛡️</span>ご契約後の安心｜ラサール クライアントデスク</a>
-</nav></div><main id="main-content"><section class="view" id="v-ninchi" data-name="ninchi">
+</nav><button type="button" class="tabtg" id="tabtg" aria-controls="tabs-nav" aria-expanded="true">▲ メニューをたたんで、下へ読み進める</button></div><main id="main-content"><section class="view" id="v-ninchi" data-name="ninchi">
 <div class="src-hero" id="hero-jihyo" hidden><img src="/img/jihyo_hero.jpg" width="540" height="540" alt="机の上に置かれた一通の封筒"><p>あなたは、どうしますか。<small>元気なうちに、決めておけること。</small></p></div>
 <div class="src-hero dark" id="hero-soba" hidden><p><span>🍜</span>父は今夜も、そばを打つ。<small>その手が止まる日のことを、少しだけ考えてみませんか。</small></p></div>
 <div class="hero-people" id="hero-default"><img src="/img/ninchisho_hero.jpg" width="1086" height="362" alt="穏やかな表情の60代の男性と女性のイラスト"></div>
@@ -639,7 +642,11 @@ function ev(n,p){try{if(window.gtag){var q={transport_type:"beacon",page:"ninchi
 function show(v,push){if(views.indexOf(v)<0)v="ninchi";views.forEach(function(x){document.getElementById("v-"+x).classList.toggle("on",x===v);});
 document.querySelectorAll(".tabs6 a").forEach(function(a){if(a.getAttribute("data-v")===v)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");});
 if(push)history.pushState(null,"","#"+v);window.scrollTo(0,0);ev("view_"+v);}
-document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[data-v]");if(!a)return;e.preventDefault();show(a.getAttribute("data-v"),true);});
+var tg=document.getElementById("tabtg"),nv=document.getElementById("tabs-nav");
+function fold(c,user){nv.classList.toggle("closed",c);tg.classList.toggle("open",c);tg.setAttribute("aria-expanded",c?"false":"true");tg.textContent=c?"☰ ご相談メニュー（10個）をひらく ▼":"▲ メニューをたたんで、下へ読み進める";try{sessionStorage.setItem("tabfold",c?"1":"0");}catch(e){}if(user)ev(c?"menu_fold":"menu_open");}
+if(tg&&nv){tg.addEventListener("click",function(){var c=!nv.classList.contains("closed");fold(c,true);if(c){var m=document.getElementById("main-content");if(m)m.scrollIntoView({behavior:"smooth",block:"start"});}});
+try{if(sessionStorage.getItem("tabfold")==="1")fold(true,false);}catch(e){}}
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[data-v]");if(!a)return;e.preventDefault();if(nv&&a.closest("#tabs-nav"))fold(true,false);show(a.getAttribute("data-v"),true);});
 window.addEventListener("popstate",function(){show(location.hash.slice(1),false);});
 show(location.hash.slice(1)||"ninchi",false);
 // がんチェック
