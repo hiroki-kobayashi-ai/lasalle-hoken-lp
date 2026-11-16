@@ -517,6 +517,11 @@ V_JIBYO = f'''<section class="view" id="v-jibyo" data-name="jibyo">
 </section>'''
 
 
+
+JOIN_WAYS = ('<section class="box" style="border:2px solid #1f5c4a"><h2>🏢 豊富な保険会社から選べます</h2>'
+ '<p style="line-height:1.8;margin:0">生命保険8社・損害保険2社の商品から、お客さまに合うものを一緒に選びます。'
+ 'ご加入は、<b>スマホ面談（テレビ電話）</b>でも、もちろん<b>対面</b>でもできます。ご都合のよい方法をお選びください。</p></section>')
+
 OVER70_HOOK = ('<section class="box o70"><h2>70歳から、何が変わる？</h2>'
  '<p class="o70lead">保険は「入りたい」と思った時に、入れるとは限りません。数字で見てみましょう。</p>'
  '<div class="o70stats">'
@@ -546,6 +551,7 @@ OVER70_NEXT = ('<section class="box"><h2>送ったあと、こう進みます</h
 V_70 = f'''<section class="view" id="v-over70" data-name="over70">
 <div class="lead"><span class="kicker">70歳以上の方へ</span><h1>あなたに合う保険を、<br>私たちがお調べします。</h1><p>わかるところだけ答えて、送るだけ。</p></div>
 {OVER70_HOOK}
+{JOIN_WAYS}
 {OVER70_FORM}
 {OVER70_NEXT}
 <section class="box" hidden><h2>このあとの流れ</h2><div class="pill-steps">
@@ -559,6 +565,7 @@ V_SOUDAN = f'''<section class="view" id="v-soudan" data-name="soudan">
 <section class="box"><h2>🙋 自分で決める方はこちら</h2><p>相談せずに、ご自身で保険料を見て、そのままスマホで申し込むこともできます。</p>
 <a class="cta js-neo" data-ev="neo_other" id="banner-other-soudan" href="{NEO_ALL}" target="_blank" rel="noopener noreferrer">自分で決める｜保険を選んで保険料を見る<small>第一ネオ生命（第一生命グループ）の画面へ・試算だけなら申込みになりません</small></a>
 <p class="note">迷ったら、下の無料相談からどうぞ。</p></section>
+{JOIN_WAYS}
 {AFTER_BOX}
 {CASES_BOX}
 {DESK_MINI}
