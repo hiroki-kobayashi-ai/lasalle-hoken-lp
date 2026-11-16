@@ -437,7 +437,7 @@ DESK_MINI = ('<section class="box" style="border:2px solid #1f5c4a"><h2>🛡️ 
  '<a class="cta sub" href="#desk" data-v="desk" data-ev="desk_more">クライアントデスクのくわしい説明を見る</a></section>')
 CASES_BOX = '<section class="box" id="cases"><h2>📖 実際にあったお話（契約のあとこそ）</h2><p style="line-height:1.8">代表がこれまでにお預かりしてきたご契約は<b>500件以上</b>。保険金・給付金をお届けしたご家族と、今も長いお付き合いが続いています。</p><ul class="kv"><li><b>Mさん（当時70代の奥さま・仮名）</b>ご主人が長く入院され、入院給付金の支払い日数は上限に。奥さまはパートで病院代を払い続けていました。たまたま伺った際に状況をうかがい、当社募集人が主治医にヒアリングすると<b>高度障害の状態</b>にあたることが分かりました。診断書のお願いの仕方もご案内して請求し、<b>高度障害保険金5,000万円</b>をお届けできました。ご本人もご家族も、保険が出るとは気づいていなかったケースです。</li><li><b>Kさん（50代の男性・仮名）</b>軽度の障がいをお持ちの方でした。お母さまと母一人・子一人のご家庭で、80歳ごろのお母さまがお亡くなりになり、Kさんはお一人になりました。死亡保険金をお届けし、税理士と一緒に相続税の手続きを進め、暮らしに必要な手配もお手伝いしました。その後も寄り添い続け、<b>10年以上のお付き合い</b>になっています。</li></ul><p class="note">※個人が特定されないよう、仮名で紹介しています。保険金・給付金が出るかどうか、その金額は、ご契約の内容と保険会社の審査によります。</p></section>'
 TOKUTEN_BOX = ('<section class="box" id="tokuten" style="border:2px solid #d9822b;background:#fffaf3"><h2>🎁 いまだけの特典（どなたでも）</h2>'
- '<p style="line-height:1.8;margin:0 0 8px"><b>11月30日まで、このページに来た方全員に</b>「お金と制度の早わかり表 2026年版」（入院・介護・年金・相続で国からいくら戻るか、A4・9ページ）を無料でお渡しします。</p>'
+ '<p style="line-height:1.8;margin:0 0 8px"><b>11月30日まで、どなたでも無料でダウンロードできます。</b>「お金と制度の早わかり表 2026年版」（入院・介護・年金・相続で国からいくら戻るか、A4・9ページ）。下のボタンを押すとPDFが開きます。LINE登録やお名前の入力はいりません。</p>'
  '<a class="cta sub" href="/tokuten/hayawakari-2026.pdf" target="_blank" rel="noopener" data-ev="tokuten_pdf">📥 早わかり表（PDF）をダウンロードする</a>'
  '<p style="line-height:1.8;margin:10px 0 8px"><b>LINEのお友だち登録をした方全員に</b>、お孫さん・お子さんが主役の<b>20秒程度の紙芝居ドラマ</b>をお作りします。<b>お好きなあらすじ</b>をLINEで送ってください（呼び名と好きなことだけでもOK。ご自身が主役でも）。<br><small>※保険のご相談やご契約とは関係なく、どなたにもお作りします。</small></p>'
  '<a class="cta line" href="'+LINE+'" target="_blank" rel="noopener noreferrer" data-ev="tokuten_line">LINEでお友だち登録する</a></section>')
@@ -865,7 +865,7 @@ document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener
 
 html = ('<!doctype html>\n<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
         '<meta name="robots" content="noindex"><title>認知症・がん・保険のご相談｜ラサール＆パートナーズ</title>'
-        '<style>' + head_css + CSS + '</style></head><body><div class="wrap">' + TOP + '<main id="main-content"><a class="tkband" href="#tokuten" data-scroll="tokuten" data-ev="tokuten_band">🎁 <b>無料特典</b>：お金と制度の早わかり表（PDF）・お孫さんが主役の紙芝居ドラマ <span>受け取る ›</span></a>'
+        '<style>' + head_css + CSS + '</style></head><body><div class="wrap">' + TOP + '<main id="main-content"><a class="tkband" href="#tokuten" data-scroll="tokuten" data-ev="tokuten_band">🎁 <b>無料特典</b>：お金と制度の早わかり表（PDF・ボタン1つでダウンロード）／LINE登録でお孫さんが主役の紙芝居ドラマ <span>受け取る ›</span></a>'
         + V_NINCHI + V_GAN + V_JIBYO + V_70 + V_SONPO + V_SOUZOKU + V_SOUDAN + V_OYA + V_OYANAKI + V_DESK + V_COMP + '</main>' + TOKUTEN_BOX + DESK_BAND + LEGAL + FOOT + '</div>'
         + SC_JS + EV_JS + JS + '<script src="/analytics.js?v=20261116"></script></body></html>')
 import os
