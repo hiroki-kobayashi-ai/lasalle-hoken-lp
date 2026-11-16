@@ -520,7 +520,7 @@ V_JIBYO = f'''<section class="view" id="v-jibyo" data-name="jibyo">
 
 JOIN_WAYS = ('<section class="box" style="border:2px solid #1f5c4a"><h2>🏢 豊富な保険会社から選べます</h2>'
  '<p style="line-height:1.8;margin:0">生命保険8社・損害保険2社の商品から、お客さまに合うものを一緒に選びます。'
- 'ご加入は、<b>スマホ面談（テレビ電話）</b>でも、もちろん<b>対面</b>でもできます。ご都合のよい方法をお選びください。</p></section>')
+ 'ご加入は、<b>スマホ面談（テレビ電話）</b>でも、もちろん<b>対面</b>でもできます。ご都合のよい方法をお選びください。<br>車・家などの<b>損害保険は、お電話だけでもご加入の手続き</b>ができます。</p></section>')
 
 OVER70_HOOK = ('<section class="box o70"><h2>70歳から、何が変わる？</h2>'
  '<p class="o70lead">保険は「入りたい」と思った時に、入れるとは限りません。数字で見てみましょう。</p>'
