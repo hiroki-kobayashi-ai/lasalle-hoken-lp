@@ -928,18 +928,21 @@ function ev(n){try{if(window.gtag)gtag("event",n,{transport_type:"beacon",page:"
 function close(){var b=document.querySelector(".ng-bg");if(b)b.remove();}
 function open(pos,name,orig){
  close();
- var where=pos?('開いたページを下へ進み、<b>上から<span class="pos">'+pos+'番目</span>の「'+name+'」</b>を探します。'):('開いたページに、保険が上から順に並んでいます。<ol class="nglist">'+LIST.map(function(x){return '<li>上から'+x[0]+'番目：<b>'+x[1]+'</b>（'+x[2]+'）</li>';}).join('')+'</ol>');
+ var where=pos?('開いたページを下へ進み、<b>上から<span class="pos">'+pos+'番目</span>の「'+name+'」</b>を選び、その横の<b>「インターネットでお申込み」</b>を押します。'):('開いたページに、保険が上から順に並んでいます。<ol class="nglist">'+LIST.map(function(x){return '<li>上から'+x[0]+'番目：<b>'+x[1]+'</b>（'+x[2]+'）</li>';}).join('')+'</ol>入りたい保険を選び、その横の<b>「インターネットでお申込み」</b>を押します。');
  var h='<div class="ng" role="dialog" aria-label="第一ネオ生命のページの見方"><button class="ngx" type="button" aria-label="閉じる">×</button>'
- +'<h3>第一ネオ生命のページは、この順で見てください</h3>'
- +'<div class="ngkey">保険料より先に、<u>「どんなときに・いくら出るか」</u>を見るのがコツです。<br>保障を決めてから保険料を見ると、迷いません。</div>'
- +'<ol><li>'+where+'</li>'
- +'<li>まず<b>「商品パンフレット」</b>を押して、<b>どんなときに出るか／いくら出るか／いつまで続くか</b>の3つを確認します。</li>'
- +'<li>納得したら<b>「インターネットでお申込み」</b>を押し、<b>生年月日と性別</b>を入れます（保険料の計算に使います。まだ申込みにはなりません）。</li>'
- +'<li>保険料が出たら、右の青い<b>「ⓘ商品詳細」</b>でもう一度保障を確認。<b>「プラン内容を確認・変更する」</b>で受け取る金額を選ぶと、保険料が変わります。</li>'
- +'<li>決まったら<b>「申込み手続きに進む」</b>。わからないところは、いつでもLINEで聞けます。</li></ol>'
+ +'<h3>第一ネオ生命のページは、この順で進んでください</h3>'
+ +'<div class="ngkey">保険料が出たら、まず<u>「どんなときに・どんな保障が受けられるか」</u>を確認するのがコツです。</div>'
+ +'<ol><li>'+where+'<br><small>※「商品パンフレット」はPDFが開いて戻りにくくなるので、押さなくて大丈夫です。</small></li>'
+ +'<li><b>生年月日と性別</b>を入れて、<b>「保険料見積もりスタート」</b>を押します。<br><small>※保険料を見るだけなら、お申込みにはなりません。ご安心ください。</small></li>'
+ +'<li>月払の保険料が出ます。<b>右上の青い文字「ⓘ商品詳細」</b>を押してください。<b>どんなときに、どんな保障が受けられるか</b>と、商品の特徴が書いてあります。</li>'
+ +'<li><b>「プラン内容を確認・変更する」</b>で、保障の金額を選べます。金額を変えると、保険料も変わります。</li>'
+ +'<li>ご納得いただけたら、ほかに入っておきたい保険がないかも一応見てみてください。一番下の<b>「結果を保存」</b>で保存もできます。</li>'
+ +'<li>右下のオレンジのボタン<b>「申込み手続きに進む」</b>→確認事項→青いボタン<b>「申込み手続きに進む」</b>の順に進みます。ここから、メールアドレスなどを入れてスマホでお申込みできます。</li></ol>'
+ +'<div class="ngkey" style="background:#eaf3ef;border-color:#1f5c4a">途中でわからなくなったら、すぐこのページに戻って、LINEかお電話でご連絡ください。操作をサポートします。</div>'
  +'<a class="nggo js-neo" href="'+ALL+'" target="_blank" rel="noopener noreferrer" data-go="1" data-ev="'+(orig||"neo_guide")+'">第一ネオ生命のページを開く</a>'
  +'<a class="ngline" href="'+LINE+'" target="_blank" rel="noopener noreferrer" data-ev="neo_guide_line">先にLINEで相談する（無料）</a>'
- +'<p class="note" style="margin:8px 0 0">保険料を見るだけなら、申込みにはなりません。</p></div>';
+ +'<a class="ngline" href="tel:05036964531" data-ev="neo_guide_tel" style="background:#fff;color:#1f5c4a;border:2px solid #1f5c4a;margin-top:8px">電話で聞く　050-3696-4531</a>'
+ +'<p class="note" style="margin:8px 0 0">保険料を見るだけなら、お申込みにはなりません。</p></div>';
  var bg=document.createElement("div");bg.className="ng-bg";bg.innerHTML=h;document.body.appendChild(bg);
  bg.addEventListener("click",function(e){if(e.target===bg||e.target.classList.contains("ngx")){ev("neo_guide_close");close();}});
  bg.querySelector(".nggo").addEventListener("click",function(){setTimeout(close,300);});
