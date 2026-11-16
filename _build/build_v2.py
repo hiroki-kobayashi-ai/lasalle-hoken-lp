@@ -788,6 +788,8 @@ V_OYANAKI = f'''<section class="view" id="v-oyanaki" data-name="oyanaki">
 </ul><p class="note">お取り次ぎは無料です。専門家に正式にご依頼される場合の報酬は、各事務所との直接のお取り決めになります。</p></section>
 <section class="box"><h2>🏢 相談支援専門員・支援者のみなさまへ</h2><p style="line-height:1.8">「親なきあと」を、ひとりの相談員・ひとつの家庭だけで抱えないために。福祉だけでは解けない論点（お金・法律・相続・保険）を整理する<b>30〜45分のミニ勉強会</b>も承ります。営業・商品説明を目的とした会ではありません。</p></section>
 <div class="pair"><a class="p1" href="#hear-oyanaki" data-scroll="hear-oyanaki">かんたん<br>相談メモへ<small>1分・お名前は不要</small></a><a class="p2" href="{TEL}" data-ev="oyanaki_tel">電話で<br>相談する<small>050-3696-4531</small></a></div>
+<section class="box"><p class="note" style="margin:0 0 4px">保険のご相談・お申込みもできます。</p>
+{pair(NEO_ALL,'保障と保険料を<br>自分で見てみる','第一ネオ生命（第一生命グループ）の画面へ',ev='oyanaki')}</section>
 {DESK_MINI}
 {OYANAKI_FORM}
 <div class="pair"><a class="p2" href="#" onclick="history.back();return false;">← 前の画面に<br>戻る</a><a class="p1" href="#ninchi" data-v="ninchi">トップに<br>戻る</a></div>
