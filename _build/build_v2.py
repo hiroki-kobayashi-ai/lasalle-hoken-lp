@@ -970,7 +970,7 @@ document.addEventListener("click",function(e){
 });
 })();
 </script>""" % (NEO_ALL.replace('&amp;','&'), LINE)
-html = html.replace('</body></html>', NEO_GUIDE_JS + '''<script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[data-after]");if(!a)return;var id=a.getAttribute("data-after");setTimeout(function(){var el=document.getElementById(id);if(el){var y=el.getBoundingClientRect().top+window.scrollY-70;window.scrollTo({top:y,behavior:"smooth"});}},150);});</script>''' + '</body></html>')
+html = html.replace('</body></html>', NEO_GUIDE_JS + '''<script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[data-after]");if(!a)return;var id=a.getAttribute("data-after");setTimeout(function(){var el=document.querySelector(".view.on [id=\""+id+"\"]")||document.getElementById(id);if(el){var y=el.getBoundingClientRect().top+window.scrollY-70;window.scrollTo({top:y,behavior:"smooth"});}},150);});</script>''' + '</body></html>')
 
 open('/home/claude/lp/ninchisho/v2/index.html', 'w', encoding='utf8').write(html)
 print(len(html))
