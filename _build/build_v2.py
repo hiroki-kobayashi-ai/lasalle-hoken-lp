@@ -931,7 +931,7 @@ function open(pos,name,orig){
  var where=pos?('開いたページを下へ進み、<b>上から<span class="pos">'+pos+'番目</span>の「'+name+'」</b>を選び、その横の<b>「インターネットでお申込み」</b>を押します。'):('開いたページに、保険が上から順に並んでいます。<ol class="nglist">'+LIST.map(function(x){return '<li>上から'+x[0]+'番目：<b>'+x[1]+'</b>（'+x[2]+'）</li>';}).join('')+'</ol>入りたい保険を選び、その横の<b>「インターネットでお申込み」</b>を押します。');
  var h='<div class="ng" role="dialog" aria-label="第一ネオ生命のページの見方"><button class="ngx" type="button" aria-label="閉じる">×</button>'
  +'<h3>第一ネオ生命のページは、この順で進んでください</h3>'
- +'<div class="ngkey" style="background:#fdeaea;border-color:#c0392b">📧 <b>ネットでのお申込みには、メールアドレスが必要です。</b>申込みの前にメールで届く確認コードを入れます。メールアドレスがない方・メールが苦手な方は、LINEかお電話でご相談ください（郵送でのお申込みもご案内できます）。</div>'
+ +'<div class="ngkey" style="background:#fdeaea;border-color:#c0392b">📧 <b>ネットでのお申込みには、メールアドレスが必要です。</b>申込みの前にメールで届く確認コードを入れます。メールアドレスがない方・メールが苦手な方は、まず<b>LINEでご相談ください</b>。担当がお手続きまでご案内します。<a href="#soudan" data-v="soudan" class="ngsoudan" style="display:block;margin-top:6px;font-weight:800;color:#1f5c4a">→ 保険の相談へ進む</a></div>'
  +'<div class="ngkey">保険料が出たら、まず<u>「どんなときに・どんな保障が受けられるか」</u>を確認するのがコツです。</div>'
  +'<ol><li>'+where+'<br><small>※「商品パンフレット」はPDFが開いて戻りにくくなるので、押さなくて大丈夫です。</small></li>'
  +'<li><b>生年月日と性別</b>を入れて、<b>「保険料見積もりスタート」</b>を押します。<br><small>※保険料を見るだけなら、お申込みにはなりません。ご安心ください。</small></li>'
@@ -947,6 +947,7 @@ function open(pos,name,orig){
  var bg=document.createElement("div");bg.className="ng-bg";bg.innerHTML=h;document.body.appendChild(bg);
  bg.addEventListener("click",function(e){if(e.target===bg||e.target.classList.contains("ngx")){ev("neo_guide_close");close();}});
  bg.querySelector(".nggo").addEventListener("click",function(){setTimeout(close,300);});
+ var sd=bg.querySelector(".ngsoudan");if(sd)sd.addEventListener("click",function(){ev("neo_guide_soudan");close();});
  ev("neo_guide_open");
 }
 window.__openNeoGuide=open;
