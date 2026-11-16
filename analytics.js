@@ -134,9 +134,11 @@
     box.setAttribute("role", "dialog");
     box.setAttribute("aria-label", "迷ったらLINEで聞けます");
     box.innerHTML = '<div class="in"><button type="button" aria-label="閉じる">×</button>'
-      + '<p>申込みの画面で迷いましたか？</p>'
-      + '<small>どの保険がいいか、ご家族の分など、LINEでそのまま聞けます。無料です。聞いても申し込まなくて大丈夫です。</small>'
-      + '<a href="' + LINE_URL + '" target="_blank" rel="noopener noreferrer" data-ev="neo_return_line">LINEで聞いてみる</a></div>';
+      + '<p>もう一度、考えてみませんか？</p>'
+      + '<small>保険は、一度入院したり病気が見つかったりすると、告知に当てはまって入れなくなることがあります。年齢が上がるほど保険料も上がります。迷ったところは、LINEでそのまま聞けます（無料・申し込まなくてOK）。</small>'
+      + '<a href="' + LINE_URL + '" target="_blank" rel="noopener noreferrer" data-ev="neo_return_line">LINEで相談する</a>'
+      + (window.__openNeoGuide ? '<a href="#" class="neo-return-guide" data-ev="neo_return_guide" style="background:#fff;color:#1f5c4a;border:2px solid #1f5c4a;margin-top:8px;min-height:50px;font-size:18px">保障の見方をもう一度見る</a>' : '')
+      + '</div>';
     document.body.appendChild(box);
     sendNow("neo_return");
     box.querySelector("a").addEventListener("click", function(){
@@ -145,6 +147,8 @@
       box.remove();
     });
     box.querySelector("button").addEventListener("click", function(){ sendNow("neo_return_close"); box.remove(); });
+    var g = box.querySelector(".neo-return-guide");
+    if(g) g.addEventListener("click", function(e){ e.preventDefault(); box.remove(); try{ window.__openNeoGuide("", "", "neo_return_go"); }catch(_){} });
   }
   // 別タブのNeoから戻った（このタブが再び表示された・前面に戻った）
   function backFromNeo(){

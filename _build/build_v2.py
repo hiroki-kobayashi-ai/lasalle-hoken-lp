@@ -50,6 +50,7 @@ body{font-size:20px;background:#f5f6f3}
 .deskband b{color:#1f5c4a}.deskband .ar{margin-left:auto;font-weight:800;color:#1f5c4a;white-space:nowrap}
 .telrow{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;margin:0 0 6px;border:2px solid #d6ded9;border-radius:12px;text-decoration:none;color:#18221f;background:#fff}.telrow span{display:flex;flex-direction:column;line-height:1.35}.telrow small{font-size:13px;color:#4f5c57}.telrow em{font-style:normal;font-weight:800;color:#1f5c4a;white-space:nowrap;font-size:16px}
 .tkband{display:block;margin:10px 0 12px;padding:10px 12px;border-radius:12px;background:#fff6ec;border:2px solid #d9822b;color:#18221f;text-decoration:none;font-size:15px;line-height:1.5}.tkband span{font-weight:800;color:#b5651d;white-space:nowrap}
+.o70 h2{font-size:24px}.o70lead{font-weight:700;margin:0 0 10px}.o70stats{display:grid;grid-template-columns:1fr;gap:8px;margin:8px 0 14px}.o70stats div{background:#fff6ec;border:2px solid #d9822b;border-radius:14px;padding:10px 12px;line-height:1.5}.o70stats b{display:block;font-size:30px;color:#b5651d;line-height:1.2}.o70stats span{display:block;font-weight:700}.o70stats i{display:block;font-style:normal;font-size:14px;color:#4f5c57}.talk{margin:6px 0 10px}.tk{display:flex;align-items:flex-end;gap:8px;margin:8px 0}.tk.r{justify-content:flex-end}.tk .av{font-size:34px;line-height:1}.tk p{margin:0;padding:10px 14px;border-radius:18px;background:#eaf3ef;max-width:78%;line-height:1.6;position:relative}.tk.r p{background:#fdf0e1}.o70why{margin:6px 0 10px;padding-left:1.2em;line-height:1.7}.o70why li{margin:4px 0}.o70now{text-align:center;font-size:21px;line-height:1.6;margin:12px 0 8px}.o70now b{color:#b5651d;font-size:24px}.o70who{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}.o70who a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:64px;border-radius:14px;background:#1f5c4a;color:#fff;font-weight:800;font-size:15px;line-height:1.35;text-decoration:none;padding:6px}.o70who small{font-size:12px;font-weight:400}.ng-bg{position:fixed;inset:0;background:#18221f99;z-index:10000;display:flex;align-items:flex-end;justify-content:center}.ng{background:#fff;max-width:640px;width:100%;max-height:92vh;overflow:auto;border-radius:18px 18px 0 0;padding:18px 16px 22px;position:relative;line-height:1.65}.ng h3{font-size:22px;margin:0 36px 6px 0}.ng .ngkey{background:#fff6ec;border:2px solid #d9822b;border-radius:12px;padding:8px 12px;font-weight:700;margin:6px 0 10px}.ng ol{padding-left:1.3em;margin:6px 0}.ng li{margin:6px 0}.ng .pos{display:inline-block;background:#1f5c4a;color:#fff;border-radius:8px;padding:0 8px;font-weight:800}.ng .ngx{position:absolute;top:8px;right:8px;width:44px;height:44px;border:0;background:none;font-size:28px;cursor:pointer;color:#4f5c57}.ng .nglist{margin:4px 0 6px;padding-left:1.4em}.ng .nglist li{margin:2px 0}.ng a.nggo{display:flex;justify-content:center;align-items:center;min-height:58px;border-radius:14px;background:#d9822b;color:#fff;font-size:20px;font-weight:800;text-decoration:none;margin:12px 0 6px}.ng a.ngline{display:flex;justify-content:center;align-items:center;min-height:50px;border-radius:14px;background:#06c755;color:#fff;font-size:18px;font-weight:700;text-decoration:none}.neopos{display:block;font-size:13px;font-weight:700;opacity:.95;margin-top:2px}
 .desk3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:10px 0}.desk3 div{background:#f1f4f0;border-radius:14px;padding:10px 6px;text-align:center;line-height:1.4}.desk3 b{display:block;font-size:19px;color:#1f5c4a}.desk3 span{font-size:13px;color:#4f5c57}
 .tabs6 a[aria-current="page"],.tabs6 a.small[aria-current="page"]{background:#1f5c4a;color:#fff}
 .tabs6 a.small{font-size:14px;color:#4f5c57}
@@ -391,7 +392,8 @@ def pair(first_href, first_label, first_small, neo=True, ev="pair"):
           else f'<a class="p1" href="{first_href}" data-v="{first_href[1:]}">{first_label}<small>{first_small}</small></a>')
     return f'<div class="pair">{a1}<a class="p2" href="#soudan" data-v="soudan">あらゆる保険の<br>相談をする<small>無料・申し込まなくてOK</small></a></div>'
 OVER70_FORM = hear("hear-70", "70歳以上の方のご相談", "家族のための保障",
-    q("どんな保険をお探しですか？（いくつでも）", opts("探している保険", ["認知症","がん","医療・入院","介護","お葬式・死亡","相続","資産形成（資産運用）","まだわからない"], multi=True))
+    q("どなたのためのご相談ですか？", opts("相談の立場", ["ご自分のため","親御さんのため（お子さまから）","今の保険の確認"]))
+    + q("どんな保険をお探しですか？（いくつでも）", opts("探している保険", ["認知症","がん","医療・入院","介護","お葬式・死亡","相続","資産形成（資産運用）","まだわからない"], multi=True))
     + q("ご希望の保険会社（いくつでも）", opts("希望の保険会社", ["特にない"] + LIFE_CO + NONLIFE_CO, multi=True)
         + '<input type="text" name="その他の保険会社" placeholder="その他の保険会社（わかれば）" style="margin-top:8px">')
     + q("性別", opts("性別", ["男性","女性"]))
@@ -513,10 +515,39 @@ V_JIBYO = f'''<section class="view" id="v-jibyo" data-name="jibyo">
 {AFTER_MINI}
 </section>'''
 
+
+OVER70_HOOK = ('<section class="box o70"><h2>70歳から、何が変わる？</h2>'
+ '<p class="o70lead">保険は「入りたい」と思った時に、入れるとは限りません。数字で見てみましょう。</p>'
+ '<div class="o70stats">'
+ '<div><b>約3.4倍</b><span>入院する人の割合<br>（50代前半とくらべて70代前半）</span><i>人口10万人あたり 441人→1,502人</i></div>'
+ '<div><b>約8倍</b><span>がんと診断される男性の割合<br>（50代前半とくらべて70代前半）</span><i>人口10万人あたり 322人→2,685人（女性は約2.2倍）</i></div>'
+ '<div><b>43.4%</b><span>収入が年金だけの<br>高齢者世帯</span><i>入院やがんの費用は、貯金を取り崩すことに</i></div>'
+ '</div>'
+ '<div class="talk"><div class="tk l"><span class="av">👵</span><p>70を過ぎてから、まわりで「がんが見つかった」って話をよく聞くようになったのよね。</p></div>'
+ '<div class="tk r"><p>年金暮らしだと、入院したら貯金から出すしかないんだよな。</p><span class="av">👴</span></div>'
+ '<div class="tk l"><span class="av">👩</span><p>元気な今のうちに、一度だけ聞いてみたら？　相談だけならタダなんだし。</p></div>'
+ '<p class="note" style="text-align:right">※会話はイメージです</p></div>'
+ '<ul class="o70why"><li><b>保険料は、申し込む年齢で決まります。</b>1歳上がるごとに高くなるのが一般的です。</li>'
+ '<li><b>一度入院・手術をすると、入れなくなることがあります。</b>告知（健康状態の質問）に当てはまると、お断りや条件付きになることがあります。</li>'
+ '<li><b>年齢が上がるほど、選べる保険が減っていきます。</b>入れる年齢に上限がある保険も多いです。</li></ul>'
+ '<p class="o70now">思い立った今日が、いちばん若い日です。<br><b>今、相談しちゃいましょう。</b></p>'
+ '<div class="o70who"><a href="#hear-70" data-who="ご自分のため" data-ev="o70_self">👤 ご自分のため</a>'
+ '<a href="#hear-70" data-who="親御さんのため（お子さまから）" data-ev="o70_parent">👪 親御さんのため<br><small>お子さまから</small></a>'
+ '<a href="#hear-70" data-who="今の保険の確認" data-ev="o70_check">📋 今の保険の確認</a></div>'
+ '<p class="src2">出典：厚生労働省「令和5年 患者調査」入院受療率、厚生労働省「令和5年 全国がん登録 罹患数・率 報告」年齢階級別罹患率、厚生労働省「2024年 国民生活基礎調査」（公的年金・恩給を受給している高齢者世帯のうち、総所得に占める割合が100%の世帯）</p></section>')
+OVER70_NEXT = ('<section class="box"><h2>送ったあと、こう進みます</h2><div class="pill-steps">'
+ '<div><b>1</b>担当から、受付から<b>遅くとも翌々日まで</b>にご連絡します</div>'
+ '<div><b>2</b>お電話かテレビ電話で、まず<b>「どんなときに・いくら出るか」</b>を一緒に確認します</div>'
+ '<div><b>3</b>生年月日と性別をうかがって、<b>保険料をお出しします</b></div>'
+ '<div><b>4</b>パンフレットと重要事項説明書をお送りし、ご納得いただけたらお申込みへ</div></div>'
+ '<p class="note">ご家族も一緒に聞けます（ご希望の方だけ。ご本人だけでも大丈夫です）。</p></section>')
+
 V_70 = f'''<section class="view" id="v-over70" data-name="over70">
 <div class="lead"><span class="kicker">70歳以上の方へ</span><h1>あなたに合う保険を、<br>私たちがお調べします。</h1><p>わかるところだけ答えて、送るだけ。</p></div>
+{OVER70_HOOK}
 {OVER70_FORM}
-<section class="box"><h2>このあとの流れ</h2><div class="pill-steps">
+{OVER70_NEXT}
+<section class="box" hidden><h2>このあとの流れ</h2><div class="pill-steps">
 <div><b>1</b>いまの内容を送る</div><div><b>2</b>担当がお客さまに合う保険をお調べします</div><div><b>3</b>保険料やパンフレットを、ご希望の方法でご案内します</div><div><b>4</b>ご納得いただけたら、お手続きをご案内します</div></div>
 <p class="callrow">お電話でもどうぞ<br><a href="{TEL}" data-ev="tel_70">050-3696-4531</a><br><span class="note">月〜金 9:00〜18:00</span></p></section>
 {AFTER_MINI}
@@ -867,8 +898,67 @@ html = ('<!doctype html>\n<html lang="ja"><head><meta charset="utf-8"><meta name
         '<meta name="robots" content="noindex"><title>認知症・がん・保険のご相談｜ラサール＆パートナーズ</title>'
         '<style>' + head_css + CSS + '</style></head><body><div class="wrap">' + TOP + '<main id="main-content"><a class="tkband" href="#tokuten" data-scroll="tokuten" data-ev="tokuten_band">🎁 <b>無料特典</b>：お金と制度の早わかり表（PDF・ボタン1つでダウンロード）／LINE登録でお孫さんが主役の紙芝居ドラマ <span>受け取る ›</span></a>'
         + V_NINCHI + V_GAN + V_JIBYO + V_70 + V_SONPO + V_SOUZOKU + V_SOUDAN + V_OYA + V_OYANAKI + V_DESK + V_COMP + '</main>' + TOKUTEN_BOX + DESK_BAND + LEGAL + FOOT + '</div>'
-        + SC_JS + EV_JS + JS + '<script src="/analytics.js?v=20261116"></script></body></html>')
+        + SC_JS + EV_JS + JS + '<script src="/analytics.js?v=20261116b"></script></body></html>')
 import os
 os.makedirs('/home/claude/lp/ninchisho/v2', exist_ok=True)
+# ---- 2026-11-16 23:3x 小林さん承認：Neoへのボタンはすべて汎用版（ent2）へ。押すと「見方の案内」を先に出す ----
+import re as _re
+_NEO_POS = {'type=014014': ('6', '認知症保険 toスマイル'),
+            'type=014015': ('3', 'がん保険 ネオdeがんちりょう'),
+            'type=014002': ('2', 'ネオdeいりょう 健康プロモート（持病がある方の医療保険）')}
+def _neo_fix(m):
+    a = m.group(0)
+    href = _re.search(r'href="([^"]+)"', a).group(1)
+    pos, name = '', ''
+    for k, v in _NEO_POS.items():
+        if k in href: pos, name = v
+    a = a.replace('href="%s"' % href, 'href="#neo-guide"', 1).replace(' target="_blank" rel="noopener noreferrer"', '', 1)
+    a = a.replace('class="', 'data-guide="1" data-pos="%s" data-prod="%s" class="' % (pos, name), 1)
+    a = a.replace('保険料を見てみる', '保障の中身と保険料を見る').replace('保険料を<br>見てみる', '保障と保険料を<br>見てみる')
+    if pos:
+        a = a.replace('</small></a>', '<span class="neopos">第一ネオのページの上から%s番目「%s」</span></small></a>' % (pos, name.split('（')[0]), 1)
+    return a
+html = _re.sub(r'<a [^>]*class="[^"]*js-neo[^"]*"[^>]*>.*?</a>', _neo_fix, html, flags=_re.S)
+NEO_GUIDE_JS = r"""<script>
+(function(){
+var ALL="%s",LINE="%s";
+var LIST=[["1","医療保険 ネオdeいりょう","入院・手術・三大疾病"],["2","ネオdeいりょう 健康プロモート","持病がある方の医療保険"],["3","がん保険 ネオdeがんちりょう","がんの治療"],["4","ネオde3疾病サポート","がん・心臓・脳の病気"],["5","健康年齢で保険料がきまる保険","8大生活習慣病"],["6","認知症保険 toスマイル","認知症・介護"]];
+function ev(n){try{if(window.gtag)gtag("event",n,{transport_type:"beacon",page:"ninchisho"});}catch(e){}}
+function close(){var b=document.querySelector(".ng-bg");if(b)b.remove();}
+function open(pos,name,orig){
+ close();
+ var where=pos?('開いたページを下へ進み、<b>上から<span class="pos">'+pos+'番目</span>の「'+name+'」</b>を探します。'):('開いたページに、保険が上から順に並んでいます。<ol class="nglist">'+LIST.map(function(x){return '<li>上から'+x[0]+'番目：<b>'+x[1]+'</b>（'+x[2]+'）</li>';}).join('')+'</ol>');
+ var h='<div class="ng" role="dialog" aria-label="第一ネオ生命のページの見方"><button class="ngx" type="button" aria-label="閉じる">×</button>'
+ +'<h3>第一ネオ生命のページは、この順で見てください</h3>'
+ +'<div class="ngkey">保険料より先に、<u>「どんなときに・いくら出るか」</u>を見るのがコツです。<br>保障を決めてから保険料を見ると、迷いません。</div>'
+ +'<ol><li>'+where+'</li>'
+ +'<li>まず<b>「商品パンフレット」</b>を押して、<b>どんなときに出るか／いくら出るか／いつまで続くか</b>の3つを確認します。</li>'
+ +'<li>納得したら<b>「インターネットでお申込み」</b>を押し、<b>生年月日と性別</b>を入れます（保険料の計算に使います。まだ申込みにはなりません）。</li>'
+ +'<li>保険料が出たら、右の青い<b>「ⓘ商品詳細」</b>でもう一度保障を確認。<b>「プラン内容を確認・変更する」</b>で受け取る金額を選ぶと、保険料が変わります。</li>'
+ +'<li>決まったら<b>「申込み手続きに進む」</b>。わからないところは、いつでもLINEで聞けます。</li></ol>'
+ +'<a class="nggo js-neo" href="'+ALL+'" target="_blank" rel="noopener noreferrer" data-go="1" data-ev="'+(orig||"neo_guide")+'">第一ネオ生命のページを開く</a>'
+ +'<a class="ngline" href="'+LINE+'" target="_blank" rel="noopener noreferrer" data-ev="neo_guide_line">先にLINEで相談する（無料）</a>'
+ +'<p class="note" style="margin:8px 0 0">保険料を見るだけなら、申込みにはなりません。</p></div>';
+ var bg=document.createElement("div");bg.className="ng-bg";bg.innerHTML=h;document.body.appendChild(bg);
+ bg.addEventListener("click",function(e){if(e.target===bg||e.target.classList.contains("ngx")){ev("neo_guide_close");close();}});
+ bg.querySelector(".nggo").addEventListener("click",function(){setTimeout(close,300);});
+ ev("neo_guide_open");
+}
+window.__openNeoGuide=open;
+document.addEventListener("click",function(e){
+ var a=e.target.closest&&e.target.closest('a[data-guide="1"]');if(!a)return;
+ e.preventDefault();e.stopPropagation();
+ open(a.getAttribute("data-pos")||"",a.getAttribute("data-prod")||"",a.getAttribute("data-ev")||"");
+},true);
+document.addEventListener("click",function(e){
+ var w=e.target.closest&&e.target.closest("[data-who]");if(!w)return;
+ e.preventDefault();var v=w.getAttribute("data-who");
+ var r=document.querySelector('#hear-70 input[name="相談の立場"][value="'+v+'"]');if(r){r.checked=true;r.dispatchEvent(new Event("change",{bubbles:true}));}
+ var t=document.getElementById("hear-70");if(t)t.scrollIntoView({behavior:"smooth",block:"start"});
+});
+})();
+</script>""" % (NEO_ALL.replace('&amp;','&'), LINE)
+html = html.replace('</body></html>', NEO_GUIDE_JS + '</body></html>')
+
 open('/home/claude/lp/ninchisho/v2/index.html', 'w', encoding='utf8').write(html)
 print(len(html))
