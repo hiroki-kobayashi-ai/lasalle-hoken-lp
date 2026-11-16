@@ -423,7 +423,7 @@ TIPS_SOUZOKU = tips("知らないと損する3つのこと", [
     "出典：国税庁（相続税の基礎控除・生命保険金の非課税限度額）。具体的な税額は、必要に応じて税理士と連携してご案内します。")
 
 AFTER_BOX = ('<section class="box" id="after-care"><h2>🤝 ご契約後のサポート</h2>'
- '<p style="line-height:1.8"><b>保険は、入ってからが本番です。</b>ネットでお申し込みの方も、ご相談から入った方も、同じようにサポートします。</p><ul class="kv">'
+ '<p style="line-height:1.8"><b>保険は、入ってからが本番です。</b>ネットでお申し込みの方も、ご相談から入った方も、同じようにサポートします。</p><p style="line-height:1.8;background:#eaf3ef;border-radius:12px;padding:10px 12px"><b>ここからが、ラサール＆パートナーズの違いです。</b>お手続き、事故のとき、保障の点検、法律のことまで。保険以外の日頃のご相談も、<b>私たちでよければ、いつでもお聞きします。</b></p><ul class="kv">'
  '<li><b>① 変更の手続き</b>住所・お名前・口座・受取人の変更など、手続きのご案内とお手伝いをします。</li>'
  '<li><b>② 給付金・保険金の請求</b>入院・手術・がんの診断などのとき、請求の仕方と必要な書類をご案内します。</li>'
  '<li><b>③ ご契約内容の確認</b>「何に入っていたっけ？」にお答えします。更新・満期の前にもお知らせします。</li>'
@@ -433,7 +433,7 @@ AFTER_BOX = ('<section class="box" id="after-care"><h2>🤝 ご契約後のサ�
  '</ul><p class="note">ご連絡はLINE・お電話・フォームから。お手続きは各保険会社の所定の方法で行います。お取り次ぎは無料です。士業に正式にご依頼される場合の報酬は、各事務所との直接のお取り決めになります（弁護士費用特約の対象になる場合があります）。</p>'
  '<div class="pair"><a class="p1" href="'+LINE+'" target="_blank" rel="noopener noreferrer" data-ev="after_line">LINEで<br>相談する<small>契約後のことも何でも</small></a><a class="p2" href="'+TEL+'" data-ev="after_tel">電話で<br>相談する<small>050-3696-4531</small></a></div></section>')
 AFTER_MINI = ('<section class="box"><p style="margin:0;line-height:1.8">🤝 <b>ご契約後もサポートします。</b>変更の手続き、給付金・保険金の請求、もしものときのご家族の手続きまでお手伝いします。</p>'
- '<a class="cta sub" href="#soudan" data-v="soudan" data-ev="after_more">ご契約後のサポートを見る</a></section>')
+ '<a class="cta sub" href="#soudan" data-v="soudan" data-after="after-care" data-ev="after_more">ご契約後のサポートを見る</a></section>')
 
 DESK_MINI = ('<section class="box" style="border:2px solid #1f5c4a"><h2>🛡️ ご契約後は「ラサール クライアントデスク」がお守りします</h2>'
  '<p style="line-height:1.8">ネットでお申し込みの方も、ご相談から入った方も、ご契約後のお手続き（保全）は<b>LINEで24時間受付</b>しています。ご自宅の水漏れなどの事故のご連絡から、万一の保険金のお届け、各士業への無料お取り次ぎまで、同じ窓口で承ります。</p>'
@@ -970,7 +970,7 @@ document.addEventListener("click",function(e){
 });
 })();
 </script>""" % (NEO_ALL.replace('&amp;','&'), LINE)
-html = html.replace('</body></html>', NEO_GUIDE_JS + '</body></html>')
+html = html.replace('</body></html>', NEO_GUIDE_JS + '''<script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[data-after]");if(!a)return;var id=a.getAttribute("data-after");setTimeout(function(){var el=document.getElementById(id);if(el){var y=el.getBoundingClientRect().top+window.scrollY-70;window.scrollTo({top:y,behavior:"smooth"});}},150);});</script>''' + '</body></html>')
 
 open('/home/claude/lp/ninchisho/v2/index.html', 'w', encoding='utf8').write(html)
 print(len(html))
