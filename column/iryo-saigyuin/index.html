@@ -41,6 +41,17 @@ ol.check li{margin:8px 0}
 .cta.tel{background:var(--g);color:#fff}
 .cta.sub{background:#fff;color:var(--g);border:2px solid var(--g);font-size:18px}
 .disc{font-size:14px;color:var(--sub);border-top:1px solid var(--line);margin-top:36px;padding-top:14px;line-height:1.7}
+.tl{display:flex;align-items:stretch;overflow-x:auto;gap:2px;margin:8px 0 4px;font-size:13px;line-height:1.3}
+.tl .in{background:#1f5c4a;color:#fff;border-radius:6px;padding:6px 4px;text-align:center;font-weight:700}
+.tl .in2{background:#d9822b;color:#fff;border-radius:6px;padding:6px 4px;text-align:center;font-weight:700}
+.tl .gap{background:repeating-linear-gradient(90deg,#e8ece9 0 6px,#f5f6f3 6px 12px);color:#4f5c57;border-radius:6px;padding:6px 4px;text-align:center}
+.co{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.co>div{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px}
+.co .a{border-color:#5a7fb8}.co .b{border-color:#d9822b}
+.co b.big{display:block;font-size:26px;margin-top:4px}
+.step{background:#1f5c4a;color:#fff;display:inline-block;border-radius:8px;padding:2px 10px;font-weight:800;font-size:15px}
+.legend{font-size:14px;color:#4f5c57}
+@media (max-width:560px){.co{grid-template-columns:1fr}}
 #bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);display:flex;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));z-index:9}
 #bar a{flex:1;text-align:center;text-decoration:none;font-weight:800;border-radius:12px;padding:10px 4px;font-size:16px}
 #bar .l{background:#06c755;color:#fff}#bar .t{background:var(--g);color:#fff}
@@ -78,40 +89,47 @@ ol.check li{margin:8px 0}
 <p>以前は「退院から180日以内」とする保険が多く、今も180日の保険はあります。一方で最近は、この間の期間を短くして90日、60日とする保険が出てきていて、現在では30日という保険もあります。逆に、筆者の経験では、古い契約にはもっと長い期間になっているものもあります。また、がんや心臓・脳の病気だけ、期間をさらに長くしている保険もあります。</p>
 <p>間の期間が短いほど、2回目の入院が「別の入院」として新しく数えられやすくなります。</p>
 
-<div class="box warn"><b>ここが一番の落とし穴です。</b><br>
-間の期間は、入院した日からではなく<b>「退院した日の次の日」から</b>数えます（入院している日数は数えません）。そして多くの保険では、<b>「最初の退院」からではなく「直前の退院」から数え直します</b>。入院と退院を短い間隔でくり返していると、何回入院しても、ずっと「1回の入院の続き」として数えられていきます。<br><span style="font-size:15px">※数え方は保険によって違うことがあります（たとえば入院一時金のタイプでは、最初の入院の退院から数えるものもあります）。ご契約の約款でご確認ください。</span></div>
-
-<p>具体的に見てみましょう。どちらも、<b>入院1日1万円・1回の入院の上限60日・間の期間60日（直前の退院から数え直す）</b>の医療保険とします。</p>
-
-<h3>例1：1回目で上限を使い切ったあとの再入院は、0円</h3>
-<div class="box">① 病気で<b>60日間</b>入院して、退院しました。→ 給付金 <b>60万円</b><br>② 退院して1か月後に、また<b>20日間</b>入院しました。</div>
+<h2>A社とB社で比べてみる（3つのケース）</h2>
+<p>実際に販売されている2つの医療保険の約款・パンフレットにある決まりを、そのまま使って比べます（会社名は伏せています）。どちらも<b>入院1日1万円・1回の入院の上限60日</b>とします。</p>
 <table class="ex">
-<tr><th>②の入院が、①の退院から…</th><th>扱い</th><th>②の給付金</th></tr>
-<tr><td>30日後（60日以内）</td><td>①の続き＝1回の入院。上限60日はもう使い切っている</td><td><b>0円</b></td></tr>
-<tr><td>90日後（60日を過ぎた）</td><td>新しい1回の入院</td><td><b>20万円</b></td></tr>
+<tr><th></th><th>A社</th><th>B社</th></tr>
+<tr><td>間の期間</td><td><b>180日</b></td><td><b>30日</b></td></tr>
+<tr><td>対象になる再入院</td><td><b>同じ病気</b>（または同じ事故）での再入院</td><td>期間内の再入院（<b>病気の種類は問わない</b>書き方）</td></tr>
 </table>
-<p>間の期間が180日の保険なら、90日後の再入院も「続き」になり、<b>0円</b>です。間の期間が短い保険ほど、新しい入院として数えられやすくなります。</p>
+<div class="box">数え方の基本：間の期間は、入院した日からではなく<b>「退院した日の次の日」から</b>数えます。入院している日数は数えません。そして多くの保険では、退院するたびに<b>直前の退院から数え直します</b>。<br><span class="legend">※数え方は保険によって違うことがあります（入院一時金のタイプでは、最初の入院の退院から数えるものもあります）。</span></div>
+<p class="legend">図の見かた：<span style="background:#1f5c4a;color:#fff;border-radius:4px;padding:0 6px">緑</span>＝入院、<span style="background:#d9822b;color:#fff;border-radius:4px;padding:0 6px">オレンジ</span>＝別の病気での入院、しま模様＝退院していた期間</p>
 
-<h3>例2：くり返すほど「続き」がつながっていく</h3>
-<div class="box">① <b>30日間</b>入院 → 退院<br>② ①の退院から50日後に <b>20日間</b>入院 → 退院<br>③ ②の退院から50日後に <b>20日間</b>入院</div>
+<p><span class="step">ケース1</span> <b>「間の期間」の長さで変わる</b></p>
+<p>病気で40日入院し、退院から45日後に、<b>同じ病気</b>でまた30日入院した。</p>
+<div class="tl"><div class="in" style="flex:0 0 88px">入院40日</div><div class="gap" style="flex:0 0 99px">45日</div><div class="in" style="flex:0 0 66px">入院30日</div></div>
+<div class="co"><div class="a">A社（180日）<br>45日は180日以内 → <b>1回の入院</b>（40＋30＝70日）。上限60日で止まる<b class="big">60万円</b></div><div class="b">B社（30日）<br>45日は30日を過ぎている → <b>別々の入院</b>（40日＋30日）<b class="big">70万円</b></div></div>
+<p>→ 間の期間が<b>短い</b>ほど、2回目が「新しい入院」になりやすく、上限にかかりにくくなります。</p>
+
+<p><span class="step">ケース2</span> <b>「どんな再入院が対象か」で変わる</b></p>
+<p>病気で40日入院し、退院から20日後に、<b>まったく別の病気</b>で30日入院した。</p>
+<div class="tl"><div class="in" style="flex:0 0 88px">入院40日</div><div class="gap" style="flex:0 0 44px">20日</div><div class="in2" style="flex:0 0 66px">別の病気30日</div></div>
+<div class="co"><div class="a">A社（同じ病気だけ）<br>別の病気なので → <b>別々の入院</b><b class="big">70万円</b></div><div class="b">B社（病気の種類を問わない）<br>20日は30日以内 → <b>1回の入院</b>（70日）。上限60日で止まる<b class="big">60万円</b></div></div>
+<p>→ 今度は逆に、A社のほうが多くなりました。<b>「何日か」だけでなく「どんな再入院が対象か」</b>も見ないと、どちらが有利かは決まりません。</p>
+
+<p><span class="step">ケース3</span> <b>入院をくり返すと、差はさらに広がる（極端な例）</b></p>
+<p>同じ病気（たとえば、がんの治療）で、20日の入院を<b>5回</b>くり返した。どの回も、退院から40日後に次の入院（入院は合計100日）。</p>
+<div class="tl"><div class="in" style="flex:0 0 34px">20日</div><div class="gap" style="flex:0 0 64px">40日</div><div class="in" style="flex:0 0 34px">20日</div><div class="gap" style="flex:0 0 64px">40日</div><div class="in" style="flex:0 0 34px">20日</div><div class="gap" style="flex:0 0 64px">40日</div><div class="in" style="flex:0 0 34px">20日</div><div class="gap" style="flex:0 0 64px">40日</div><div class="in" style="flex:0 0 34px">20日</div></div>
 <table class="ex">
-<tr><th>入院</th><th>数え方</th><th>給付金</th></tr>
-<tr><td>①30日</td><td>1回の入院のはじまり</td><td>30万円</td></tr>
-<tr><td>②20日</td><td>①の退院から50日後（60日以内）→ ①の続き。合計50日</td><td>20万円</td></tr>
-<tr><td>③20日</td><td>②の退院から50日後（60日以内）→ さらに続き。合計70日で上限60日を超える</td><td><b>10万円だけ</b></td></tr>
+<tr><th>入院</th><th>A社（180日）</th><th>B社（30日）</th></tr>
+<tr><td>1回目</td><td>20万円</td><td>20万円</td></tr>
+<tr><td>2回目</td><td>20万円（続き・合計40日）</td><td>20万円（別の入院）</td></tr>
+<tr><td>3回目</td><td>20万円（続き・合計60日）</td><td>20万円（別の入院）</td></tr>
+<tr><td>4回目</td><td><b>0円</b>（続き・上限60日を超えた）</td><td>20万円（別の入院）</td></tr>
+<tr><td>5回目</td><td><b>0円</b></td><td>20万円（別の入院）</td></tr>
+<tr><td><b>合計</b></td><td><b>60万円</b></td><td><b>100万円</b></td></tr>
 </table>
-<p>③は、①の退院からは4か月以上たっています。それでも、直前の②の退院から60日以内なので、①からずっと「1回の入院」として数えられ、上限の60日でとまってしまいます。がんの治療などで入退院をくり返すと、こうしたことが起こりえます。</p>
-<p class="note">※分かりやすくするための例です（入院1日目から支払われる保険とし、ほかの給付金や特約は考えていません）。「原因を問わないタイプ」なら、違う病気での再入院でも同じように数えられます。入院した時点で一時金が出るタイプでは、期間内の再入院には一時金が出ないこともあります。実際の扱いは、ご契約の約款で決まります。</p>
-<h3>例3：同じ入院でも、ここまで差が開くことがある</h3>
-<p>最後に、まったく同じ入院のしかたで、保険の「間の期間」によってどれだけ差が出るかを比べます。<b>あくまで分かりやすくするための例です。</b></p>
-<div class="box"><b>入院のしかた（共通）</b><br>20日間の入院を<b>5回</b>くり返す（合計100日）。入院1日1万円・1回の入院の上限60日の保険。<br>変わるのは「退院してから次の入院まで、何日あいたか」だけです。</div>
-<table class="ex">
-<tr><th>次の入院まで</th><th>間の期間30日の保険</th><th>間の期間60日の保険</th><th>間の期間180日の保険</th></tr>
-<tr><td>40日あいた</td><td><b>100万円</b><br>5回とも別の入院</td><td><b>60万円</b><br>5回で1回の入院</td><td><b>60万円</b><br>5回で1回の入院</td></tr>
-<tr><td>90日あいた</td><td><b>100万円</b></td><td><b>100万円</b><br>5回とも別の入院</td><td><b>60万円</b><br>5回で1回の入院</td></tr>
-<tr><td>200日あいた</td><td><b>100万円</b></td><td><b>100万円</b></td><td><b>100万円</b></td></tr>
-</table>
-<p>たとえば「90日あいた」場合、同じ100日の入院でも、間の期間が60日の保険なら100万円、180日の保険なら60万円と、<b>40万円</b>の差になります。間の期間が180日の保険では、退院から半年たたないうちに次の入院をくり返すかぎり、その退院からまた180日を数え直すので、ずっと「1回の入院」が続いていきます。</p>
+<p>A社では、退院するたびにそこから180日を数え直すので、半年たたないうちに入院をくり返すかぎり、5回すべてが「1回の入院」になります。B社では、40日あいていればそのつど新しい入院です。<b>同じ100日の入院で、40万円の差</b>になります。</p>
+<div class="box"><b>3つのケースから分かること</b><br>
+① 間の期間が短いほど、再入院が「新しい入院」になりやすい（ケース1）<br>
+② ただし、「同じ病気だけが対象」か「病気の種類を問わない」かで、有利・不利が入れかわる（ケース2）<br>
+③ 入院をくり返す病気ほど、この差は大きく広がる（ケース3）<br>
+つまり、<b>どちらの保険が良いかは、日数だけでは決まりません。</b>ご自身がどんな入院をしそうかと合わせて見ることが大切です。</div>
+<p class="note">※A社・B社の決まりは、各社の約款・パンフレットの記載にもとづきます。入院1日目から支払われるものとし、入院一時金や特約などは考えていない、分かりやすくするための例です。実際の扱いは、ご契約の約款と保険会社の判断によります。</p>
 <div class="box" style="border:2px solid #06c755"><b>ご自身の医療保険は、何日のルールになっていますか？</b><br>保険証券の写真を送っていただければ、FPが無料でお調べします。<a class="cta line" href="https://lin.ee/5gJWVqG" data-ev="col_line_mid" style="margin-bottom:0">LINEで無料チェックを頼む</a></div>
 <h2>どんな病気で差が出やすいのか</h2>
 <p>入院と退院をくり返しやすい病気ほど、このルールの影響を受けやすくなります。たとえば、がんの治療（手術のあと、抗がん剤や放射線で入退院をくり返すことがあります）、脳卒中、心臓の病気、また心の病気などです。</p>
