@@ -157,6 +157,7 @@ TOP = f'''<div class="top"><div class="brand"><span><b>ラサール＆パート�
 <a href="#oya" data-v="oya"><span class="ic">👪</span>親御さんの<br>保険</a>
 <a href="#oyanaki" data-v="oyanaki"><span class="ic">🤲</span>障がいと<br>親なきあと</a>
 <a href="#desk" data-v="desk" class="wide"><span class="ic">🛡️</span>ご契約後の安心｜ラサール クライアントデスク</a>
+<a href="/column/?src=lp_tab" class="wide" data-ev="tab_column" style="background:#fff6ec;border-color:#d9822b;color:#7a3d00"><span class="ic">📝</span>プロは保険のここを見る｜FPのコラム</a>
 </nav><button type="button" class="tabtg" id="tabtg" aria-controls="tabs-nav" aria-expanded="true">▲ メニューをたたんで、下へ読み進める</button></div>'''
 
 GO_TILES = '''<div class="go-tiles">
@@ -856,7 +857,7 @@ function show(v,push){if(views.indexOf(v)<0)v="ninchi";views.forEach(function(x)
 document.querySelectorAll(".tabs6 a").forEach(function(a){if(a.getAttribute("data-v")===v)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");});
 if(push)history.pushState(null,"","#"+v);window.scrollTo(0,0);ev("view_"+v);}
 var tg=document.getElementById("tabtg"),nv=document.getElementById("tabs-nav");
-function fold(c,user){nv.classList.toggle("closed",c);tg.classList.toggle("open",c);tg.setAttribute("aria-expanded",c?"false":"true");tg.textContent=c?"☰ ご相談メニュー（10個）をひらく ▼":"▲ メニューをたたんで、下へ読み進める";try{sessionStorage.setItem("tabfold",c?"1":"0");}catch(e){}if(user)ev(c?"menu_fold":"menu_open");}
+function fold(c,user){nv.classList.toggle("closed",c);tg.classList.toggle("open",c);tg.setAttribute("aria-expanded",c?"false":"true");tg.textContent=c?"☰ ご相談メニュー（11個）をひらく ▼":"▲ メニューをたたんで、下へ読み進める";try{sessionStorage.setItem("tabfold",c?"1":"0");}catch(e){}if(user)ev(c?"menu_fold":"menu_open");}
 if(tg&&nv){tg.addEventListener("click",function(){var c=!nv.classList.contains("closed");fold(c,true);if(c){var m=document.getElementById("main-content");if(m)m.scrollIntoView({behavior:"smooth",block:"start"});}});
 try{if(sessionStorage.getItem("tabfold")==="1")fold(true,false);}catch(e){}}
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[data-v]");if(!a)return;e.preventDefault();if(nv&&a.closest("#tabs-nav"))fold(true,false);show(a.getAttribute("data-v"),true);});
