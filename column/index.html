@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>プロは保険のここを見る｜入る前に知っておきたい、保険の仕組みと落とし穴｜ラサール＆パートナーズ</title>
+<meta name="description" content="がん保険・医療保険・死亡保険・法人保険・相続。保険の現場で17年見てきたFPが、契約の前に確認してほしいところを、商品をすすめずに解説します。">
+<meta name="robots" content="noindex,nofollow">
+<!-- 準備中：1本目の記事の確認後に noindex を外し、LPのタブからリンクする -->
+<style>
+:root{--ink:#18221f;--sub:#4f5c57;--g:#1f5c4a;--bg:#f5f6f3;--line:#d9e0dc}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:19px/1.8 "BIZ UDPGothic","Hiragino Sans","Yu Gothic","Meiryo",sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px 100px}
+header.top{background:#fff;border-bottom:1px solid var(--line)}
+header.top .in{max-width:760px;margin:0 auto;padding:10px 18px;display:flex;justify-content:space-between;gap:10px;font-size:15px}
+header.top a{color:var(--g);font-weight:700;text-decoration:none}
+h1{font-size:30px;line-height:1.4;margin:22px 0 4px}
+.sub{font-size:18px;color:var(--sub);margin:0 0 14px}
+.author{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:15px;color:var(--sub);line-height:1.6}
+.cats{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.cats button{font:inherit;font-size:16px;font-weight:700;border:2px solid var(--g);background:#fff;color:var(--g);border-radius:999px;padding:6px 14px;cursor:pointer}
+.cats button[aria-pressed="true"]{background:var(--g);color:#fff}
+.card{display:block;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:12px 0;text-decoration:none;color:var(--ink)}
+.card .c{display:inline-block;background:#eaf3ef;color:var(--g);font-weight:800;font-size:13px;border-radius:999px;padding:1px 10px}
+.card h2{font-size:21px;line-height:1.5;margin:6px 0}
+.card p{margin:0;font-size:16px;color:var(--sub)}
+.empty{color:var(--sub);font-size:16px}
+.disc{font-size:14px;color:var(--sub);margin-top:30px;line-height:1.7}
+</style>
+<script src="/analytics.js?v=20261116b"></script>
+</head>
+<body>
+<header class="top"><div class="in"><a href="/ninchisho/?src=column">ラサール＆パートナーズ（保険代理店）</a><a href="tel:05036964531">☎ 050-3696-4531</a></div></header>
+<div class="wrap">
+<h1>プロは保険のここを見る</h1>
+<p class="sub">入る前に知っておきたい、保険の仕組みと落とし穴</p>
+<div class="author">文・分析：小林 弘毅（2級ファイナンシャル・プランニング技能士・保険業歴17年）<br>どの記事も、特定の保険をすすめるものではなく、筆者個人の見解と分析です。</div>
+<div class="cats" id="cats">
+<button aria-pressed="true" data-c="">すべて</button><button data-c="gan">がん保険</button><button data-c="iryo">医療保険</button><button data-c="shibou">死亡保険</button><button data-c="ippan">保険一般</button><button data-c="houjin">法人保険</button><button data-c="souzoku">相続</button>
+</div>
+<div id="list">
+<a class="card" data-c="iryo" href="/column/iryo-saigyuin/"><span class="c">医療保険</span><h2>医療保険の「再入院のルール」—同じ病気でまた入院したら、給付金はどうなる？</h2><p>退院から一定の日数のうちに同じ病気で再入院すると「1回の入院」と数えられ、2回目に給付金がほとんど出ないことも。確認する4つのところ。</p></a>
+</div>
+<p class="empty" id="empty" hidden>この分類の記事は、いま準備中です。</p>
+<p class="disc">掲載の記事は一般的な仕組みについての筆者個人の見解・分析です。実際の保障内容・お支払いは、ご契約の約款と保険会社の判断によります。<br>ラサール＆パートナーズ株式会社（保険代理店）</p>
+</div>
+<script>
+document.getElementById("cats").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var c=b.getAttribute("data-c");document.querySelectorAll("#cats button").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});var n=0;document.querySelectorAll("#list .card").forEach(function(a){var on=!c||a.getAttribute("data-c")===c;a.hidden=!on;if(on)n++;});document.getElementById("empty").hidden=n>0;});
+</script>
+</body>
+</html>
