@@ -233,7 +233,7 @@ table.cost{width:100%;border-collapse:separate;border-spacing:0;font-size:16px;l
 
 <main class="wrap">
 <!-- ① ファーストビュー -->
-<section class="hero" id="top">
+<section data-sec="01_top" class="hero" id="top">
   <span class="kicker">🛡️ 会社・お店を経営する方へ</span>
   <h1>取引先から<br><em>「セキュリティは<br>大丈夫？」</em>と<br>聞かれたら。</h1>
   <p class="sub">サイバー攻撃・情報漏えいの「もしも」のお金に、保険で備えておく時代です。</p><p class="two">大手損保2社をくらべて見積もり。申込みはスマホで。来店・郵送・ハンコなし</p>
@@ -256,7 +256,7 @@ table.cost{width:100%;border-collapse:separate;border-spacing:0;font-size:16px;l
 </section>
 
 <!-- ② なぜ今？（数字＋もし起きたらいくら） -->
-<section class="box naze" id="naze" aria-label="なぜ今サイバー保険が必要か">
+<section data-sec="02_naze" class="box naze" id="naze" aria-label="なぜ今サイバー保険が必要か">
   <h2><span class="n">なぜ今？</span>狙われているのは、<br>大企業より中小企業です</h2>
   <div class="nums">
     <div class="num"><b>123件</b><span>ランサムウェアの被害<br><small>（2026年上半期・半期で過去最多）</small></span></div>
@@ -316,7 +316,7 @@ table.cost{width:100%;border-collapse:separate;border-spacing:0;font-size:16px;l
   </div>
 </section>
 <!-- ② 選ばれる理由3つ -->
-<section class="box" aria-label="ラサールが選ばれる理由">
+<section data-sec="03_riyu" class="box" aria-label="ラサールが選ばれる理由">
   <h2>ラサールで備える、3つの理由</h2>
   <div class="why">
     <div><span class="ic">🏢</span><b>業歴17年目</b><span>生命保険会社の支社長と信用金庫の支店長がつくった代理店</span></div>
@@ -327,7 +327,7 @@ table.cost{width:100%;border-collapse:separate;border-spacing:0;font-size:16px;l
 </section>
 
 <!-- ④ 出るもの・出ないもの -->
-<section class="box" aria-label="サイバー保険で出るもの・出ないもの">
+<section data-sec="04_hosho" class="box" aria-label="サイバー保険で出るもの・出ないもの">
   <h2>サイバー保険で、<br>出るもの・出ないもの</h2>
   <p class="lead">サイバー保険の柱は<b>「相手への賠償」「事故対応の費用」「止まった間の利益」</b>の3つ。ただし、何でも出るわけではありません。</p>
   <table class="cmp">
@@ -343,7 +343,7 @@ table.cost{width:100%;border-collapse:separate;border-spacing:0;font-size:16px;l
 </section>
 
 <!-- ⑥ 1分 対策チェック -->
-<section class="box" id="check" aria-label="1分 サイバー対策チェック">
+<section data-sec="05_check" class="box" id="check" aria-label="1分 サイバー対策チェック">
   <h2>1分 サイバー対策チェック<br><small style="font-size:16px;color:var(--muted)">10問に「はい・いいえ」で答えるだけ</small></h2>
   <ol class="ck" id="ck">
     <li><p><i>1</i>パソコンにウイルス対策ソフトを入れ、更新している</p><div class="yn"><label><input type="radio" name="q1" value="1">はい</label><label><input type="radio" name="q1" value="0">いいえ</label><label><input type="radio" name="q1" value="0">わからない</label></div></li>
@@ -371,7 +371,7 @@ table.cost{width:100%;border-collapse:separate;border-spacing:0;font-size:16px;l
 </section>
 
 <!-- ⑦ 見積もりメモ -->
-<section class="box hear" id="mitsumori" data-title="サイバー保険のお見積り依頼" aria-label="サイバー保険の見積もり依頼">
+<section data-sec="06_mitsumori" class="box hear" id="mitsumori" data-title="サイバー保険のお見積り依頼" aria-label="サイバー保険の見積もり依頼">
   <h2>かんたん見積もりメモ<br><small style="font-size:16px;color:var(--muted)">わかるところだけでOK。会社名・お名前は、ここでは入れません。</small></h2>
   <div class="ckres" id="ck-in"></div>
   <div class="hf"><p class="ql">ご契約の形</p><div class="chips"><label><input type="radio" name="形" value="法人">法人</label><label><input type="radio" name="形" value="個人事業主">個人事業主</label></div></div>
@@ -389,7 +389,7 @@ table.cost{width:100%;border-collapse:separate;border-spacing:0;font-size:16px;l
 </section>
 
 <!-- ⑧ 申込みまでの流れ（お急ぎの方へ） -->
-<section class="box isogi" id="isogi" aria-label="申込みまでの流れ">
+<section data-sec="07_isogi" class="box isogi" id="isogi" aria-label="申込みまでの流れ">
   <span id="nagare"></span>
   <h2><span class="n">お急ぎの方へ</span>面倒な手続きなし。<br>スマホで申込めます</h2>
   <p class="lead">書類を郵送したり、ハンコを押したりする必要はありません。<b>LINE・フォーム・メールのやり取りだけ</b>で、最後はスマホで申込ボタンを押すだけです。</p>
@@ -409,7 +409,7 @@ table.cost{width:100%;border-collapse:separate;border-spacing:0;font-size:16px;l
 </section>
 
 <!-- ⑨ 契約後 -->
-<section class="box" aria-label="契約後のサポート">
+<section data-sec="08_keiyakugo" class="box" aria-label="契約後のサポート">
   <div class="staff">
     <img src="https://hoken.lasalle2023.com/img/icon_lab_father.jpg" alt="" width="72" height="72" loading="lazy">
     <div><h2 style="margin:0">事故のとき、<br>「どこに電話すれば？」にしない</h2></div>
@@ -421,7 +421,7 @@ table.cost{width:100%;border-collapse:separate;border-spacing:0;font-size:16px;l
 </section>
 
 <!-- ⑩ よくある質問 -->
-<section class="box faq" aria-label="よくある質問">
+<section data-sec="09_faq" class="box faq" aria-label="よくある質問">
   <h2>よくある質問</h2>
   <details open><summary>Q 個人事業主・ひとり社長でも入れますか？</summary><p>入れます。お客さまや取引先の情報を預かっているなら、規模が小さくても備えておく意味があります。</p></details>
   <details><summary>Q セキュリティ対策が不十分でも入れますか？</summary><p>対策の状況はお聞きしますが、それだけで入れないとは限りません。対策の状況によって、保険料が変わることがあります。ご加入できるかどうかは、保険会社が判断します。</p></details>
@@ -431,7 +431,7 @@ table.cost{width:100%;border-collapse:separate;border-spacing:0;font-size:16px;l
 </section>
 
 <!-- ⑪ 最終ブロック -->
-<section class="final" aria-label="まとめ">
+<section data-sec="10_final" class="final" aria-label="まとめ">
   <h2>サイバー事故は、<br>起きてからでは保険に入れません。</h2>
   <p style="margin:0 0 14px">入る前に起きていた事故は、補償されません。何も起きていない今のうちに、まずは見積もりだけでも。お急ぎの方は<a href="#isogi">LINE・メールでスマホから申込み</a>まで進めます。</p>
   <div class="roads">
@@ -597,6 +597,8 @@ document.getElementById("send-form").addEventListener("click",function(){ev("cyb
 // 固定バー：最初の画面と最後のブロックでは隠す
 var dock=document.getElementById("dock"),hero=document.getElementById("top"),fin=document.querySelector(".final");
 if("IntersectionObserver" in window){var vis={};var io=new IntersectionObserver(function(es){es.forEach(function(x){vis[x.target===hero?"h":"f"]=x.isIntersecting;});dock.classList.toggle("hide",!!(vis.h||vis.f));},{threshold:.15});io.observe(hero);io.observe(fin);}
+// どこまで見たか：各ブロックが画面のまん中まで来たら1回だけ送る（2026-11-22）
+(function(){if(!("IntersectionObserver" in window))return;var done={};var io=new IntersectionObserver(function(es){es.forEach(function(e){var k=e.target.getAttribute("data-sec");if(e.isIntersecting&&!done[k]){done[k]=1;ev("cyber_sec_"+k);io.unobserve(e.target);}});},{rootMargin:"-45% 0px -45% 0px"});document.querySelectorAll("section[data-sec]").forEach(function(el){io.observe(el);});})();
 })();
 </script>
 <script src="/analytics.js?v=20261116b"></script>
