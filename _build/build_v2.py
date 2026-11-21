@@ -917,7 +917,7 @@ html = ('<!doctype html>\n<html lang="ja"><head><meta charset="utf-8"><meta name
         '<link rel="canonical" href="https://hoken.lasalle2023.com/ninchisho/"><title>認知症保険・がん保険・医療保険のご相談と保険証券の無料チェック｜ラサール＆パートナーズ（保険代理店）</title>'
         '<style>' + head_css + CSS + '</style></head><body><div class="wrap">' + TOP + '<main id="main-content"><a class="tkband" href="#tokuten" data-scroll="tokuten" data-ev="tokuten_band">🎁 <b>無料特典</b>：お金と制度の早わかり表（PDF・ボタン1つでダウンロード）／LINE登録でお孫さんが主役の紙芝居ドラマ <span>受け取る ›</span></a>'
         + V_NINCHI + V_GAN + V_JIBYO + V_70 + V_SONPO + V_SOUZOKU + V_SOUDAN + V_OYA + V_OYANAKI + V_DESK + V_COMP + '</main>' + TOKUTEN_BOX + DESK_BAND + LEGAL + FOOT + '</div>'
-        + SC_JS + EV_JS + JS + '<script src="/analytics.js?v=20261116b"></script></body></html>')
+        + SC_JS + EV_JS + JS + '<script src="/analytics.js?v=20261122a"></script></body></html>')
 import os
 os.makedirs('/home/claude/lp/ninchisho/v2', exist_ok=True)
 # ---- 2026-11-16 23:3x 小林さん承認：Neoへのボタンはすべて汎用版（ent2）へ。押すと「見方の案内」を先に出す ----

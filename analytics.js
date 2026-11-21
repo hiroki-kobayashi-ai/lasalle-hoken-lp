@@ -23,7 +23,26 @@
   s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
   document.head.appendChild(s);
   window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
+  // 2026-11-22 追加（小林さん指示）：押したボタンの文言を link_text として、そのとき送るイベントに付ける（GA4のカスタム定義「ボタンの文言」で見る）
+  var lastTxt = "", lastAt = 0;
+  window.addEventListener("click", function(e){
+    var el = e.target.closest && e.target.closest("a,button,summary,label,[role=button],[data-ev]");
+    if(!el) return;
+    lastTxt = ((el.innerText || el.textContent || el.getAttribute("aria-label") || "").replace(/\s+/g, " ").trim()).slice(0, 60);
+    lastAt = Date.now();
+  }, true);
+  function pushArgs(){ dataLayer.push(arguments); }
+  function gtag(){
+    var a = Array.prototype.slice.call(arguments);
+    if(a[0] === "event" && lastTxt && Date.now() - lastAt < 800 && !/(^|_)(sec|scroll|stay)_/.test(String(a[1]))){
+      var p = {}; var q = a[2] || {}; for(var k in q) p[k] = q[k];
+      if(!p.link_text) p.link_text = lastTxt;
+      a[2] = p;
+      pushArgs.apply(null, a);
+      return;
+    }
+    dataLayer.push(arguments);
+  }
   window.gtag = gtag;
   gtag("js", new Date());
   var cfg = {};

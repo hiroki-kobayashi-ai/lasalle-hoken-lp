@@ -718,5 +718,5 @@ if("IntersectionObserver" in window){var vis={};var io=new IntersectionObserver(
 (function(){if(!("IntersectionObserver" in window))return;var done={};var io=new IntersectionObserver(function(es){es.forEach(function(e){var k=e.target.getAttribute("data-sec");if(e.isIntersecting&&!done[k]){done[k]=1;ev("shika_sec_"+k);io.unobserve(e.target);}});},{rootMargin:"-45% 0px -45% 0px"});document.querySelectorAll("section[data-sec]").forEach(function(el){io.observe(el);});})();
 })();
 </script>
-<script src="/analytics.js?v=20261116b"></script>
+<script src="/analytics.js?v=20261122a"></script>
 </body></html>
