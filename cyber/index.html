@@ -113,6 +113,12 @@ select,textarea{width:100%;font:inherit;font-size:17px;border:2px solid var(--li
 .sendrow button:active{transform:translateY(4px);box-shadow:none}
 .note{font-size:15px;color:var(--muted);line-height:1.6;margin:10px 0 0}
 .reply{margin:10px 0 0;background:var(--cream);border-radius:10px;padding:8px 12px;font-size:16px}
+.route{border-radius:12px;padding:10px 12px;margin:0 0 14px;font-size:16px;line-height:1.6;background:var(--pine-l)}
+.route b{display:block;font-size:17px}
+.route.n{background:var(--cream)}
+.num{display:flex;align-items:center;gap:8px}.num input{flex:1;font:inherit;font-size:18px;border:2px solid var(--line);border-radius:12px;padding:10px;min-height:48px}.num span{font-weight:800}
+.hf input.sub,.hf .sub{margin-top:8px}.hf input.sub{width:100%;font:inherit;font-size:17px;border:2px solid var(--line);border-radius:12px;padding:10px;min-height:48px;box-sizing:border-box}
+.hf[hidden],.sub[hidden],.route[hidden]{display:none!important}
 /* ステップ */
 .steps{display:grid;gap:8px;margin:8px 0 12px}
 .step{display:grid;grid-template-columns:48px 1fr;gap:10px;align-items:start;background:#eef2f5;border-radius:14px;padding:10px}
@@ -370,19 +376,26 @@ table.cost{width:100%;border-collapse:separate;border-spacing:0;font-size:16px;l
   <p class="src">※一般的な基本対策をもとにした簡易チェックで、専門の診断ではありません。答えはこの画面の中だけで使い、送信はされません。</p>
 </section>
 
-<!-- ⑦ 見積もりメモ -->
+<!-- ⑦ 見積もりメモ（業種で質問が変わる・2026-11-22改定） -->
 <section data-sec="06_mitsumori" class="box hear" id="mitsumori" data-title="サイバー保険のお見積り依頼" aria-label="サイバー保険の見積もり依頼">
-  <h2>かんたん見積もりメモ<br><small style="font-size:16px;color:var(--muted)">わかるところだけでOK。会社名・お名前は、ここでは入れません。</small></h2>
+  <h2>かんたん見積もりメモ<br><small style="font-size:16px;color:var(--muted)">お見積もりに使う項目だけです。会社名・お名前は、ここでは入れません。</small></h2>
   <div class="ckres" id="ck-in"></div>
   <div class="hf"><p class="ql">ご契約の形</p><div class="chips"><label><input type="radio" name="形" value="法人">法人</label><label><input type="radio" name="形" value="個人事業主">個人事業主</label></div></div>
-  <div class="hf"><p class="ql">業種</p><select name="業種"><option value="">えらんでください</option><option>製造業</option><option>卸売・小売（ネットショップ含む）</option><option>建設・工務店・リフォーム</option><option>不動産</option><option>飲食店</option><option>美容室・理容・エステ・ネイル</option><option>整骨院・治療院</option><option>医療・介護・福祉</option><option>士業（税理士・社労士・行政書士など）</option><option>運輸・物流</option><option>IT・Web制作・ソフトウェア</option><option>教育・学習塾</option><option>その他のサービス業</option><option>その他</option></select></div>
-  <div class="hf"><p class="ql">直近1年の売上高<i>保険料の計算に使います</i></p><div class="chips"><label><input type="radio" name="売上高" value="1,000万円未満">1,000万円未満</label><label><input type="radio" name="売上高" value="1,000万〜1億円">1,000万〜1億円</label><label><input type="radio" name="売上高" value="1億〜5億円">1億〜5億円</label><label><input type="radio" name="売上高" value="5億〜10億円">5億〜10億円</label><label><input type="radio" name="売上高" value="10億円以上">10億円以上</label></div></div>
-  <div class="hf"><p class="ql">働いている人数</p><div class="chips"><label><input type="radio" name="人数" value="1人">1人</label><label><input type="radio" name="人数" value="2〜5人">2〜5人</label><label><input type="radio" name="人数" value="6〜20人">6〜20人</label><label><input type="radio" name="人数" value="21〜50人">21〜50人</label><label><input type="radio" name="人数" value="51人以上">51人以上</label></div></div>
-  <div class="hf"><p class="ql">一番の心配<i>いくつでも</i></p><div class="chips"><label><input type="checkbox" name="心配" value="お客さま情報の漏えい">お客さま情報の漏えい</label><label><input type="checkbox" name="心配" value="システムが止まる">システムが止まる</label><label><input type="checkbox" name="心配" value="なりすましメールの送金">なりすましメールの送金</label><label><input type="checkbox" name="心配" value="取引先に対策を求められた">取引先に対策を求められた</label><label><input type="checkbox" name="心配" value="ネットショップ・予約サイト">ネットショップ・予約サイト</label></div></div>
-  <div class="hf"><p class="ql">預かっているお客さま情報の件数<i>だいたいで</i></p><div class="chips"><label><input type="radio" name="件数" value="100件未満">100件未満</label><label><input type="radio" name="件数" value="100〜1,000件">100〜1,000件</label><label><input type="radio" name="件数" value="1,000〜1万件">1,000〜1万件</label><label><input type="radio" name="件数" value="1万件以上">1万件以上</label><label><input type="radio" name="件数" value="わからない">わからない</label></div></div>
-  <div class="hf"><p class="ql">今入っているサイバー保険</p><div class="chips"><label><input type="radio" name="今の保険" value="ない">ない</label><label><input type="radio" name="今の保険" value="ある">ある</label><label><input type="radio" name="今の保険" value="わからない">わからない</label></div></div>
-  <div class="hf"><p class="ql">ご質問・ご要望など<i>自由にどうぞ</i></p><textarea name="comment" rows="3" placeholder="例：取引先から対策の確認書を求められている／商工会の保険とくらべたい"></textarea></div>
-  <div class="hf"><p class="ql">ご連絡の方法</p><div class="chips"><label><input type="radio" name="連絡方法" value="LINE">LINE</label><label><input type="radio" name="連絡方法" value="電話">電話</label><label><input type="radio" name="連絡方法" value="メール">メール</label><label><input type="radio" name="連絡方法" value="テレビ電話">テレビ電話</label></div></div>
+  <div class="hf"><p class="ql">業種<i>えらぶと、聞く項目が変わります</i></p><select name="業種" id="mm-gyo"><option value="" data-r="">えらんでください</option><option value="製造業（自動車・医薬品・医療機器をのぞく）" data-r="s">製造業（自動車・医薬品・医療機器をのぞく）</option><option value="卸売・商社" data-r="s">卸売・商社</option><option value="小売（ネットショップ含む）" data-r="s">小売（ネットショップ含む）</option><option value="建設・工務店・リフォーム" data-r="s">建設・工務店・リフォーム</option><option value="不動産" data-r="s">不動産</option><option value="飲食店" data-r="s">飲食店</option><option value="宿泊・旅行" data-r="s">宿泊・旅行</option><option value="教育・学習塾" data-r="s">教育・学習塾</option><option value="福祉・介護" data-r="s">福祉・介護</option><option value="人材派遣" data-r="s">人材派遣</option><option value="運輸・物流・倉庫" data-r="s">運輸・物流・倉庫</option><option value="美容室・理容・エステ・ネイル" data-r="s">美容室・理容・エステ・ネイル</option><option value="整骨院・治療院" data-r="s">整骨院・治療院</option><option value="士業（税理士・社労士・行政書士など）" data-r="s">士業（税理士・社労士・行政書士など）</option><option value="保険代理店" data-r="s">保険代理店</option><option value="その他のサービス業" data-r="s">その他のサービス業</option><option value="歯科医院・クリニック・病院" data-r="n">歯科医院・クリニック・病院</option><option value="IT・Web制作・ソフトウェア開発" data-r="it">IT・Web制作・ソフトウェア開発</option><option value="自動車・医薬品・医療機器の製造" data-r="n">自動車・医薬品・医療機器の製造</option><option value="金融（保険代理店以外）" data-r="n">金融（保険代理店以外）</option><option value="通信・放送・電力・ガス・水道" data-r="n">通信・放送・電力・ガス・水道</option><option value="その他" data-r="s">その他</option></select></div>
+  <div class="route" id="mm-route" hidden></div>
+  <div class="hf" data-show="any"><p class="ql">直近1年の売上高<i>消費税込み・だいたいでOK</i></p><div class="num"><input type="text" inputmode="numeric" name="売上高" placeholder="例：3000"><span>万円</span></div></div>
+  <div class="hf" data-show="any"><p class="ql">海外での売上</p><div class="chips"><label><input type="radio" name="海外" value="なし">なし</label><label><input type="radio" name="海外" value="あり">あり</label></div>
+    <input type="text" class="sub" name="海外の内容" data-if="海外=あり" placeholder="国・地域とだいたいの金額（例：中国 200万円）" hidden></div>
+  <div class="hf" data-show="any"><p class="ql">この3年で、ウイルス感染・情報漏えいなどの事故は？</p><div class="chips"><label><input type="radio" name="事故" value="なかった">なかった</label><label><input type="radio" name="事故" value="あった">あった</label></div>
+    <input type="text" class="sub" name="事故の内容" data-if="事故=あった" placeholder="いつ・どんなことが（かんたんに）" hidden></div>
+  <div class="hf" data-show="it"><p class="ql">お客さまに提供しているITサービス<i>かんたんに</i></p><input type="text" class="sub" name="ITサービス" placeholder="例：受託でアプリ開発／予約システムを月額で提供"></div>
+  <div class="hf" data-show="n"><p class="ql">システムが止まって休業したときの、利益の補償</p><div class="chips"><label><input type="radio" name="休業補償" value="付けたい">付けたい</label><label><input type="radio" name="休業補償" value="いらない">いらない</label><label><input type="radio" name="休業補償" value="話を聞きたい">話を聞きたい</label></div>
+    <div class="num sub" data-if="休業補償=付けたい" hidden><input type="text" inputmode="numeric" name="営業利益＋固定費" placeholder="直近1年の営業利益＋固定費（例：1500）"><span>万円</span></div></div>
+  <div class="hf" data-show="n"><p class="ql">セキュリティ対策の質問票<i>答えると保険料が下がることがあります</i></p><div class="chips"><label><input type="radio" name="質問票" value="送ってほしい">送ってほしい</label><label><input type="radio" name="質問票" value="今回はいい">今回はいい</label></div></div>
+  <div class="hf" data-show="any"><p class="ql">保険を始めたい日</p><div class="chips"><label><input type="radio" name="始期" value="できるだけ早く">できるだけ早く</label><label><input type="radio" name="始期" value="日にちを決めている">日にちを決めている</label><label><input type="radio" name="始期" value="まだ決めていない">まだ決めていない</label></div>
+    <input type="date" class="sub" name="始めたい日" data-if="始期=日にちを決めている" hidden></div>
+  <div class="hf" data-show="any"><p class="ql">ご質問・ご要望など<i>なくてもOK</i></p><textarea name="comment" rows="2" placeholder="例：取引先から対策の確認書を求められている"></textarea></div>
+  <div class="hf"><p class="ql">お見積もりの受け取り方</p><div class="chips"><label><input type="radio" name="連絡方法" value="LINE">LINE</label><label><input type="radio" name="連絡方法" value="メール">メール</label></div></div>
   <div class="sendrow"><button type="button" class="s-line" id="send-line">LINEで送る</button><button type="button" class="s-form" id="send-form">フォームで送る</button></div>
   <p class="note">「LINEで送る」はLINEが開くので、送信を押すだけ。「フォームで送る」は<b>Googleフォーム</b>（会社名・お名前・ご連絡先を入れる画面）が開き、答えは入った状態です。</p>
   <p class="reply">⏱ 受付から遅くとも<b>翌々日まで</b>に、お見積もりをお返事します。</p>
@@ -395,7 +408,7 @@ table.cost{width:100%;border-collapse:separate;border-spacing:0;font-size:16px;l
   <p class="lead">書類を郵送したり、ハンコを押したりする必要はありません。<b>LINE・フォーム・メールのやり取りだけ</b>で、最後はスマホで申込ボタンを押すだけです。</p>
   <div class="steps">
     <div class="step"><i>1</i><div><b>LINE・フォーム・メールで「申し込みたい」とご連絡</b><span>下のボタンから送るだけ。夜や休日でも受け付けます。</span></div></div>
-    <div class="step"><i>2</i><div><b>ラサールから「記入事項」をお送りします。書いて返信するだけ</b><span>業種・売上・従業員数・今の対策など。手が空いたときに書いて返していただければ大丈夫です。</span></div></div>
+    <div class="step"><i>2</i><div><b>ラサールから「記入事項」をお送りします。書いて返信するだけ</b><span>上の「かんたん見積もりメモ」を送った方は、足りないところだけお聞きします。手が空いたときに書いて返していただければ大丈夫です。</span></div></div>
     <div class="step"><i>3</i><div><b>ラサールが設計書・提案書を作ってお送りします</b><span>損保ジャパンとあいおいニッセイ同和損保で試算。補償の中身や金額に修正・変更のご希望があれば、何度でも作り直します。</span></div></div>
     <div class="step"><i>4</i><div><b>内容がよければ、スマホで「申込」ボタンを押して完了</b><span>署名もハンコも郵送もいりません。大切なご説明（重要事項）は、申込みの前にお電話か資料でご案内します。お支払いはコンビニ払い・クレジットカードなどから選べます。</span></div></div>
   </div>
@@ -580,18 +593,32 @@ document.getElementById("ck-go").addEventListener("click",function(){
  ev("cyber_ck_result",{score:s});
 });
 
-// 見積もりメモ → LINE／フォーム
+// 見積もりメモ → LINE／フォーム（業種で質問を切り替え・2026-11-22）
+var MM=document.getElementById("mitsumori"),GYO=document.getElementById("mm-gyo"),ROUTE=document.getElementById("mm-route");
+function mmRoute(){var o=GYO.options[GYO.selectedIndex];var r=o?o.getAttribute("data-r"):"";var ac=MM.querySelector('input[name="事故"]:checked');
+ if(r==="s"&&ac&&ac.value==="あった")r="n";return r;}
+function mmUpdate(){var r=mmRoute();
+ MM.querySelectorAll(".hf[data-show]").forEach(function(h){var w=h.getAttribute("data-show");var show=w==="any"||(w==="n"&&(r==="n"||r==="it"))||(w==="it"&&r==="it");h.hidden=!show;});
+ MM.querySelectorAll("[data-if]").forEach(function(x){var k=x.getAttribute("data-if").split("=");var c=MM.querySelector('input[name="'+k[0]+'"]:checked');x.hidden=!(c&&c.value===k[1]);});
+ if(!r){ROUTE.hidden=true;return;}
+ ROUTE.hidden=false;ROUTE.className="route"+(r==="s"?"":" n");
+ if(r==="s")ROUTE.innerHTML="<b>✅ かんたん審査の対象です</b>お聞きするのは、売上高・海外の売上・事故の有無・始めたい日だけです。";
+ else if(GYO.value.indexOf("歯科")===0)ROUTE.innerHTML="<b>🦷 医療機関は通常のサイバー保険でお見積もりします</b>休診したときの補償なども選べます。<a href=\"https://hoken.lasalle2023.com/cyber/shika/?src=cyber_gyo\">歯科医院の方の特設ページ ›</a>";
+ else if(r==="it")ROUTE.innerHTML="<b>💻 IT業の方は、通常のサイバー保険でお見積もりします</b>提供しているサービスの中身も、かんたんに教えてください。";
+ else ROUTE.innerHTML="<b>📋 通常のサイバー保険でお見積もりします</b>少しだけ質問が増えます。";}
+MM.addEventListener("change",mmUpdate);mmUpdate();
 function memo(){
- var sec=document.getElementById("mitsumori"),out=["【"+sec.getAttribute("data-title")+"】"];
- sec.querySelectorAll(".hf").forEach(function(h){var lab=h.querySelector(".ql").childNodes[0].textContent.trim();var v=[];
-  h.querySelectorAll("input:checked").forEach(function(i){v.push(i.value);});
-  h.querySelectorAll("select,textarea").forEach(function(i){if(i.value.trim())v.push(i.value.trim());});
+ var out=["【"+MM.getAttribute("data-title")+"】"];var r=mmRoute();
+ out.push("見積区分："+(r==="s"?"シンプルサイバー候補":(r?"通常サイバー":"未選択")));
+ MM.querySelectorAll(".hf").forEach(function(h){if(h.hidden)return;var lab=h.querySelector(".ql").childNodes[0].textContent.trim();var v=[];
+  h.querySelectorAll("input[type=radio]:checked,input[type=checkbox]:checked").forEach(function(i){v.push(i.value);});
+  h.querySelectorAll("select,textarea,input[type=text],input[type=date]").forEach(function(i){if(i.closest("[hidden]"))return;if(i.value.trim())v.push(i.value.trim()+(i.name==="売上高"||i.name==="営業利益＋固定費"?"万円":""));});
   out.push(lab+"："+(v.join("・")||"－"));});
  out.push("対策チェック："+(score<0?"未実施":score+"／10"+(weakNames.length?"（弱いところ："+weakNames.join("・")+"）":"")));
  return out.join("\n");
 }
 document.getElementById("send-line").addEventListener("click",function(){ev("cyber_send_line");window.open(OA+encodeURIComponent(memo()),"_blank","noopener");});
-document.getElementById("send-form").addEventListener("click",function(){ev("cyber_send_form");var how=document.querySelector('#mitsumori input[name="連絡方法"]:checked');var map={"LINE":"LINE","電話":"電話","メール":"メール"};
+document.getElementById("send-form").addEventListener("click",function(){ev("cyber_send_form");var how=document.querySelector('#mitsumori input[name="連絡方法"]:checked');var map={"LINE":"LINE","メール":"メール"};
  window.open(FORM+"?usp=pp_url&entry.777293406="+encodeURIComponent("会社・お店の保険")+"&entry.245163664="+encodeURIComponent(memo())+(how&&map[how.value]?"&entry.2058551988="+encodeURIComponent(map[how.value]):""),"_blank","noopener");});
 
 // 固定バー：最初の画面と最後のブロックでは隠す

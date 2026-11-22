@@ -113,6 +113,9 @@ select,textarea{width:100%;font:inherit;font-size:17px;border:2px solid var(--li
 .sendrow button:active{transform:translateY(4px);box-shadow:none}
 .note{font-size:15px;color:var(--muted);line-height:1.6;margin:10px 0 0}
 .reply{margin:10px 0 0;background:var(--cream);border-radius:10px;padding:8px 12px;font-size:16px}
+.num{display:flex;align-items:center;gap:8px}.num input{flex:1;font:inherit;font-size:18px;border:2px solid var(--line);border-radius:12px;padding:10px;min-height:48px}.num span{font-weight:800}
+.hf input.sub,.hf .sub{margin-top:8px}.hf input.sub{width:100%;font:inherit;font-size:17px;border:2px solid var(--line);border-radius:12px;padding:10px;min-height:48px;box-sizing:border-box}
+.sub[hidden]{display:none!important}
 /* ステップ */
 .steps{display:grid;gap:8px;margin:8px 0 12px}
 .step{display:grid;grid-template-columns:48px 1fr;gap:10px;align-items:start;background:#eef2f5;border-radius:14px;padding:10px}
@@ -362,10 +365,8 @@ br.sp{display:none}
     <ul class="asks">
       <li>医院名・医療法人か個人開業か</li>
       <li>直近1年の医業収入（だいたいで）</li>
-      <li>スタッフの人数</li>
-      <li>カルテの件数のめやす</li>
-      <li>使っているシステム（電子カルテ・レセコン・Web予約など）</li>
-      <li>セキュリティ対策の状況（下の1分チェックの結果でOK）</li>
+      <li>この3年の事故の有無</li>
+      <li>休診したときの利益の補償を付けるか</li>
       <li>手続きする方のお名前・生年月日・携帯番号（スマホでの申込みに使います）</li>
       <li>補償を始めたい日</li>
     </ul>
@@ -498,20 +499,21 @@ br.sp{display:none}
   <p class="src">※厚生労働省「医療機関・薬局におけるサイバーセキュリティ対策チェックリスト」の主な項目を参考にした簡易チェックで、正式なチェックリストの代わりにはなりません。答えはこの画面の中だけで使い、送信はされません。</p>
 </section>
 
-<!-- ⑦ 見積もりメモ（歯科医院版） -->
+<!-- ⑦ 見積もりメモ（歯科医院版・2026-11-22改定：見積もりに使う項目だけ） -->
 <section data-sec="09_mitsumori" class="box hear" id="mitsumori" data-title="歯科医院のサイバー保険お見積り依頼" aria-label="見積もり依頼">
-  <h2>かんたん見積もりメモ<br><small style="font-size:16px;color:var(--muted)">わかるところだけでOK。医院名・お名前は、ここでは入れません。</small></h2>
+  <h2>かんたん見積もりメモ<br><small style="font-size:16px;color:var(--muted)">お見積もりに使う項目だけです。医院名・お名前は、ここでは入れません。</small></h2>
   <div class="ckres" id="ck-in"></div>
   <div class="hf"><p class="ql">開設の形</p><div class="chips"><label><input type="radio" name="形" value="医療法人">医療法人</label><label><input type="radio" name="形" value="個人開業">個人開業</label></div></div>
-  <div class="hf"><p class="ql">直近1年の医業収入<i>保険料の計算に使います</i></p><div class="chips"><label><input type="radio" name="医業収入" value="5,000万円未満">5,000万円未満</label><label><input type="radio" name="医業収入" value="5,000万〜1億円">5,000万〜1億円</label><label><input type="radio" name="医業収入" value="1億〜3億円">1億〜3億円</label><label><input type="radio" name="医業収入" value="3億円以上">3億円以上</label></div></div>
-  <div class="hf"><p class="ql">チェア（ユニット）の台数</p><div class="chips"><label><input type="radio" name="チェア" value="1〜3台">1〜3台</label><label><input type="radio" name="チェア" value="4〜6台">4〜6台</label><label><input type="radio" name="チェア" value="7台以上">7台以上</label></div></div>
-  <div class="hf"><p class="ql">スタッフの人数<i>院長を含む</i></p><div class="chips"><label><input type="radio" name="人数" value="1〜5人">1〜5人</label><label><input type="radio" name="人数" value="6〜10人">6〜10人</label><label><input type="radio" name="人数" value="11〜20人">11〜20人</label><label><input type="radio" name="人数" value="21人以上">21人以上</label></div></div>
-  <div class="hf"><p class="ql">カルテの件数のめやす</p><div class="chips"><label><input type="radio" name="カルテ" value="1,000人未満">1,000人未満</label><label><input type="radio" name="カルテ" value="1,000〜5,000人">1,000〜5,000人</label><label><input type="radio" name="カルテ" value="5,000〜1万人">5,000〜1万人</label><label><input type="radio" name="カルテ" value="1万人以上">1万人以上</label><label><input type="radio" name="カルテ" value="わからない">わからない</label></div></div>
-  <div class="hf"><p class="ql">使っているもの<i>いくつでも</i></p><div class="chips"><label><input type="checkbox" name="システム" value="電子カルテ">電子カルテ</label><label><input type="checkbox" name="システム" value="レセコン">レセコン</label><label><input type="checkbox" name="システム" value="Web予約・Web問診">Web予約・Web問診</label><label><input type="checkbox" name="システム" value="オンライン診療">オンライン診療</label><label><input type="checkbox" name="システム" value="デジタルレントゲン・CT">デジタルレントゲン・CT</label><label><input type="checkbox" name="システム" value="リモート保守">リモート保守</label></div></div>
-  <div class="hf"><p class="ql">今入っているサイバー保険</p><div class="chips"><label><input type="radio" name="今の保険" value="ない">ない</label><label><input type="radio" name="今の保険" value="ある">ある</label><label><input type="radio" name="今の保険" value="わからない">わからない</label></div></div>
-  <div class="hf"><p class="ql">お急ぎですか？</p><div class="chips"><label><input type="radio" name="急ぎ" value="すぐ入りたい">すぐ入りたい</label><label><input type="radio" name="急ぎ" value="1か月以内">1か月以内</label><label><input type="radio" name="急ぎ" value="まず見積もりだけ">まず見積もりだけ</label></div></div>
-  <div class="hf"><p class="ql">ご質問・ご要望など<i>自由にどうぞ</i></p><textarea name="comment" rows="3" placeholder="例：立入検査の前に整えたい／所属団体の保険とくらべたい"></textarea></div>
-  <div class="hf"><p class="ql">ご連絡の方法</p><div class="chips"><label><input type="radio" name="連絡方法" value="LINE">LINE</label><label><input type="radio" name="連絡方法" value="電話">電話</label><label><input type="radio" name="連絡方法" value="メール">メール</label><label><input type="radio" name="連絡方法" value="テレビ電話">テレビ電話</label></div></div>
+  <div class="hf"><p class="ql">直近1年の医業収入<i>保険診療＋自費・消費税込み・だいたいでOK</i></p><div class="num"><input type="text" inputmode="numeric" name="医業収入" placeholder="例：8000"><span>万円</span></div></div>
+  <div class="hf"><p class="ql">この3年で、ウイルス感染・情報漏えいなどの事故は？</p><div class="chips"><label><input type="radio" name="事故" value="なかった">なかった</label><label><input type="radio" name="事故" value="あった">あった</label></div>
+    <input type="text" class="sub" name="事故の内容" data-if="事故=あった" placeholder="いつ・どんなことが（かんたんに）" hidden></div>
+  <div class="hf"><p class="ql">電子カルテ・レセコンが止まって休診したときの、利益の補償</p><div class="chips"><label><input type="radio" name="休業補償" value="付けたい">付けたい</label><label><input type="radio" name="休業補償" value="いらない">いらない</label><label><input type="radio" name="休業補償" value="話を聞きたい">話を聞きたい</label></div>
+    <div class="num sub" data-if="休業補償=付けたい" hidden><input type="text" inputmode="numeric" name="営業利益＋固定費" placeholder="直近1年の営業利益＋固定費（例：3000）"><span>万円</span></div></div>
+  <div class="hf"><p class="ql">セキュリティ対策の質問票<i>答えると保険料が下がることがあります</i></p><div class="chips"><label><input type="radio" name="質問票" value="送ってほしい">送ってほしい</label><label><input type="radio" name="質問票" value="今回はいい">今回はいい</label></div></div>
+  <div class="hf"><p class="ql">保険を始めたい日</p><div class="chips"><label><input type="radio" name="始期" value="できるだけ早く">できるだけ早く</label><label><input type="radio" name="始期" value="日にちを決めている">日にちを決めている</label><label><input type="radio" name="始期" value="まだ決めていない">まだ決めていない</label></div>
+    <input type="date" class="sub" name="始めたい日" data-if="始期=日にちを決めている" hidden></div>
+  <div class="hf"><p class="ql">ご質問・ご要望など<i>なくてもOK</i></p><textarea name="comment" rows="2" placeholder="例：所属団体の保険とくらべたい"></textarea></div>
+  <div class="hf"><p class="ql">お見積もりの受け取り方</p><div class="chips"><label><input type="radio" name="連絡方法" value="LINE">LINE</label><label><input type="radio" name="連絡方法" value="メール">メール</label></div></div>
   <div class="sendrow"><button type="button" class="s-line" id="send-line">LINEで送る</button><button type="button" class="s-form" id="send-form">フォームで送る</button></div>
   <p class="note">「LINEで送る」はLINEが開くので、送信を押すだけ。「フォームで送る」は<b>Googleフォーム</b>（医院名・お名前・ご連絡先を入れる画面）が開き、答えは入った状態です。</p>
   <p class="reply">⏱ 受付から遅くとも<b>翌々日まで</b>に、お見積もりをお返事します。お急ぎの方は<a href="#isogi">LINE・メールでのお申込み</a>へ。</p>
@@ -697,18 +699,21 @@ document.getElementById("ck-go").addEventListener("click",function(){
  ev("shika_ck_result",{score:s});
 });
 
-// 見積もりメモ → LINE／フォーム
+// 見積もりメモ → LINE／フォーム（2026-11-22改定）
+var MM=document.getElementById("mitsumori");
+function mmUpdate(){MM.querySelectorAll("[data-if]").forEach(function(x){var k=x.getAttribute("data-if").split("=");var c=MM.querySelector('input[name="'+k[0]+'"]:checked');x.hidden=!(c&&c.value===k[1]);});}
+MM.addEventListener("change",mmUpdate);mmUpdate();
 function memo(){
- var sec=document.getElementById("mitsumori"),out=["【"+sec.getAttribute("data-title")+"】"];
- sec.querySelectorAll(".hf").forEach(function(h){var lab=h.querySelector(".ql").childNodes[0].textContent.trim();var v=[];
-  h.querySelectorAll("input:checked").forEach(function(i){v.push(i.value);});
-  h.querySelectorAll("select,textarea").forEach(function(i){if(i.value.trim())v.push(i.value.trim());});
+ var out=["【"+MM.getAttribute("data-title")+"】","見積区分：通常サイバー（医療機関）"];
+ MM.querySelectorAll(".hf").forEach(function(h){var lab=h.querySelector(".ql").childNodes[0].textContent.trim();var v=[];
+  h.querySelectorAll("input[type=radio]:checked,input[type=checkbox]:checked").forEach(function(i){v.push(i.value);});
+  h.querySelectorAll("select,textarea,input[type=text],input[type=date]").forEach(function(i){if(i.closest("[hidden]"))return;if(i.value.trim())v.push(i.value.trim()+(i.name==="医業収入"||i.name==="営業利益＋固定費"?"万円":""));});
   out.push(lab+"："+(v.join("・")||"－"));});
  out.push("対策チェック："+(score<0?"未実施":score+"／10"+(weakNames.length?"（弱いところ："+weakNames.join("・")+"）":"")));
  return out.join("\n");
 }
 document.getElementById("send-line").addEventListener("click",function(){ev("shika_send_line");window.open(OA+encodeURIComponent(memo()),"_blank","noopener");});
-document.getElementById("send-form").addEventListener("click",function(){ev("shika_send_form");var how=document.querySelector('#mitsumori input[name="連絡方法"]:checked');var map={"LINE":"LINE","電話":"電話","メール":"メール"};
+document.getElementById("send-form").addEventListener("click",function(){ev("shika_send_form");var how=document.querySelector('#mitsumori input[name="連絡方法"]:checked');var map={"LINE":"LINE","メール":"メール"};
  window.open(FORM+"?usp=pp_url&entry.777293406="+encodeURIComponent("会社・お店の保険")+"&entry.245163664="+encodeURIComponent(memo())+(how&&map[how.value]?"&entry.2058551988="+encodeURIComponent(map[how.value]):""),"_blank","noopener");});
 
 // 固定バー：最初の画面と最後のブロックでは隠す
