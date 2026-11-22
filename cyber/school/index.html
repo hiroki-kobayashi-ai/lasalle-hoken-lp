@@ -245,12 +245,6 @@ table.cost{width:100%;border-collapse:separate;border-spacing:0;font-size:16px;l
   <h1>保護者から<br><em>「うちの子の情報は<br>大丈夫？」</em>と<br>聞かれたら。</h1>
   <p class="sub">サイバー攻撃・情報漏えいの「もしも」のお金に、保険で備えておく時代です。</p><p class="two">大手損保で見積もり。申込みはスマホで。来店・郵送・ハンコなし</p>
   <div class="roads">
-    <a class="road a" href="#check" data-ev="school_fv_check">
-      <span class="lab">まずは無料で</span>
-      <strong>1分 サイバー対策チェック</strong>
-      <ul><li>⏱ 10問・約1分</li><li>🆓 登録なし</li><li>📋 弱いところがわかる</li></ul>
-      <span class="go">チェックを始める ›</span>
-    </a>
     <a class="road b" href="#mitsumori" data-ev="school_fv_mitsumori">
       <span class="lab">すぐ知りたい方</span>
       <strong>業種と売上だけで、<br>見積もりを依頼</strong>
@@ -348,38 +342,9 @@ table.cost{width:100%;border-collapse:separate;border-spacing:0;font-size:16px;l
   <p class="src">※一般的な説明です。補償の範囲・条件は保険会社とご契約の内容で変わります。身代金が対象にならないことは、日本損害保険協会も説明しています。</p>
 </section>
 
-<!-- ⑥ 1分 対策チェック -->
-<section data-sec="05_check" class="box" id="check" aria-label="1分 サイバー対策チェック">
-  <h2>1分 サイバー対策チェック<br><small style="font-size:16px;color:var(--muted)">10問に「はい・いいえ」で答えるだけ</small></h2>
-  <ol class="ck" id="ck">
-    <li><p><i>1</i>パソコンにウイルス対策ソフトを入れ、更新している</p><div class="yn"><label><input type="radio" name="q1" value="1">はい</label><label><input type="radio" name="q1" value="0">いいえ</label><label><input type="radio" name="q1" value="0">わからない</label></div></li>
-    <li><p><i>2</i>パソコン・スマホのOSやソフトを、いつも最新にしている</p><div class="yn"><label><input type="radio" name="q2" value="1">はい</label><label><input type="radio" name="q2" value="0">いいえ</label><label><input type="radio" name="q2" value="0">わからない</label></div></li>
-    <li><p><i>3</i>ルーターや、外から社内につなぐ機器（VPN）の更新をしている</p><div class="yn"><label><input type="radio" name="q3" value="1">はい</label><label><input type="radio" name="q3" value="0">いいえ</label><label><input type="radio" name="q3" value="0">わからない</label></div></li>
-    <li><p><i>4</i>大事なデータのバックアップを、ふだん使う場所とは別に保管している</p><div class="yn"><label><input type="radio" name="q4" value="1">はい</label><label><input type="radio" name="q4" value="0">いいえ</label><label><input type="radio" name="q4" value="0">わからない</label></div></li>
-    <li><p><i>5</i>メールやクラウドに「2段階認証」を設定している</p><div class="yn"><label><input type="radio" name="q5" value="1">はい</label><label><input type="radio" name="q5" value="0">いいえ</label><label><input type="radio" name="q5" value="0">わからない</label></div></li>
-    <li><p><i>6</i>同じパスワードを、いくつものサービスで使い回していない</p><div class="yn"><label><input type="radio" name="q6" value="1">はい</label><label><input type="radio" name="q6" value="0">いいえ</label><label><input type="radio" name="q6" value="0">わからない</label></div></li>
-    <li><p><i>7</i>怪しいメールの見分け方を、従業員（家族・スタッフ）に伝えている</p><div class="yn"><label><input type="radio" name="q7" value="1">はい</label><label><input type="radio" name="q7" value="0">いいえ</label><label><input type="radio" name="q7" value="0">わからない</label></div></li>
-    <li><p><i>8</i>「振込先が変わりました」というメールは、電話で確かめてから払う</p><div class="yn"><label><input type="radio" name="q8" value="1">はい</label><label><input type="radio" name="q8" value="0">いいえ</label><label><input type="radio" name="q8" value="0">わからない</label></div></li>
-    <li><p><i>9</i>パソコンの持ち出しやUSBの使い方に、社内のルールがある</p><div class="yn"><label><input type="radio" name="q9" value="1">はい</label><label><input type="radio" name="q9" value="0">いいえ</label><label><input type="radio" name="q9" value="0">わからない</label></div></li>
-    <li><p><i>10</i>事故が起きたとき、だれに・どこに連絡するか決めている</p><div class="yn"><label><input type="radio" name="q10" value="1">はい</label><label><input type="radio" name="q10" value="0">いいえ</label><label><input type="radio" name="q10" value="0">わからない</label></div></li>
-  </ol>
-  <p id="ck-warn" style="display:none;color:#b42318;font-weight:800;margin:0 0 8px">10問すべてに答えてください（わからないもOK）</p>
-  <button type="button" class="btn" id="ck-go">結果を見る</button>
-  <div class="res" id="ck-res" role="status">
-    <h3 id="ck-h"></h3>
-    <div class="meter" aria-hidden="true"><span id="ck-bar"></span></div>
-    <p id="ck-p"></p>
-    <ul class="weak" id="ck-weak"></ul>
-    <a class="btn orange" href="#mitsumori" data-ev="school_ck_to_mitsumori">この結果をつけて見積もりを依頼する ›</a>
-    <p class="note">対策の状況によって、保険料が安くなる割引を用意している保険会社もあります。見積もりのときに、この結果も参考にします。</p>
-  </div>
-  <p class="src">※一般的な基本対策をもとにした簡易チェックで、専門の診断ではありません。答えはこの画面の中だけで使い、送信はされません。</p>
-</section>
-
 <!-- ⑦ 見積もりメモ（業種で質問が変わる・2026-11-22改定） -->
 <section data-sec="06_mitsumori" class="box hear" id="mitsumori" data-title="学習塾・教室・保育園のサイバー保険お見積り依頼" aria-label="サイバー保険の見積もり依頼">
   <h2>かんたん見積もりメモ<br><small style="font-size:16px;color:var(--muted)">お見積もりに使う項目だけです。会社名・お名前は、ここでは入れません。</small></h2>
-  <div class="ckres" id="ck-in"></div>
   <div class="hf"><p class="ql">ご契約の形</p><div class="chips"><label><input type="radio" name="形" value="法人">法人</label><label><input type="radio" name="形" value="個人事業主">個人事業主</label></div></div>
   <div class="hf"><p class="ql">業種<i>えらぶと、聞く項目が変わります</i></p><select name="業種" id="mm-gyo"><option value="" data-r="">えらんでください</option><option value="製造業（自動車・医薬品・医療機器をのぞく）" data-r="s">製造業（自動車・医薬品・医療機器をのぞく）</option><option value="卸売・商社" data-r="s">卸売・商社</option><option value="小売（ネットショップ含む）" data-r="s">小売（ネットショップ含む）</option><option value="建設・工務店・リフォーム" data-r="s">建設・工務店・リフォーム</option><option value="不動産" data-r="s">不動産</option><option value="飲食店" data-r="s">飲食店</option><option value="宿泊・旅行" data-r="s">宿泊・旅行</option><option value="教育・学習塾" data-r="s" selected>教育・学習塾</option><option value="保育園・幼稚園・学童" data-r="s">保育園・幼稚園・学童</option><option value="習い事の教室（英会話・音楽・スポーツなど）" data-r="s">習い事の教室（英会話・音楽・スポーツなど）</option><option value="福祉・介護" data-r="s">福祉・介護</option><option value="人材派遣" data-r="s">人材派遣</option><option value="運輸・物流・倉庫" data-r="s">運輸・物流・倉庫</option><option value="美容室・理容・エステ・ネイル" data-r="s">美容室・理容・エステ・ネイル</option><option value="整骨院・治療院" data-r="s">整骨院・治療院</option><option value="士業（税理士・社労士・行政書士など）" data-r="s">士業（税理士・社労士・行政書士など）</option><option value="保険代理店" data-r="s">保険代理店</option><option value="その他のサービス業" data-r="s">その他のサービス業</option><option value="歯科医院・クリニック・病院" data-r="n">歯科医院・クリニック・病院</option><option value="IT・Web制作・ソフトウェア開発" data-r="it">IT・Web制作・ソフトウェア開発</option><option value="自動車・医薬品・医療機器の製造" data-r="n">自動車・医薬品・医療機器の製造</option><option value="金融（保険代理店以外）" data-r="n">金融（保険代理店以外）</option><option value="通信・放送・電力・ガス・水道" data-r="n">通信・放送・電力・ガス・水道</option><option value="その他" data-r="s">その他</option></select></div>
   <div class="route" id="mm-route" hidden></div>
@@ -448,12 +413,6 @@ table.cost{width:100%;border-collapse:separate;border-spacing:0;font-size:16px;l
   <h2>サイバー事故は、<br>起きてからでは保険に入れません。</h2>
   <p style="margin:0 0 14px">入る前に起きていた事故は、補償されません。何も起きていない今のうちに、まずは見積もりだけでも。お急ぎの方は<a href="#isogi">LINE・メールでスマホから申込み</a>まで進めます。</p>
   <div class="roads">
-    <a class="road a" href="#check" data-ev="school_final_check">
-      <span class="lab">まずは無料で</span>
-      <strong>1分 サイバー対策チェック</strong>
-      <ul><li>⏱ 10問・約1分</li><li>🆓 登録なし</li></ul>
-      <span class="go">チェックを始める ›</span>
-    </a>
     <a class="road b" href="#mitsumori" data-ev="school_final_mitsumori">
       <span class="lab">すぐ知りたい方</span>
       <strong>見積もりを依頼する</strong>
@@ -550,7 +509,7 @@ table.cost{width:100%;border-collapse:separate;border-spacing:0;font-size:16px;l
 <!-- 下の固定バー -->
 <nav class="dock" id="dock" aria-label="チェック・見積もり">
   <div class="in">
-    <a class="da" href="#check" data-ev="school_dock_check">1分 対策チェック<small>無料・登録なし</small></a>
+    <a class="da" href="#isogi" data-ev="school_dock_isogi2">📱 スマホで申込み<small>LINE・メールで受付</small></a>
     <a class="db" href="#mitsumori" data-ev="school_dock_mitsumori">見積もりを依頼<small>遅くとも翌々日にお返事</small></a>
   </div>
 </nav>
@@ -562,37 +521,7 @@ var FORM="https://docs.google.com/forms/d/e/1FAIpQLSccRHCt5AheXYdAuCldzdOeVagka3
 function ev(n,p){try{if(window.gtag)gtag("event",n,Object.assign({transport_type:"beacon",page:"cyber_school"},p||{}));}catch(e){}}
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-ev]");if(a)ev(a.getAttribute("data-ev"));},true);
 
-// 1分 対策チェック
-var HINT={
- q1:["ウイルス対策ソフト","入れていても、更新が止まっていると新しいウイルスを防げません。"],
- q2:["OS・ソフトの更新","古いままだと、知られた弱点からそのまま入られます。"],
- q3:["ルーター・VPN機器の更新","ランサムウェアの入口として、いちばん多く狙われる場所です。"],
- q4:["別の場所のバックアップ","同じネットワークにあると、バックアップごと暗号化されます。"],
- q5:["2段階認証","パスワードが盗まれても、乗っ取りを防ぐ一番手軽な対策です。"],
- q6:["パスワードの使い回し","1か所で漏れると、ほかのサービスにも次々に入られます。"],
- q7:["怪しいメールの見分け方","多くの被害は、1通のメールを開くところから始まります。"],
- q8:["振込先変更の確認","取引先になりすましたメールで、代金をだまし取る手口が増えています。"],
- q9:["持ち出し・USBのルール","置き忘れ・紛失も、情報漏えいの事故になります。"],
- q10:["事故のときの連絡先","最初の数時間の動きで、被害と費用の大きさが変わります。"]
-};
-var score=-1,weakNames=[];
-document.getElementById("ck-go").addEventListener("click",function(){
- var s=0,miss=0,weak=[];weakNames=[];
- for(var i=1;i<=10;i++){var x=document.querySelector('#ck input[name="q'+i+'"]:checked');if(!x){miss++;continue;}if(x.value==="1")s++;else{weak.push(HINT["q"+i]);weakNames.push(HINT["q"+i][0]);}}
- var w=document.getElementById("ck-warn");if(miss){w.style.display="block";w.scrollIntoView({behavior:"smooth",block:"center"});return;}w.style.display="none";
- score=s;
- var h,p;
- if(s>=8){h="✅ "+s+"／10　よくできています";p="基本の対策はかなりできています。それでも、取引先や委託先から入られることもあります。最後の備えとして、保険で「もしも」のお金を用意しておくと安心です。";}
- else if(s>=5){h="⚠️ "+s+"／10　あと一歩です";p="いくつか弱いところがあります。下の項目を見直すと、事故の起きやすさが下がります。あわせて、もしものときのお金の備えも考えておきましょう。";}
- else{h="🚨 "+s+"／10　早めの対策と備えを";p="狙われやすい状態かもしれません。下の項目から、できるところを一つずつ。対策が整うまでの間こそ、もしものときのお金の備えが大切です。";}
- document.getElementById("ck-h").textContent=h;document.getElementById("ck-p").textContent=p;
- document.getElementById("ck-bar").style.width=(s*10)+"%";
- document.getElementById("ck-weak").innerHTML=weak.map(function(x){return "<li><b>"+x[0]+"</b>"+x[1]+"</li>";}).join("");
- var r=document.getElementById("ck-res");r.classList.add("show");r.scrollIntoView({behavior:"smooth",block:"start"});
- var ci=document.getElementById("ck-in");ci.style.display="block";ci.textContent="📋 対策チェックの結果（"+s+"／10）も、見積もりに添えて送ります";
- ev("school_ck_result",{score:s});
-});
-
+var score=-1,weakNames=[];  // 1分チェックは2026-11-22に外した（old/ に保管）
 // 見積もりメモ → LINE／フォーム（業種で質問を切り替え・2026-11-22）
 var MM=document.getElementById("mitsumori"),GYO=document.getElementById("mm-gyo"),ROUTE=document.getElementById("mm-route");
 function mmRoute(){var o=GYO.options[GYO.selectedIndex];var r=o?o.getAttribute("data-r"):"";var ac=MM.querySelector('input[name="事故"]:checked');
@@ -614,7 +543,6 @@ function memo(){
   h.querySelectorAll("input[type=radio]:checked,input[type=checkbox]:checked").forEach(function(i){v.push(i.value);});
   h.querySelectorAll("select,textarea,input[type=text],input[type=date]").forEach(function(i){if(i.closest("[hidden]"))return;if(i.value.trim())v.push(i.value.trim()+(i.name==="売上高"||i.name==="営業利益＋固定費"?"万円":""));});
   out.push(lab+"："+(v.join("・")||"－"));});
- out.push("対策チェック："+(score<0?"未実施":score+"／10"+(weakNames.length?"（弱いところ："+weakNames.join("・")+"）":"")));
  return out.join("\n");
 }
 document.getElementById("send-line").addEventListener("click",function(){ev("school_send_line");window.open(OA+encodeURIComponent(memo()),"_blank","noopener");});

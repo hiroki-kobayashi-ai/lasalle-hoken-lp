@@ -296,11 +296,11 @@ br.sp{display:none}
       <ul><li>💬 記入事項はLINE・メールでお送りします</li><li>📄 設計書・提案書はラサールが作成</li><li>📱 最後はスマホで申込ボタン（署名不要）</li></ul>
       <span class="go">すぐ申し込みたい ›</span>
     </a>
-    <a class="road b" href="#check" data-ev="shika_fv_check">
-      <span class="lab">まずは無料で</span>
-      <strong>1分 サイバー対策チェック<br>（歯科医院版）</strong>
-      <ul><li>⏱ 10問・約1分</li><li>📋 厚労省チェックリストを参考</li><li>🆓 登録なし</li></ul>
-      <span class="go">チェックを始める ›</span>
+    <a class="road b" href="#mitsumori" data-ev="shika_fv_mitsumori">
+      <span class="lab">まずは見積もり</span>
+      <strong>医業収入だけで、<br>見積もりを依頼</strong>
+      <ul><li>📨 遅くとも翌々日にお返事</li><li>🆓 見積もりだけでもOK</li></ul>
+      <span class="go">見積もりを依頼する ›</span>
     </a>
   </div>
   <a class="mayou" href="#naze" data-ev="shika_fv_naze">なぜ今、歯科医院にサイバー保険？ ›</a>
@@ -471,38 +471,9 @@ br.sp{display:none}
   <p class="src">※一般的な説明です。補償の範囲・条件は保険会社とご契約の内容で変わります。</p>
 </section>
 
-<!-- ⑥ 1分 対策チェック（歯科医院版） -->
-<section data-sec="08_check" class="box" id="check" aria-label="1分 サイバー対策チェック 歯科医院版">
-  <h2>1分 サイバー対策チェック<br><small style="font-size:16px;color:var(--muted)">歯科医院版・10問に「はい・いいえ」で</small></h2>
-  <ol class="ck" id="ck">
-    <li><p><i>1</i>医療情報システムの安全管理の責任者（院長でも可）を決めている</p><div class="yn"><label><input type="radio" name="q1" value="1">はい</label><label><input type="radio" name="q1" value="0">いいえ</label><label><input type="radio" name="q1" value="0">わからない</label></div></li>
-    <li><p><i>2</i>電子カルテ・レセコンの端末やサーバーの一覧（台帳）がある</p><div class="yn"><label><input type="radio" name="q2" value="1">はい</label><label><input type="radio" name="q2" value="0">いいえ</label><label><input type="radio" name="q2" value="0">わからない</label></div></li>
-    <li><p><i>3</i>業者がリモート保守でつなぐ機器（VPNなど）の更新を、業者と確認している</p><div class="yn"><label><input type="radio" name="q3" value="1">はい</label><label><input type="radio" name="q3" value="0">いいえ</label><label><input type="radio" name="q3" value="0">わからない</label></div></li>
-    <li><p><i>4</i>カルテのバックアップを、ネットから切り離した場所にも取っている</p><div class="yn"><label><input type="radio" name="q4" value="1">はい</label><label><input type="radio" name="q4" value="0">いいえ</label><label><input type="radio" name="q4" value="0">わからない</label></div></li>
-    <li><p><i>5</i>Web予約・Web問診・メールに「二段階認証」を設定している</p><div class="yn"><label><input type="radio" name="q5" value="1">はい</label><label><input type="radio" name="q5" value="0">いいえ</label><label><input type="radio" name="q5" value="0">わからない</label></div></li>
-    <li><p><i>6</i>同じパスワードを、いくつものサービスで使い回していない</p><div class="yn"><label><input type="radio" name="q6" value="1">はい</label><label><input type="radio" name="q6" value="0">いいえ</label><label><input type="radio" name="q6" value="0">わからない</label></div></li>
-    <li><p><i>7</i>カルテを見るパソコンで、私用のメールやネット閲覧をしていない</p><div class="yn"><label><input type="radio" name="q7" value="1">はい</label><label><input type="radio" name="q7" value="0">いいえ</label><label><input type="radio" name="q7" value="0">わからない</label></div></li>
-    <li><p><i>8</i>パソコン・ソフトの更新とウイルス対策を、定期的に行っている</p><div class="yn"><label><input type="radio" name="q8" value="1">はい</label><label><input type="radio" name="q8" value="0">いいえ</label><label><input type="radio" name="q8" value="0">わからない</label></div></li>
-    <li><p><i>9</i>事故のときの連絡先（業者・厚生労働省・警察など）を一覧にしている</p><div class="yn"><label><input type="radio" name="q9" value="1">はい</label><label><input type="radio" name="q9" value="0">いいえ</label><label><input type="radio" name="q9" value="0">わからない</label></div></li>
-    <li><p><i>10</i>システムが止まっても診療を続ける手順（紙カルテへの切替など）を決めている</p><div class="yn"><label><input type="radio" name="q10" value="1">はい</label><label><input type="radio" name="q10" value="0">いいえ</label><label><input type="radio" name="q10" value="0">わからない</label></div></li>
-  </ol>
-  <p id="ck-warn" style="display:none;color:#b42318;font-weight:800;margin:0 0 8px">10問すべてに答えてください（わからないもOK）</p>
-  <button type="button" class="btn" id="ck-go">結果を見る</button>
-  <div class="res" id="ck-res" role="status">
-    <h3 id="ck-h"></h3>
-    <div class="meter" aria-hidden="true"><span id="ck-bar"></span></div>
-    <p id="ck-p"></p>
-    <ul class="weak" id="ck-weak"></ul>
-    <a class="btn orange" href="#mitsumori" data-ev="shika_ck_to_mitsumori">この結果をつけて見積もりを依頼する ›</a>
-    <p class="note">対策の状況によって、保険料が安くなる割引を用意している保険会社もあります。</p>
-  </div>
-  <p class="src">※厚生労働省「医療機関・薬局におけるサイバーセキュリティ対策チェックリスト」の主な項目を参考にした簡易チェックで、正式なチェックリストの代わりにはなりません。答えはこの画面の中だけで使い、送信はされません。</p>
-</section>
-
 <!-- ⑦ 見積もりメモ（歯科医院版・2026-11-22改定：見積もりに使う項目だけ） -->
 <section data-sec="09_mitsumori" class="box hear" id="mitsumori" data-title="歯科医院のサイバー保険お見積り依頼" aria-label="見積もり依頼">
   <h2>かんたん見積もりメモ<br><small style="font-size:16px;color:var(--muted)">お見積もりに使う項目だけです。医院名・お名前は、ここでは入れません。</small></h2>
-  <div class="ckres" id="ck-in"></div>
   <div class="hf"><p class="ql">開設の形</p><div class="chips"><label><input type="radio" name="形" value="医療法人">医療法人</label><label><input type="radio" name="形" value="個人開業">個人開業</label></div></div>
   <div class="hf"><p class="ql">直近1年の医業収入<i>保険診療＋自費・消費税込み・だいたいでOK</i></p><div class="num"><input type="text" inputmode="numeric" name="医業収入" placeholder="例：8000"><span>万円</span></div></div>
   <div class="hf"><p class="ql">この3年で、ウイルス感染・情報漏えいなどの事故は？</p><div class="chips"><label><input type="radio" name="事故" value="なかった">なかった</label><label><input type="radio" name="事故" value="あった">あった</label></div>
@@ -657,7 +628,7 @@ br.sp{display:none}
 <nav class="dock" id="dock" aria-label="電話・チェック">
   <div class="in">
     <a class="dt" href="#isogi" data-ev="shika_dock_isogi">📱 スマホで申込み<small>LINE・メールで受付</small></a>
-    <a class="dc" href="#check" data-ev="shika_dock_check">1分 対策チェック<small>歯科医院版・無料</small></a>
+    <a class="dc" href="#mitsumori" data-ev="shika_dock_mitsumori">見積もりを依頼<small>遅くとも翌々日にお返事</small></a>
   </div>
 </nav>
 
@@ -668,37 +639,7 @@ var FORM="https://docs.google.com/forms/d/e/1FAIpQLSccRHCt5AheXYdAuCldzdOeVagka3
 function ev(n,p){try{if(window.gtag)gtag("event",n,Object.assign({transport_type:"beacon",page:"cyber_shika"},p||{}));}catch(e){}}
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-ev]");if(a)ev(a.getAttribute("data-ev"));},true);
 
-// 1分 対策チェック
-var HINT={
- q1:["安全管理の責任者","厚生労働省のチェックリストで最初に確認される項目です。院長が兼ねても構いません。"],
- q2:["端末・サーバーの台帳","何がつながっているか分からないと、事故のときに調べる範囲も決められません。"],
- q3:["リモート保守の機器（VPN）","医療機関のランサムウェアで、入口として多く狙われる場所です。業者との責任分担も確認を。"],
- q4:["ネットから切り離したバックアップ","同じネットワークにあると、バックアップごと暗号化されます。"],
- q5:["二段階認証","2026年10月、オンライン診療システムの不正ログインを受けて、厚生労働省が設定を求めています。"],
- q6:["パスワードの使い回し","1か所で漏れたパスワードで、ほかのサービスにも入られます。"],
- q7:["カルテ用パソコンの私用利用","私用メールやネット閲覧が、ウイルスの入口になります。"],
- q8:["更新とウイルス対策","古いままだと、知られた弱点からそのまま入られます。"],
- q9:["事故のときの連絡先一覧","最初の数時間の動きで、被害と費用の大きさが変わります。"],
- q10:["診療を続ける手順","止まった日に紙カルテで受付できるかどうかで、休診の日数が変わります。"]
-};
-var score=-1,weakNames=[];
-document.getElementById("ck-go").addEventListener("click",function(){
- var s=0,miss=0,weak=[];weakNames=[];
- for(var i=1;i<=10;i++){var x=document.querySelector('#ck input[name="q'+i+'"]:checked');if(!x){miss++;continue;}if(x.value==="1")s++;else{weak.push(HINT["q"+i]);weakNames.push(HINT["q"+i][0]);}}
- var w=document.getElementById("ck-warn");if(miss){w.style.display="block";w.scrollIntoView({behavior:"smooth",block:"center"});return;}w.style.display="none";
- score=s;
- var h,p;
- if(s>=8){h="✅ "+s+"／10　よくできています";p="基本の対策はかなりできています。それでも、保守業者やシステムの提供元から入られることもあります。最後の備えとして、保険で「もしも」のお金を用意しておくと安心です。";}
- else if(s>=5){h="⚠️ "+s+"／10　あと一歩です";p="いくつか弱いところがあります。下の項目を見直すと、事故の起きやすさが下がります。あわせて、もしものときのお金の備えも考えておきましょう。";}
- else{h="🚨 "+s+"／10　早めの対策と備えを";p="狙われやすい状態かもしれません。下の項目から、できるところを一つずつ。対策が整うまでの間こそ、もしものときのお金の備えが大切です。";}
- document.getElementById("ck-h").textContent=h;document.getElementById("ck-p").textContent=p;
- document.getElementById("ck-bar").style.width=(s*10)+"%";
- document.getElementById("ck-weak").innerHTML=weak.map(function(x){return "<li><b>"+x[0]+"</b>"+x[1]+"</li>";}).join("");
- var r=document.getElementById("ck-res");r.classList.add("show");r.scrollIntoView({behavior:"smooth",block:"start"});
- var ci=document.getElementById("ck-in");ci.style.display="block";ci.textContent="📋 対策チェックの結果（"+s+"／10）も、見積もりに添えて送ります";
- ev("shika_ck_result",{score:s});
-});
-
+var score=-1,weakNames=[];  // 1分チェックは2026-11-22に外した（old/ に保管）
 // 見積もりメモ → LINE／フォーム（2026-11-22改定）
 var MM=document.getElementById("mitsumori");
 function mmUpdate(){MM.querySelectorAll("[data-if]").forEach(function(x){var k=x.getAttribute("data-if").split("=");var c=MM.querySelector('input[name="'+k[0]+'"]:checked');x.hidden=!(c&&c.value===k[1]);});}
@@ -709,7 +650,6 @@ function memo(){
   h.querySelectorAll("input[type=radio]:checked,input[type=checkbox]:checked").forEach(function(i){v.push(i.value);});
   h.querySelectorAll("select,textarea,input[type=text],input[type=date]").forEach(function(i){if(i.closest("[hidden]"))return;if(i.value.trim())v.push(i.value.trim()+(i.name==="医業収入"||i.name==="営業利益＋固定費"?"万円":""));});
   out.push(lab+"："+(v.join("・")||"－"));});
- out.push("対策チェック："+(score<0?"未実施":score+"／10"+(weakNames.length?"（弱いところ："+weakNames.join("・")+"）":"")));
  return out.join("\n");
 }
 document.getElementById("send-line").addEventListener("click",function(){ev("shika_send_line");window.open(OA+encodeURIComponent(memo()),"_blank","noopener");});
